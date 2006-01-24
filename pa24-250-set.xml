@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Aircraft configuration file: Piper Comanche 250 (1962 model)
+This file configures the airplane with full fuel, a 200 lb pilot, and
+a 150 lb copilot.  The plane starts with the mags on and the engine
+spinning.
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>Piper Comanche 250 (1962 model)</description>
+  <author>Dave Perry</author>
+
+
+  <!-- Use the YASim physics engine for the flight model -->
+
+  <flight-model archive="y">yasim</flight-model>
+  <aero archive="y">pa24-250</aero>
+
+  <startup>
+   <splash-texture>Aircraft/pa24-250/pa24-250splash.rgb</splash-texture>
+  </startup>
+
+
+  <!-- For now, use the Cessna 172 sound configuration (same engine) -->
+
+  <sound>
+   <path archive="y">Aircraft/pa24-250/pa24-250-sound.xml</path>
+  </sound>
+
+
+  <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
+
+  <model>
+   <path archive="y">Aircraft/pa24-250/Models/pa24-250.xml</path>
+  </model>
+  <panel>
+   <visibility archive="y">false</visibility>
+  </panel>
+
+
+  <!-- Set the pilot's view position x/y/z == right/up/back-->
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">-0.28</x-offset-m> <!-- -0.18-->
+     <y-offset-m archive="y">0.5</y-offset-m>   <!-- 0.45-->
+     <z-offset-m archive="y">2.65</z-offset-m>   <!-- 2.7-->
+     <pitch-offset-deg>-15</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
+  <weight n="0">
+    <name>Pilot</name>
+    <weight-lb>200</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="1">
+    <name>Copilot</name>
+    <weight-lb>150</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="2">
+    <name>Left Passenger</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="3">
+    <name>Right Passenger</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="4">
+    <name>Baggage</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>200</max-lb>
+  </weight>
+
+  <help>
+   <title>Piper Comanche 250</title>
+   <key>
+    <name>f</name>
+    <desc>fuel tank select</desc>
+   </key>
+  </help>
+
+ </sim>
+
+ <!-- Allow the attitude indicator to tumble -->
+
+ <instrumentation>
+  <attitude-indicator>
+   <config>
+    <tumble-flag>true</tumble-flag>
+   </config>
+  </attitude-indicator>
+ </instrumentation>
+
+ <!-- Start with the engine spinning -->
+
+ <engines>
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+ </engines>
+
+
+ <!-- Start with the magnetos on, trims set for take-off, and strobe on -->
+
+ <controls>
+  <engines>
+   <engine n="0">
+    <magnetos>3</magnetos>
+   </engine>
+  </engines>
+  <flight>
+   <aileron-trim>0.00</aileron-trim>
+   <elevator-trim>-0.0</elevator-trim>  <!--0-->
+   <rudder-trim>0</rudder-trim>
+  </flight>
+  <lighting>
+   <strobe>true</strobe>
+  </lighting>
+ </controls>
+
+ <!-- If there were an autopilot, it would use these numbers ... -->  
+
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">74.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">91.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">600.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.01</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+
+ <!-- Start with both main tanks completely full and right main selected
+      The Comanche modeled has one fuel quantity gage which displays
+      the fraction of fuel in the selected tank.  This is acurately
+      modeled, so only one tank should be selected at a time. 
+      Use keyboard "f" nasal binding to switch tanks; this cycles through
+      the tanks in order Right Main, Right Aux, Left Aux, Left Main, and 
+      finally Off.  In the off position or with an empty tank selected,
+      the engine quits.
+-->
+
+ <controls> 
+  <fuel>
+   <switch-position type = "int">1</switch-position>
+    <tank n="0">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+    <tank n="1">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+    <tank n="2">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+    <tank n="3">
+     <fuel_selector>true</fuel_selector>
+    </tank>
+  </fuel>
+ </controls> 
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <name>RightMain</name>
+    <level-gal_us>28.0</level-gal_us>
+    <selected>true</selected>
+   </tank>
+   <tank n="1">
+    <name>RightAux</name>
+    <level-gal_us>0.0</level-gal_us>
+    <selected>false</selected>
+   </tank>
+   <tank n="2">
+    <name>LeftAux</name>
+    <level-gal_us>0.0</level-gal_us>
+    <selected>false</selected>
+  </tank>
+   <tank n="3">
+    <name>LeftMain</name>
+    <level-gal_us>28.0</level-gal_us>
+    <selected>false</selected>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <input>
+  <keyboard>
+   <key n="102">
+   <name>f</name>
+   <desc>fuel tank select</desc>
+   <binding>
+    <command>nasal</command>
+     <script>pa24.fuel_switch()</script>
+   </binding>
+   </key>
+  </keyboard>
+ </input>
+
+<nasal>
+	<pa24>
+          <file>Aircraft/pa24-250/Models/pa24.nas</file>
+	</pa24>
+</nasal>
+
+</PropertyList>
+
+<!-- end of pa24-250-set.xml -->
