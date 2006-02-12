@@ -8,9 +8,9 @@
   <name>COMP</name>
   <path>Aircraft/Instruments-3d/comp/comp.xml</path>
   <offsets>
-   <x-m>2.29</x-m>
+   <x-m>2.317</x-m>
    <y-m>0.000</y-m>
-   <z-m>0.63</z-m>
+   <z-m>0.623</z-m>
   </offsets>
  </model>
 
@@ -48,9 +48,9 @@
   <name>ALT</name>
   <path>Aircraft/Instruments-3d/alt/alt.xml</path>
   <offsets>
-   <x-m>2.12</x-m>  <!--  1.925 -->
-   <y-m>-0.388</y-m>
-   <z-m>0.218</z-m> <!-- 0.290  -->
+   <x-m>2.12</x-m>
+   <y-m>-0.390</y-m>
+   <z-m>0.218</z-m>
   </offsets>
  </model>
 
@@ -71,6 +71,16 @@
    <x-m>2.12</x-m>
    <y-m>-0.01</y-m>
    <z-m>0.243</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>GPS</name>
+  <path>Aircraft/Instruments-3d/gps-ind/gps.xml</path>
+  <offsets>
+   <x-m>2.12</x-m>
+   <y-m>-0.01</y-m>
+   <z-m>0.148</z-m>
   </offsets>
  </model>
 
@@ -109,7 +119,7 @@
   <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.104</y-m>
+   <y-m>-0.105</y-m>
    <z-m>0.197</z-m>
   </offsets>
  </model>
@@ -193,6 +203,26 @@
    <z-m>0.066</z-m>
   </offsets>
  </model>
+
+ <model>
+  <name>RadioStack</name>
+  <path>Aircraft/pa24-250/Models/radio_stack/radio-stack.xml</path>
+  <offsets>
+   <x-m>2.12</x-m>
+   <y-m>.12</y-m>
+   <z-m>0.16</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>mags</name>
+  <path>Aircraft/pa24-250/Models/mag.sw/mags.xml</path>
+  <offsets>
+   <x-m>2.125</x-m>
+   <y-m>-0.145</y-m>
+   <z-m>-0.015</z-m>
+  </offsets>
+ </model>
   
  <!-- Visible up to 10km (6mi) -->
  <animation>
@@ -218,15 +248,220 @@
   <object-name>OIL</object-name>
   <object-name>FlapIndicator</object-name>
   <object-name>VAC</object-name>
+  <object-name>RadioStack</object-name>
+  <object-name>GPS</object-name>
  </animation>
+
+<panel>
+  <path>Aircraft/pa24-250/Panel/pa24-panel.xml</path>
+  <bottom-left>
+    <x-m>2.14</x-m>
+    <y-m>-0.530</y-m>
+    <z-m>-0.040</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>2.14</x-m>
+    <y-m>0.530</y-m>
+    <z-m>-0.040</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>2.14</x-m>
+    <y-m>-0.530</y-m>
+    <z-m>0.4</z-m>
+  </top-left>
+</panel>
 
  <animation>
   <name>PanelAlphaOrderGroup</name>
   <object-name>InstrumentGroup</object-name>
-  <object-name>Panel</object-name>
+  <object-name>Panel-3d</object-name>
   <object-name>PlacardGroup</object-name>
+  <object-name>SwitchesGroup</object-name>
+  <object-name>TogglesGroup</object-name>
   <object-name>WindowGroup</object-name>
  </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>MasterToggle</object-name>
+  <property>/controls/electric/battery-switch</property>
+  <offset>40</offset>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>FuelPumpToggle</object-name>
+  <property>/controls/engines/engine/fuel-pump</property>
+  <offset>40</offset>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+   <animation>
+  <type>rotate</type>
+  <object-name>NavLightToggle</object-name>
+  <property>/controls/switches/nav-lights</property>
+  <factor>100</factor>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.13</x-m>
+   <y-m>-0.35</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>LdgLtLeftToggle</object-name>
+  <property>/controls/switches/landing-light</property>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>LdgLt</object-name>
+  <condition>
+   <property>/controls/lighting/landing-lights</property>
+  </condition>
+ </animation>
+
+
+  <animation>
+  <type>rotate</type>
+  <object-name>LdgLtRightToggle</object-name>
+  <property>/controls/switches/landing-light</property>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>TurnBankToggle</object-name>
+  <property>/instrumentation/turn-indicator/serviceable</property>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>RotBeaconToggle</object-name>
+  <property>/controls/switches/flashing-beacon</property>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>PitotHeatToggle</object-name>
+  <property>/controls/anti-ice/pitot-heat</property>
+  <factor>40</factor>
+  <axis>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+<center>
+ <x-m>2.125</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+</center>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>StrobeToggle</object-name>
+   <property>/controls/switches/strobe-lights</property>
+   <factor>40</factor>
+   <axis>
+     <x>0.0</x>
+     <y>-1.0</y>
+     <z>0.0</z>
+   </axis>
+   <center>
+     <x-m>2.125</x-m>
+     <y-m>0.00</y-m>
+     <z-m>0.00</z-m>
+   </center>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>AvionicsMasterToggle</object-name>
+   <property>/controls/switches/master-avionics</property>
+   <factor>40</factor>
+   <axis>
+     <x>0.0</x>
+     <y>-1.0</y>
+     <z>0.0</z>
+   </axis>
+   <center>
+     <x-m>2.125</x-m>
+     <y-m>0.00</y-m>
+     <z-m>0.00</z-m>
+   </center>
+ </animation>
+
 
 <!-- Make the fuel selector valve move based on the value of switch-position 
      The actual change in tank selection is done by pa24.nas which allows
@@ -261,6 +496,16 @@
   <object-name>BeaconFlasher</object-name>
   <condition>
    <property>controls/lighting/beacon</property>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Beacon</object-name>
+  <condition>
+   <not>
+    <property>controls/lighting/beacon</property>
+   </not>
   </condition>
  </animation>
 
@@ -362,7 +607,7 @@
   <name>YokeLeft</name>
   <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
   <offsets>
-   <x-m>2.10</x-m>
+   <x-m>2.12</x-m>
    <y-m>-0.284</y-m>
    <z-m>0.167</z-m>
   </offsets>
@@ -372,7 +617,7 @@
   <name>YokeRight</name>
   <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
   <offsets>
-   <x-m>2.10</x-m>
+   <x-m>2.12</x-m>
    <y-m>0.277</y-m>
    <z-m>0.167</z-m>
   </offsets>
@@ -418,13 +663,25 @@
   <type>translate</type>
   <object-name>CarbHeat</object-name>
   <property>/controls/anti-ice/engine/carb-heat[0]</property>
-  <factor>0.07</factor>
+  <factor>0.05</factor>
   <axis>
    <x>1.0</x>
    <y>0.0</y>
    <z>0.0</z>
   </axis>
  </animation>
+
+    <animation> 
+      <type>translate</type>
+      <object-name>Prime</object-name>
+      <property>controls/engines/engine/primer-pump</property>
+      <factor>-0.035</factor>
+      <axis> 
+        <x>-1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    </animation>
 
  <animation>
   <type>rotate</type>
@@ -592,6 +849,7 @@
    <object-name>GearGreen-e</object-name>
     <condition>
      <and>
+       <property>/controls/electric/battery-switch</property>
        <equals>
         <property>gear/gear[0]/position-norm</property>
         <value>1</value>
@@ -636,6 +894,7 @@
    <object-name>GearYellow-e</object-name>
     <condition>
      <and>
+      <property>/controls/electric/battery-switch</property>      
       <equals>
        <property>gear/gear[0]/position-norm</property>
        <value>0</value>

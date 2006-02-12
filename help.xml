@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+  <PropertyList> 
+  <help>
+   <title>Piper Comanche 250</title>
+    <key> 
+     <name>Space</name>
+     <desc>Start</desc>
+   </key>
+   <key>
+    <name>f</name>
+    <desc>fuel tank select</desc>
+   </key>
+   <key>
+    <name>!</name>
+    <desc>toggle master switch</desc>
+   </key>
+   <key>
+    <name>@</name>
+    <desc>toggle fuel pump</desc>
+   </key>
+   <key>
+    <name>#</name>
+    <desc>toggle nav lights</desc>
+   </key>
+   <key>
+    <name>$</name>
+    <desc>toggle landing lights</desc>
+   </key>
+   <key>
+    <name>%</name>
+    <desc>toggle turn and bank</desc>
+   </key>
+   <key>
+    <name>^</name>
+    <desc>toggle rotating beacon</desc>
+   </key>
+   <key>
+    <name>*</name>
+    <desc>toggle pitot heat</desc>
+   </key>
+   <key>
+    <name>(</name>
+    <desc>toggle strobe lights</desc>
+   </key>
+   <key>
+    <name>)</name>
+    <desc>toggle avionics master</desc>
+   </key>
+   <key>
+    <name>h</name>
+    <desc>toggle carburator heat</desc>
+   </key>
+   <key>
+    <name>ctrl-P</name>
+    <desc>toggle primer pump</desc>
+   </key>
+
+      <line>Type Ctrl-C to display mouse "hot-spots"</line>
+      <line></line>
+      <line>Start Routine</line>
+      <line>1. fuel on most full main ("f" toggles selector between seats)</line>
+      <line>2. avionics master and all other toggles OFF</line>
+      <line>3. master switch to ON</line>
+      <line>4. electric fuel pump ON</line>
+      <line>5. operate primer pump three times then locked (ctrl-P cycles primer)</line>
+      <line>6. "CLEAR PROP"</line>
+      <line>7. magnetos on both</line>
+      <line>8. key to start (or space bar)</line>
+      <line>9. turn and bank ON</line>
+      <line>10. pitot heat ON if IFR</line>
+      <line>11. avionics master, beacon, nav lights, strobe lights ON as required</line>
+      <line></line>
+      <line>Take-Off Check List on Panel</line>
+      <line></line>
+      <line>Landing Check List on Panel</line>
+  </help>
+
+  </PropertyList>

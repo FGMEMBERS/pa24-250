@@ -10,10 +10,11 @@ spinning.
 
 <PropertyList>
 
- <sim>
+ <sim include="help.xml">
 
   <description>Piper Comanche 250 (1962 model)</description>
   <author>Dave Perry</author>
+  <status>early-production</status>
 
 
   <!-- Use the YASim physics engine for the flight model -->
@@ -25,6 +26,11 @@ spinning.
    <splash-texture>Aircraft/pa24-250/pa24-250splash.rgb</splash-texture>
   </startup>
 
+  <systems>
+   <electrical>
+    <path></path>
+   </electrical>
+  </systems> 
 
   <!-- For now, use the Cessna 172 sound configuration (same engine) -->
 
@@ -49,8 +55,8 @@ spinning.
    <internal archive="y">true</internal>
    <config>
      <x-offset-m archive="y">-0.28</x-offset-m> <!-- -0.18-->
-     <y-offset-m archive="y">0.5</y-offset-m>   <!-- 0.45-->
-     <z-offset-m archive="y">2.65</z-offset-m>   <!-- 2.7-->
+     <y-offset-m archive="y">0.51</y-offset-m>   <!-- 0.45-->
+     <z-offset-m archive="y">2.62</z-offset-m>   <!-- 2.7-->
      <pitch-offset-deg>-15</pitch-offset-deg>
    </config>
   </view>
@@ -111,13 +117,6 @@ spinning.
     <max-lb>200</max-lb>
   </weight>
 
-  <help>
-   <title>Piper Comanche 250</title>
-   <key>
-    <name>f</name>
-    <desc>fuel tank select</desc>
-   </key>
-  </help>
 
  </sim>
 
@@ -131,32 +130,63 @@ spinning.
   </attitude-indicator>
  </instrumentation>
 
- <!-- Start with the engine spinning -->
 
- <engines>
-  <engine>
-   <rpm type="double">700</rpm>
-  </engine>
- </engines>
+ <!-- Start with trims set for take-off and
 
+	ITEM		STATE	Toggle	Hot
+				Key 	SPOT 
+	Master  	Off	"!"	Y		
+	Fuel Pump	Off	"@"	Y
+	Nav Lights	Off	"#"	Y
+	Landing Lights	Off	"$"	Y
+	Turn & Bank	Off	"%"	Y
+	Rot Beacon	Off	"^"	Y
+	Pitot Heat	Off	"*"	Y
+	Strobe Lights	Off	"("	Y
+	Avionics Master Off	")"	Y
 
- <!-- Start with the magnetos on, trims set for take-off, and strobe on -->
-
+	Magnetos	Off		Y
+	Starter		Off		Y
+	Fuel Selector	Off	"f"	N
+					 -->
  <controls>
   <engines>
-   <engine n="0">
-    <magnetos>3</magnetos>
+   <engine>
+    <fuel-pump type="bool">0</fuel-pump>		<!-- fuel-pump off 		-->
+    <primer-pump type="double">0</primer-pump>		<!-- primer locked		-->
+    <rpm>0</rpm>    
+    <magnetos>0</magnetos>
    </engine>
   </engines>
+  <gear>
+   <brake-parking type="double">1</brake-parking>	<!--  parking brake set 	-->
+  </gear>
+  <electric>
+   <battery-switch type="bool">0</battery-switch>	<!--  master switch off 	-->
+  </electric>
+  <lighting>
+   <nav-lights type="bool">0</nav-lights>		<!--  nav lights off 		-->
+   <landing-lights type="bool">0</landing-lights>
+   <beacon type="bool">0</beacon>			<!--  rotating beacon off 	-->
+   <strobe type="bool">0</strobe>			<!--  strobe lights off 	-->
+  </lighting>
+  <anti-ice>
+   <pitot-heat type="bool">0</pitot-heat>		<!--  pitot heat off 		-->
+  </anti-ice>
   <flight>
    <aileron-trim>0.00</aileron-trim>
-   <elevator-trim>-0.0</elevator-trim>  <!--0-->
-   <rudder-trim>0</rudder-trim>
+   <elevator-trim>-0.2</elevator-trim>  		<!--  tab set for takeoff	-->
+   <rudder-trim>0.00</rudder-trim>
   </flight>
-  <lighting>
-   <strobe>true</strobe>
-  </lighting>
+  <switches>
+   <taxi-lights type="bool">0</taxi-lights>		<!--  avionics master off	-->
+  </switches>
  </controls>
+ <instrumentation>
+  <turn-indicator>
+   <serviceable type="bool">0</serviceable>		<!--  turn & bank off		-->
+  </turn-indicator>
+ </instrumentation>
 
  <!-- If there were an autopilot, it would use these numbers ... -->  
 
@@ -186,7 +216,7 @@ spinning.
 
  <controls> 
   <fuel>
-   <switch-position type = "int">1</switch-position>
+   <switch-position type = "int">0</switch-position>
     <tank n="0">
      <fuel_selector>true</fuel_selector>
     </tank>
@@ -237,12 +267,114 @@ spinning.
      <script>pa24.fuel_switch()</script>
    </binding>
    </key>
-  </keyboard>
- </input>
+   
+  <key n="33">
+  <name>!</name>
+  <desc>Toggle Master Switch</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.master_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="64">
+  <name>@</name>
+  <desc>Toggle Fuel Pump</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.f_pump_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="35">
+  <name>#</name>
+  <desc>Toggle Nav Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.nav_light_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="36">
+  <name>$</name>
+  <desc>Toggle Landing Light</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.landing_light_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="37">
+  <name>%</name>
+  <desc>Toggle Turn+Bank</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.turn_bank_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="94">
+  <name>^</name>
+  <desc>Toggle Rotating Beacon</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.rot_beacon_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="42">
+  <name>*</name>
+  <desc>Toggle Pitot Heat</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.pitot_heat_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="40">
+  <name>(</name>
+  <desc>Toggle Strobe Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.strobe_light_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="41">
+  <name>)</name>
+  <desc>Toggle Avionics Master</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.avionics_master_switch()</script>
+  </binding>
+  </key> 
+
+  <key n="104">
+  <name>h</name>
+  <desc>Toggle Carb Heat</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.carb_heat()</script>
+  </binding>
+  </key> 
+
+  <key n="16">
+  <name>ctrl-P</name>
+  <desc>Toggle Prime Pump</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.primer()</script>
+  </binding>
+  </key> 
+
+</keyboard> 
+
+</input>
 
 <nasal>
 	<pa24>
           <file>Aircraft/pa24-250/Models/pa24.nas</file>
+          <file>Aircraft/pa24-250/pa24-electrical.nas</file>
 	</pa24>
 </nasal>
 

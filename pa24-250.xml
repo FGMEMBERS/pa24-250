@@ -5,7 +5,7 @@
 
 <!-- Approach configuration -->
 <approach speed="71" aoa="16" fuel="0.6">  <!-- 55 -->
-  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.0"/>  <!--0.2-->
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>  <!--0.2-->
   <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
   <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
   <control-setting axis="/controls/flight/flaps" value="1.0"/>

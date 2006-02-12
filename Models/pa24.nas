@@ -46,3 +46,71 @@ node = props.globals.getNode("/engines/engine/out-of-fuel",0);
 node.setBoolValue(0);} 
  }
 }
+
+master_switch = func {
+toggle=getprop("/controls/electric/battery-switch");
+toggle=1-toggle;
+setprop("/controls/electric/battery-switch",toggle);
+}
+
+f_pump_switch = func {
+toggle=getprop("/controls/engines/engine/fuel-pump");
+toggle=1-toggle;
+setprop("/controls/engines/engine/fuel-pump",toggle);
+}
+
+nav_light_switch = func {
+toggle=getprop("/controls/switches/nav-lights");
+toggle=1-toggle;
+setprop("/controls/switches/nav-lights",toggle);
+}
+
+landing_light_switch = func {
+toggle=getprop("/controls/switches/landing-light");
+toggle=1-toggle;
+setprop("/controls/switches/landing-light",toggle);
+}
+
+turn_bank_switch = func {
+toggle = getprop("/instrumentation/turn-indicator/serviceable");
+toggle=1-toggle;
+setprop("/instrumentation/turn-indicator/serviceable",toggle);
+}
+
+rot_beacon_switch = func {
+toggle=getprop("/controls/switches/flashing-beacon");
+toggle=1-toggle;
+setprop("/controls/switches/flashing-beacon",toggle);
+}
+
+pitot_heat_switch = func {
+toggle=getprop("/controls/anti-ice/pitot-heat");
+toggle=1-toggle;
+setprop("/controls/anti-ice/pitot-heat",toggle);
+}
+
+strobe_light_switch = func {
+toggle=getprop("/controls/switches/strobe-lights");
+toggle=1-toggle;
+setprop("/controls/switches/strobe-lights",toggle);
+}
+
+avionics_master_switch = func {
+toggle=getprop("/controls/switches/master-avionics");
+toggle=1-toggle;
+setprop("/controls/switches/master-avionics",toggle);
+}
+
+carb_heat = func {
+toggle=getprop("/controls/anti-ice/engine/carb-heat");
+toggle=1-toggle;
+setprop("/controls/anti-ice/engine/carb-heat",toggle);
+}
+
+primer = func {
+toggle=getprop("/controls/engines/engine/primer-pump");
+toggle=1-toggle;
+setprop("/controls/engines/engine/primer-pump",toggle);
+}
+
+
