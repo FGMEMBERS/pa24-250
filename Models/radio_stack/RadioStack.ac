@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "RadioStack"
+loc 0.000486599 0.0491208 -0.000250054
+texture "panel-tex02.rgb"
+crease 45.000000
+numvert 4
+0 0.0871311 -0.0873849
+0 0.0871311 0.0877934
+0 -0.185309 0.0877934
+0 -0.185309 -0.0873849
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+0 0 1
+1 1 1
+2 1 0
+3 0 0
+kids 0

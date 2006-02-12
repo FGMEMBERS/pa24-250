@@ -1,0 +1,25 @@
+<?xml version="1.0" ?> 
+
+  <PropertyList> 
+    <path>RadioStack.ac</path>
+ <panel>
+  <path>Aircraft/pa24-250/Panel/radio-panel.xml</path>
+  <bottom-left>
+    <x-m>0</x-m>
+    <y-m>-0.08</y-m>
+    <z-m>-0.13</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>0</x-m>
+    <y-m>0.08</y-m>
+    <z-m>-0.13</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>0</x-m>
+    <y-m>-0.08</y-m>
+    <z-m>0.13</z-m>
+  </top-left>
+ </panel>
+ 
+
+</PropertyList>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>mag_switch.ac</path>
+
+ <animation>
+  <name>mags-key</name>
+  <type>rotate</type>
+  <object-name>key</object-name>
+  <property>/controls/engines/engine/magnetos</property>
+  <factor>30</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+ <type>select</type>
+  <object-name>key</object-name>
+  <condition>
+   <not>
+    <property>/controls/switches/starter</property>
+   </not>
+  </condition>
+</animation>
+
+<animation>
+ <type>select</type>
+  <object-name>start</object-name>
+  <condition>
+    <property>/controls/switches/starter</property>
+  </condition>
+</animation>        
+  
+</PropertyList>
+
+
