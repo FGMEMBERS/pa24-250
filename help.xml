@@ -54,6 +54,14 @@
     <name>ctrl-P</name>
     <desc>toggle primer pump</desc>
    </key>
+   <key>
+    <name>B</name>
+    <desc>toggle parking brake</desc>
+   </key>
+   <key>
+    <name>space bar</name>
+    <desc>starter</desc>
+   </key>
 
       <line>Type Ctrl-C to display mouse "hot-spots"</line>
       <line></line>
@@ -69,6 +77,7 @@
       <line>9. turn and bank ON</line>
       <line>10. pitot heat ON if IFR</line>
       <line>11. avionics master, beacon, nav lights, strobe lights ON as required</line>
+      <line>12. release parking brake ("B" releases brake)</line>
       <line></line>
       <line>Take-Off Check List on Panel</line>
       <line></line>

@@ -367,6 +367,23 @@ spinning.
   </binding>
   </key> 
 
+  <key n="32">
+  <name>space bar</name>
+  <desc>Toggle Starter Switch</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>/controls/switches/starter</property>
+     <value >1</value>
+   </binding>
+   <mod-up>
+     <binding>
+       <command>property-assign</command>
+       <property>/controls/switches/starter</property>
+       <value>0</value>
+     </binding>
+   </mod-up>
+  </key>
+
 </keyboard> 
 
 </input>

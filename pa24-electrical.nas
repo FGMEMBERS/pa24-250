@@ -210,6 +210,7 @@ update_virtual_bus = func( dt ) {
     setprop("/systems/electrical/outputs/starter[0]", starter_volts);
     if (starter_volts > vcutoff) {
     setprop("/controls/engines/engine[0]/starter",1);
+    setprop("/controls/engines/engine[0]/magnetos",3);
     } else {
     setprop("/controls/engines/engine[0]/starter",0);
     }
