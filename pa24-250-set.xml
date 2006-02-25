@@ -54,9 +54,9 @@ spinning.
   <view n="0">
    <internal archive="y">true</internal>
    <config>
-     <x-offset-m archive="y">-0.28</x-offset-m> <!-- -0.18-->
-     <y-offset-m archive="y">0.51</y-offset-m>   <!-- 0.45-->
-     <z-offset-m archive="y">2.62</z-offset-m>   <!-- 2.7-->
+     <x-offset-m archive="y">-0.26</x-offset-m> <!-- -0.28-->
+     <y-offset-m archive="y">0.52</y-offset-m>   <!-- 0.51-->
+     <z-offset-m archive="y">2.7</z-offset-m>   <!-- 2.62-->
      <pitch-offset-deg>-15</pitch-offset-deg>
    </config>
   </view>

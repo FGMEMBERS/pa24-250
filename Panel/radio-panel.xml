@@ -14,24 +14,32 @@
   <instrument include="../../Instruments/dme.xml">
    <name>DME Display</name>
    <x>120</x>
-   <y>600</y>
+   <y>450</y>
    <w>200</w>
    <h>100</h> -->
   </instrument>
   
   <instrument include="../../Instruments/markerbeacon.xml">
    <name>Marker Beacon Indicators</name>
-   <x>256</x>
+   <x>64</x>
    <y>1000</y>
    <w>100</w>
    <h>50</h>
+  </instrument>
+  
+  <instrument include="../../Instruments/adf-radio.xml">
+   <name>ADF Radio</name>
+   <x>256</x>
+   <y>900</y>
+   <w>512</w>
+   <h>150</h>
   </instrument>
   
       
   <instrument include="../../Instruments/navcom-kx155.xml">
    <name>NavCom 1 Radio</name>
    <x>256</x>
-   <y>875</y>
+   <y>750</y>
    <w>512</w>
    <h>150</h>
   </instrument>
@@ -48,21 +56,17 @@
     <nav-com-pwr-volts-prop>/systems/electrical/outputs/nav[1]</nav-com-pwr-volts-prop>
    </params>
    <x>256</x>
-   <y>725</y>
+   <y>600</y>
    <w>512</w>
    <h>150</h>
   </instrument>
-<!--  
-  <instrument include="../../Instruments/adf-radio.xml">
-   <name>ADF Radio</name>
-   <x>896</x>
-   <y>307</y>
-  </instrument>
-
-  <instrument include="../../Instruments/autopilot.xml">
+<!--
+  <instrument include="../../Instruments/autopilot_gui.xml">
    <name>Autopilot</name>
-   <x>896</x>
-   <y>257v</y>
+   <x>256</x>
+   <y>450</y>
+   <w>512</w>
+   <h>100</h>
   </instrument>
 -->
 <!-- end radio stack -->
