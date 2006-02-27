@@ -83,7 +83,8 @@
 	cruise-alt="15000" cruise-power="113"
 	takeoff-power="250" takeoff-rpm="2575"
 	x="0.0" y="0.0" z="0.0" mass="600" moment="6" 
-	min-rpm="800" max-rpm="2575" >
+	min-rpm="800" max-rpm="2575"
+        fine-stop="1.0" coarse-stop="4.0" >
     <piston-engine eng-rpm="2575" alt="0" eng-power="250"
      displacement="541.5" compression="8.5"/>
     <actionpt x="0.0" y="0.0" z="0.0" />
