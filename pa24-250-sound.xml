@@ -481,7 +481,7 @@
       </click>
  
       <click> 
-        <name>Pitot Heat Off</name>
+        <name>Avionics Master Off</name>
         <path>Aircraft/pa24-250/Sounds/click.wav</path>
         <condition>
 	 <not>
@@ -492,6 +492,30 @@
           <factor>1.0</factor>
         </volume>
       </click>
+
+      <squish> 
+        <name>Primer Out</name>
+        <path>Aircraft/pa24-250/Sounds/squish.wav</path>
+        <condition>
+          <property>controls/engines/engine/primer-pump</property>
+	  </condition>
+        <volume> 
+          <factor>0.1</factor>
+        </volume>
+      </squish>
+ 
+      <squish> 
+        <name>Primer In</name>
+        <path>Aircraft/pa24-250/Sounds/squish.wav</path>
+        <condition>
+	 <not>
+           <property>controls/engines/engine/primer-pump</property>
+	  </not>
+	  </condition>
+        <volume> 
+          <factor>0.1</factor>
+        </volume>
+      </squish>
 
 </fx>
  
