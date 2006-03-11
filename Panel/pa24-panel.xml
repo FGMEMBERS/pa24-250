@@ -26,7 +26,7 @@
      <name>master switch</name>
      <button>0</button>
      <x>-405</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -39,7 +39,7 @@
      <name>fuel pump</name>
      <button>0</button>
      <x>-373</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -51,8 +51,8 @@
    <action>
      <name>nav lights</name>
      <button>0</button>
-     <x>-350</x>
-     <y>-320</y>
+     <x>-345</x>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -65,7 +65,7 @@
      <name>landing lights</name>
      <button>0</button>
      <x>-325</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>48</w>
      <h>32</h>
      <binding>
@@ -78,7 +78,7 @@
      <name>turn bamk</name>
      <button>0</button>
      <x>-261</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -91,7 +91,7 @@
      <name>rotating beacon</name>
      <button>0</button>
      <x>-229</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -105,7 +105,7 @@
      <name>pitot heat</name>
      <button>0</button>
      <x>-195</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -118,7 +118,7 @@
      <name>strobe lights</name>
      <button>0</button>
      <x>192</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -132,7 +132,7 @@
      <name>avionics master</name>
      <button>0</button>
      <x>228</x>
-     <y>-320</y>
+     <y>-193</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -145,7 +145,7 @@
      <name>carb heat</name>
      <button>0</button>
      <x>101</x>
-     <y>-330</y>
+     <y>-200</y>
      <w>16</w>
      <h>32</h>
      <binding>
@@ -158,12 +158,158 @@
      <name>primer</name>
      <button>0</button>
      <x>280</x>
-     <y>-330</y>
+     <y>-200</y>
      <w>16</w>
      <h>32</h>
      <binding>
    <command>nasal</command>
    <script>pa24.primer()</script>
+     </binding>
+   </action>   
+
+   <action>
+    <name>Increase Mixture</name>
+    <button>0</button>     <x>-58</x>
+     <y>-224</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjMixture(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Mixture</name>
+    <button>0</button>     <x>-42</x>
+     <y>-320</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjMixture(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Increase Throttle</name>
+    <button>0</button>     <x>-10</x>
+     <y>-224</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjThrottle(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Throttle</name>
+    <button>0</button>     <x>6</x>
+     <y>-320</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjThrottle(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Increase Prop RPM</name>
+    <button>0</button>     <x>48</x>
+     <y>-224</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjPropeller(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Prop RPM</name>
+    <button>0</button>     <x>64</x>
+     <y>-320</y>
+     <w>25</w>
+     <h>96</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjPropeller(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+     <name>flaps up</name>
+     <button>0</button>
+     <x>101</x>
+     <y>-330</y>
+     <w>24</w>
+     <h>32</h>
+    <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.FlapsDown(-1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.FlapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>   
+
+   <action>
+     <name>flaps down</name>
+     <button>0</button>
+     <x>101</x>
+     <y>-362</y>
+     <w>24</w>
+     <h>32</h>
+    <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.FlapsDown(1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.FlapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>   
+
+   <action>
+     <name>left rudder trim</name>
+     <button>0</button>
+     <x>134</x>
+     <y>-384</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/rudder-trim</property>
+      <step>-0.001</step>
+     </binding>
+   </action>   
+
+   <action>
+     <name>right rudder trim</name>
+     <button>0</button>
+     <x>150</x>
+     <y>-384</y>
+     <w>16</w>
+     <h>32</h>
+     <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/rudder-trim</property>
+      <step>0.001</step>
      </binding>
    </action>   
 
@@ -173,7 +319,7 @@
      <name>small decrease</name>
      <button>0</button>
      <x>-305.4</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -190,7 +336,7 @@
      <name>large decrease</name>
      <button>1</button>
      <x>-305.4</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -207,7 +353,7 @@
      <name>small increase</name>
      <button>0</button>
      <x>-295.4</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -224,7 +370,7 @@
      <name>large increase</name>
      <button>1</button>
      <x>-295.4</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -242,7 +388,7 @@
      <name>small decrease</name>
      <button>0</button>
      <x>-249.0</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -259,7 +405,7 @@
      <name>large decrease</name>
      <button>1</button>
      <x>-249.0</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -276,7 +422,7 @@
      <name>small increase</name>
      <button>0</button>
      <x>-239.0</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -293,7 +439,7 @@
      <name>large increase</name>
      <button>1</button>
      <x>-239.0</x>
-     <y>186</y>
+     <y>216</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -311,7 +457,7 @@
      <name>small decrease</name>
      <button>0</button>
      <x>-50.95</x>
-     <y>217.6</y>
+     <y>247</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -328,7 +474,7 @@
      <name>large decrease</name>
      <button>1</button>
      <x>-50.95</x>
-     <y>217.6</y>
+     <y>247</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -345,7 +491,7 @@
      <name>small increase</name>
      <button>0</button>
      <x>-40.95</x>
-     <y>217.6</y>
+     <y>247</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -362,7 +508,7 @@
      <name>large increase</name>
      <button>1</button>
      <x>-40.95</x>
-     <y>217.6</y>
+     <y>247</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -380,7 +526,7 @@
      <name>small decrease</name>
      <button>0</button>
      <x>-50.95</x>
-     <y>64.4</y>
+     <y>118</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -397,7 +543,7 @@
      <name>large decrease</name>
      <button>1</button>
      <x>-50.95</x>
-     <y>64.4</y>
+     <y>118</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -414,7 +560,7 @@
      <name>small increase</name>
      <button>0</button>
      <x>-40.95</x>
-     <y>64.4</y>
+     <y>118</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -431,7 +577,7 @@
      <name>large increase</name>
      <button>1</button>
      <x>-40.95</x>
-     <y>64.4</y>
+     <y>118</y>
      <w>10</w>
      <h>20</h>
      <binding>
@@ -452,7 +598,7 @@
   <name>calibrate fine</name>
   <button>0</button>
   <x>-409.6</x>
-  <y>20.6</y>
+  <y>83.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -469,7 +615,7 @@
   <name>calibrate coarse</name>
   <button>1</button>
   <x>-409.6</x>
-  <y>20.6</y>
+  <y>83.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -486,7 +632,7 @@
   <name>calibrate fine</name>
   <button>0</button>
   <x>-401.6.8</x>
-  <y>20.6</y>
+  <y>83.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -503,7 +649,7 @@
   <name>calibrate coarse</name>
   <button>1</button>
   <x>-401.6</x>
-  <y>20.6</y>
+  <y>83.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -521,9 +667,9 @@
      <name>decrease mags</name>
      <button>0</button>
      <x>-156.5</x>
-     <y>-345</y>
+     <y>-213</y>
      <w>10</w>
-     <h>20</h>
+     <h>40</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/engines/engine/magnetos</property>
@@ -537,9 +683,9 @@
      <name>increase mags</name>
      <button>0</button>
      <x>-146.5.0</x>
-     <y>-345</y>
+     <y>-213</y>
      <w>10</w>
-     <h>20</h>
+     <h>40</h>
      <binding>
        <command>property-adjust</command>
        <property>/controls/engines/engine/magnetos</property>
@@ -554,9 +700,9 @@
      <name>starter</name>
      <button>0</button>
      <x>-136.5.0</x>
-     <y>-345</y>
+     <y>-213</y>
      <w>10</w>
-     <h>20</h>
+     <h>40</h>
    <binding>
      <command>property-assign</command>
      <property>/controls/switches/starter</property>
@@ -570,10 +716,50 @@
      </binding>
    </mod-up>
    </action>
-   
-</actions>
 
-</instrument>
+   <action>
+    <name>Gear up</name>
+    <button>0</button>
+    <x>-156.5.0</x>
+    <y>-73</y>
+    <w>20</w>
+    <h>40</h>
+    <repeatable>false</repeatable>
+    <binding>
+     <command>nasal</command>
+     <script>controls.gearDown(-1)</script>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.gearDown(0)</script>
+     </binding>
+    </mod-up>
+   </action>
+
+   <action>
+    <name>Gear down</name>
+    <button>0</button>
+    <x>-156.5.0</x>
+    <y>-113</y>
+    <w>20</w>
+    <h>40</h>
+    <repeatable>false</repeatable>
+    <binding>
+     <command>nasal</command>
+     <script>controls.gearDown(1)</script>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.gearDown(0)</script>
+     </binding>
+    </mod-up>
+   </action>
+   
+  </actions>
+
+ </instrument>
 
 </instruments>
 

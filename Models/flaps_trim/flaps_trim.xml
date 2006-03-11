@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>FlapsTrim.ac</path>
+
+ <animation>
+  <name>NoseTrim</name>
+  <type>rotate</type>
+  <object-name>RudderTrim</object-name>
+  <property>/controls/flight/rudder-trim[0]</property>
+  <factor>1080</factor>
+  <center>
+   <x-m>0.06</x-m>
+   <y-m>0.0262</y-m>
+   <z-m>-0.0471</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+<animation>
+ <type>translate</type>
+  <object-name>NoseTrimInd</object-name>
+  <property>/controls/flight/rudder-trim[0]</property>
+  <factor>0.03</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>  
+</animation>
+
+ <animation>
+  <name>FlapSwitch</name>
+  <type>rotate</type>
+  <object-name>FlapSwitch</object-name>
+  <property>/controls/switches/flaps</property>
+  <factor>30</factor>
+  <center>
+   <x-m>0.04</x-m>
+   <y-m>0.03</y-m>
+   <z-m>0.03</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  
+</PropertyList>
+
+

@@ -1,7 +1,8 @@
 <!-- Piper PA-24-250
-     Piper Comanche 250 (1962 Model) -->
+     Piper Comanche 250 (1962 Model)
+     Maintainer: Dave Perry -->
 
-<airplane mass="1690">
+<airplane mass="1742.9">
 
 <!-- Approach configuration -->
 <approach speed="55" aoa="14" fuel="0.6">  <!-- 55 -->
@@ -49,6 +50,7 @@
   <flap0 start="0" end="0.58" lift="1.4" drag="1.5"/>
   <flap1 start="0.58" end="0.98" lift="1.2" drag="1.1"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+  <control-speed control="FLAP0" transition-time="1"/>
   <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
   <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -106,7 +108,7 @@
 </gear>
 
 
-<gear x="-2.79" y="1.51" z="-1.17" compression=".2" retract-time="5"> <!-- left main -->
+<gear x="-2.79" y="1.51" z="-1.10" compression=".2" retract-time="5"> <!--  -1.17 left main -->
   <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -114,7 +116,7 @@
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 </gear>
 
-<gear x="-2.79" y="-1.51" z="-1.17" compression=".2" retract-time="5"> <!-- right main -->
+<gear x="-2.79" y="-1.51" z="-1.10" compression=".2" retract-time="5"> <!--  -1.17 right main -->
   <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>

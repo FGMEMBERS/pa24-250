@@ -162,12 +162,33 @@
     <offset>1.2</offset>
    </pitch>
   </squeal>
- 
+
   <flap>
    <name>flaps</name>
-   <mode>in-transit</mode>
+   <mode>looped</mode>
    <path>Sounds/flaps.wav</path>
-   <property>/surface-positions/flap-pos-norm</property>
+   <condition>
+    <and>
+     <greater-than>
+      <property>/systems/electrical/outputs/flaps</property>
+      <value>8.0</value>
+     </greater-than>
+     <not>
+      <equals>
+       <property>/controls/switches/flaps</property>
+       <value>0</value>
+      </equals>
+     </not>
+     <less-than>
+      <property>/surface-positions/flap-pos-norm</property>
+      <value>1.0</value>
+     </less-than>
+     <greater-than>
+      <property>/surface-positions/flap-pos-norm</property>
+      <value>0.0</value>
+     </greater-than>      
+    </and> 
+   </condition>
    <volume>
     <factor>0.8</factor>
    </volume>

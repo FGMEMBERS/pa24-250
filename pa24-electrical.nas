@@ -399,6 +399,9 @@ electrical_bus_2 = func() {
         setprop("/systems/electrical/outputs/pitot-heat", 0.0);
     }
   
+    # Landing Gear Power
+    setprop("/systems/electrical/outputs/landing-gear", bus_volts);
+
     # register bus voltage
     ebus2_volts = bus_volts;
 

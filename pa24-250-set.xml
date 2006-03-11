@@ -3,8 +3,7 @@
 ************************************************************************
 Aircraft configuration file: Piper Comanche 250 (1962 model)
 This file configures the airplane with full fuel, a 200 lb pilot, and
-a 150 lb copilot.  The plane starts with the mags on and the engine
-spinning.
+a 150 lb copilot and no bagage.
 ************************************************************************
 -->
 
@@ -174,8 +173,8 @@ spinning.
    <pitot-heat type="bool">0</pitot-heat>		<!--  pitot heat off 		-->
   </anti-ice>
   <flight>
-   <aileron-trim>0.00</aileron-trim>
-   <elevator-trim>-0.2</elevator-trim>  		<!--  tab set for takeoff	-->
+   <aileron-trim>0.03</aileron-trim>
+   <elevator-trim>-0.25</elevator-trim>  		<!--  tab set for takeoff	-->
    <rudder-trim>0.00</rudder-trim>
   </flight>
   <switches>
@@ -204,7 +203,7 @@ spinning.
  </autopilot>
 
 
- <!-- Start with both main tanks completely full and right main selected
+ <!-- Start with both main tanks completely full and fuel selector off.
       The Comanche modeled has one fuel quantity gage which displays
       the fraction of fuel in the selected tank.  This is acurately
       modeled, so only one tank should be selected at a time. 
@@ -237,16 +236,16 @@ spinning.
    <tank n="0">
     <name>RightMain</name>
     <level-gal_us>28.0</level-gal_us>
-    <selected>true</selected>
+    <selected>false</selected>
    </tank>
    <tank n="1">
     <name>RightAux</name>
-    <level-gal_us>0.0</level-gal_us>
+    <level-gal_us>15.0</level-gal_us>
     <selected>false</selected>
    </tank>
    <tank n="2">
     <name>LeftAux</name>
-    <level-gal_us>0.0</level-gal_us>
+    <level-gal_us>15.0</level-gal_us>
     <selected>false</selected>
   </tank>
    <tank n="3">
@@ -384,6 +383,39 @@ spinning.
    </mod-up>
   </key>
 
+  <key n="91">
+   <name>[</name>
+   <desc>flaps up</desc>
+   <repeatable type="bool">true</repeatable>
+    <binding>
+     <command>nasal</command>
+     <script>controls.FlapsDown(-1)</script>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.FlapsDown(0)</script>
+     </binding>
+    </mod-up>
+   </key>   
+
+   <key n="93">
+    <name>]</name>
+    <desc>flaps down</desc>
+    <repeatable type="bool">true</repeatable>
+    <binding>
+     <command>nasal</command>
+     <script>controls.FlapsDown(1)</script>
+    </binding>
+    <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.FlapsDown(0)</script>
+     </binding>
+    </mod-up>
+   </key>   
+
+
 </keyboard> 
 
 </input>
@@ -393,6 +425,9 @@ spinning.
           <file>Aircraft/pa24-250/Models/pa24.nas</file>
           <file>Aircraft/pa24-250/pa24-electrical.nas</file>
 	</pa24>
+	<controls>
+	  <file>Aircraft/pa24-250/controls.nas</file>
+	</controls>
 </nasal>
 
 </PropertyList>
