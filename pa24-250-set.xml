@@ -383,39 +383,6 @@ a 150 lb copilot and no bagage.
    </mod-up>
   </key>
 
-  <key n="91">
-   <name>[</name>
-   <desc>flaps up</desc>
-   <repeatable type="bool">true</repeatable>
-    <binding>
-     <command>nasal</command>
-     <script>controls.FlapsDown(-1)</script>
-    </binding>
-    <mod-up>
-     <binding>
-      <command>nasal</command>
-      <script>controls.FlapsDown(0)</script>
-     </binding>
-    </mod-up>
-   </key>   
-
-   <key n="93">
-    <name>]</name>
-    <desc>flaps down</desc>
-    <repeatable type="bool">true</repeatable>
-    <binding>
-     <command>nasal</command>
-     <script>controls.FlapsDown(1)</script>
-    </binding>
-    <mod-up>
-     <binding>
-      <command>nasal</command>
-      <script>controls.FlapsDown(0)</script>
-     </binding>
-    </mod-up>
-   </key>   
-
-
 </keyboard> 
 
 </input>
@@ -425,9 +392,6 @@ a 150 lb copilot and no bagage.
           <file>Aircraft/pa24-250/Models/pa24.nas</file>
           <file>Aircraft/pa24-250/pa24-electrical.nas</file>
 	</pa24>
-	<controls>
-	  <file>Aircraft/pa24-250/controls.nas</file>
-	</controls>
 </nasal>
 
 </PropertyList>

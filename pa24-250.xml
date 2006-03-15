@@ -50,7 +50,7 @@
   <flap0 start="0" end="0.58" lift="1.4" drag="1.5"/>
   <flap1 start="0.58" end="0.98" lift="1.2" drag="1.1"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-  <control-speed control="FLAP0" transition-time="1"/>
+  <control-speed control="FLAP0" transition-time="5"/>
   <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
   <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>

@@ -113,4 +113,37 @@ toggle=1-toggle;
 setprop("/controls/engines/engine/primer-pump",toggle);
 }
 
+##
+#  Substitute controls.flapsDown taken from b29.nas.  Gives smooth flap motion
+#  as long as the flap switch is closed.
+##
 
+controls.flapsDown = func {
+    setprop("/controls/switches/flaps", arg[0]);
+#    print("arg[0] = ", arg[0]);
+    if(getprop("/systems/electrical/outputs/flaps") < 8.0) { return; }
+    if (arg[0] == 1) {
+        if ( getprop('/controls/flight/flaps') < 1 ) {
+            interpolate('/controls/flight/flaps', 1, (5*(1-getprop('/controls/flight/flaps'))));
+        # } else {
+            # check for motor burnout
+        }
+    } elsif (arg[0] == -1) {
+        if ( getprop('/controls/flight/flaps') > 0 ) {
+            interpolate('/controls/flight/flaps', 0, (5*getprop('/controls/flight/flaps')));
+        # } else {
+            # check for motor burnout
+        }
+    } else {
+        interpolate('/controls/flight/flaps');
+    }
+}
+
+controls.gearDown = func {
+    if(getprop("/systems/electrical/outputs/landing-gear") < 8.0) {return; }
+    if (arg[0] < 0) {
+      setprop("/controls/gear/gear-down", 0);
+    } elsif (arg[0] > 0) {
+      setprop("/controls/gear/gear-down", 1);
+    }
+}

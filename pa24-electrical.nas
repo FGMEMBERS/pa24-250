@@ -262,9 +262,17 @@ update_virtual_bus = func( dt ) {
     # filter both presures
     fuel_pres_ave = 0.8 * fuel_pres_ave + 0.2 * fuel_pres;
     oil_pres_ave = 0.8 * oil_pres_ave + 0.2 * oil_pres;
-# print( " rpm = ", rpm, " fuel pres = ", fuel_pres_ave, " oil pres = ", oil_pres_ave );   
+# print( " rpm = ", rpm, " fuel pres = ", fuel_pres_ave, " oil pres = ", oil_pres_ave ); 
+##
+#  Save a factor used to make the prop disc disapear as rpm increases
+##
+    factor = 1.0 - rpm/2400;
+    if ( factor < 0.0 ) {
+        factor = 0.0;
+    }
 
     # outputs
+    setprop("/sim/models/materials/propdisc/factor", factor);  
     setprop("/engines/engine/fuel-pressure-psi", fuel_pres_ave);
     setprop("/engines/engine/oil-pressure-psi", oil_pres_ave);
     setprop("/systems/electrical/amps", ammeter_ave);

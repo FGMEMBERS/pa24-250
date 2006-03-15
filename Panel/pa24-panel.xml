@@ -255,12 +255,12 @@
     <repeatable type="bool">true</repeatable>
      <binding>
       <command>nasal</command>
-      <script>controls.FlapsDown(-1)</script>
+      <script>controls.flapsDown(-1)</script>
      </binding>
      <mod-up>
       <binding>
        <command>nasal</command>
-       <script>controls.FlapsDown(0)</script>
+       <script>controls.flapsDown(0)</script>
       </binding>
      </mod-up>
    </action>   
@@ -275,12 +275,12 @@
     <repeatable type="bool">true</repeatable>
      <binding>
       <command>nasal</command>
-      <script>controls.FlapsDown(1)</script>
+      <script>controls.flapsDown(1)</script>
      </binding>
      <mod-up>
       <binding>
        <command>nasal</command>
-       <script>controls.FlapsDown(0)</script>
+       <script>controls.flapsDown(0)</script>
       </binding>
      </mod-up>
    </action>   

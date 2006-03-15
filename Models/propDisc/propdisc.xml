@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>fastprop.ac</path>
+
+ <animation>
+  <name>PropVisibility</name>
+  <type>material</type>
+  <object-name>FastpropDisc</object-name>
+  <transparency>
+   <alpha>0.2</alpha>
+   <factor-prop>/sim/models/materials/propdisc/factor</factor-prop>
+  </transparency>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>FastpropDisc</object-name>
+  <condition>
+    <greater-than>
+     <property>engines/engine[0]/rpm</property>
+     <value>350</value>
+    </greater-than>
+  </condition>
+ </animation>
+</PropertyList>
+
+
