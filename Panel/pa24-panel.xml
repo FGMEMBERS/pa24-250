@@ -56,8 +56,21 @@
      <w>16</w>
      <h>32</h>
      <binding>
-   <command>nasal</command>
-   <script>pa24.nav_light_switch()</script>
+      <command>nasal</command>
+      <script>pa24.nav_light_switch()</script>
+     </binding>
+   </action>   
+
+   <action>
+     <name>ParkingBrake</name>
+     <button>0</button>
+     <x>-335</x>
+     <y>-163</y>
+     <w>16</w>
+     <h>64</h>
+     <binding>
+      <command>nasal</command>
+      <script>controls.applyParkingBrake(1)</script>
      </binding>
    </action>   
 
@@ -595,9 +608,9 @@
   <!--             Altimeter              -->  
  
 <action>
-  <name>calibrate fine</name>
+  <name>decrease calibrate fine</name>
   <button>0</button>
-  <x>-409.6</x>
+  <x>-416.6</x>
   <y>83.6</y>
   <w>8</w>
   <h>20</h>
@@ -612,9 +625,9 @@
 </action>
 
 <action>
-  <name>calibrate coarse</name>
+  <name>decrease calibrate coarse</name>
   <button>1</button>
-  <x>-409.6</x>
+  <x>-416.6</x>
   <y>83.6</y>
   <w>8</w>
   <h>20</h>
@@ -629,9 +642,9 @@
 </action>
 
 <action>
-  <name>calibrate fine</name>
+  <name>increase calibrate fine</name>
   <button>0</button>
-  <x>-401.6.8</x>
+  <x>-408.6.8</x>
   <y>83.6</y>
   <w>8</w>
   <h>20</h>
@@ -646,9 +659,9 @@
 </action>
 
 <action>
-  <name>calibrate coarse</name>
+  <name>increase calibrate coarse</name>
   <button>1</button>
-  <x>-401.6</x>
+  <x>-408.6</x>
   <y>83.6</y>
   <w>8</w>
   <h>20</h>

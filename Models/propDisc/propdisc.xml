@@ -7,7 +7,7 @@
  <animation>
   <name>PropVisibility</name>
   <type>material</type>
-  <object-name>FastpropDisc</object-name>
+  <object-name>noshadow.PropellerDisk</object-name>
   <transparency>
    <alpha>0.2</alpha>
    <factor-prop>/sim/models/materials/propdisc/factor</factor-prop>
@@ -16,7 +16,7 @@
 
  <animation>
   <type>select</type>
-  <object-name>FastpropDisc</object-name>
+  <object-name>noshadow.PropellerDisk</object-name>
   <condition>
     <greater-than>
      <property>engines/engine[0]/rpm</property>
@@ -24,6 +24,24 @@
     </greater-than>
   </condition>
  </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>noshadow.PropellerDisk</object-name>
+  <property>/engines/engine[0]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
 </PropertyList>
 
 

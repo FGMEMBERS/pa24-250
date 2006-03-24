@@ -5,6 +5,21 @@
  <path>FlapsTrim.ac</path>
 
  <animation>
+  <type>material</type>
+  <object-name>FlapSwHousing</object-name>
+  <object-name>FlapSwitch</object-name>
+  <object-name>NoseTrimInd</object-name>
+  <object-name>RudderTrim</object-name>
+  <object-name>TrimHousing</object-name>
+  <emission>
+   <red>0.45</red>
+   <green>0.09</green>
+   <blue>0.00001</blue>
+   <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
   <name>NoseTrim</name>
   <type>rotate</type>
   <object-name>RudderTrim</object-name>

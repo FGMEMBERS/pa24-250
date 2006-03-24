@@ -4,6 +4,60 @@
 
  <path>pa24-250.ac</path>
 
+ <animation>
+  <type>material</type>
+  <object-name>TakeOffPlacard</object-name>
+  <object-name>LandingPlacard</object-name>
+  <object-name>gear-speed</object-name>
+  <object-name>ParkBrakePlacard</object-name>
+  <object-name>N7764P</object-name>
+  <object-name>MasterSwitch</object-name>
+  <object-name>FuelPumpSwitch</object-name>
+  <object-name>LdgLtLeftSwitch</object-name>
+  <object-name>LdgLtRightSwitch</object-name>
+  <object-name>TurnBankSwitch</object-name>
+  <object-name>RotBeaconSwitch</object-name>
+  <object-name>PitotHeatSwitch</object-name>
+  <object-name>StrobeSwitch</object-name>
+  <object-name>AvionicsMasterSwitch</object-name>
+  <emission>
+   <red>0.45</red>
+   <green>0.09</green>
+   <blue>0.000045</blue>
+   <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>MasterToggle</object-name>
+  <object-name>FuelPumpToggle</object-name>
+  <object-name>NavLightToggle</object-name>
+  <object-name>LdgLtLeftToggle</object-name>
+  <object-name>LdgLtRightToggle</object-name>
+  <object-name>TurnBankToggle</object-name>
+  <object-name>RotBeaconToggle</object-name>
+  <object-name>PitotHeatToggle</object-name>
+  <object-name>StrobeToggle</object-name>
+  <object-name>AvionicsMasterToggle</object-name>
+  <object-name>gear-lever-nut</object-name>
+  <object-name>GearLever</object-name>
+  <object-name>ParkBrake</object-name>
+  <object-name>Mixture</object-name>
+  <object-name>Throttle</object-name>
+  <object-name>PropCont</object-name>
+  <object-name>CarbHeat</object-name>
+  <object-name>Prime</object-name>
+  <object-name>FuelValve</object-name>
+  <object-name>FuelSel</object-name>
+  <emission>
+   <red>0.1</red>
+   <green>0.02</green>
+   <blue>0.00001</blue>
+   <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+  </emission>
+ </animation>
+
 <panel>
   <path>Aircraft/pa24-250/Panel/pa24-panel.xml</path>
   <bottom-left>
@@ -26,17 +80,17 @@
 <panel>
   <path>Aircraft/pa24-250/Panel/fuel-select-panel.xml</path>
   <bottom-left>
-    <x-m>3.00</x-m>
+    <x-m>2.93</x-m>
     <y-m>-0.530</y-m>
     <z-m>-0.47</z-m>
   </bottom-left>
   <bottom-right>
-    <x-m>3.00</x-m>
+    <x-m>2.93</x-m>
     <y-m>0.530</y-m>
     <z-m>-0.47</z-m>
   </bottom-right>
   <top-left>
-    <x-m>2.47</x-m>
+    <x-m>2.40</x-m>
     <y-m>-0.530</y-m>
     <z-m>-0.47</z-m>
   </top-left>
@@ -57,7 +111,7 @@
   <path>Aircraft/Instruments-3d/clock/clock.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.459</y-m>
+   <y-m>-0.470</y-m>
    <z-m>0.298</z-m>
   </offsets>
  </model>
@@ -67,7 +121,7 @@
   <path>Aircraft/Instruments-3d/asi-pa24/asi.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.387</y-m>
+   <y-m>-0.397</y-m>
    <z-m>0.309</z-m>
   </offsets>
  </model>
@@ -77,8 +131,8 @@
   <path>Aircraft/Instruments-3d/ai/ai.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.156</y-m>
-   <z-m>0.317</z-m>
+   <y-m>-0.1595</y-m>
+   <z-m>0.3175</z-m>
   </offsets>
  </model>
 
@@ -87,8 +141,8 @@
   <path>Aircraft/Instruments-3d/alt/alt.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.390</y-m>
-   <z-m>0.218</z-m>
+   <y-m>-0.3952</y-m>
+   <z-m>0.2197</z-m>
   </offsets>
  </model>
 
@@ -97,7 +151,7 @@
   <path>Aircraft/Instruments-3d/vor/vor.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.01</y-m>
+   <y-m>-0.009</y-m>
    <z-m>0.334</z-m>
   </offsets>
  </model>
@@ -107,7 +161,7 @@
   <path>Aircraft/Instruments-3d/vor/vor2.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.01</y-m>
+   <y-m>-0.009</y-m>
    <z-m>0.243</z-m>
   </offsets>
  </model>
@@ -117,8 +171,8 @@
   <path>Aircraft/Instruments-3d/gps-ind/gps.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.01</y-m>
-   <z-m>0.148</z-m>
+   <y-m>-0.0105</y-m>
+   <z-m>0.1485</z-m>
   </offsets>
  </model>
 
@@ -128,7 +182,7 @@
   <offsets>
    <x-m>2.115</x-m>
    <y-m>0.082</y-m>
-   <z-m>0.336</z-m>
+   <z-m>0.337</z-m>
   </offsets>
  </model>
 
@@ -137,8 +191,8 @@
   <path>Aircraft/Instruments-3d/tc/tc.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.195</y-m>
-   <z-m>0.196</z-m>
+   <y-m>-0.196</y-m>
+   <z-m>0.197</z-m>
   </offsets>
  </model>
 
@@ -147,7 +201,7 @@
   <path>Aircraft/Instruments-3d/hi/hi.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.276</y-m>
+   <y-m>-0.282</y-m>
    <z-m>0.316</z-m>
   </offsets>
  </model>
@@ -157,7 +211,7 @@
   <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.105</y-m>
+   <y-m>-0.107</y-m>
    <z-m>0.197</z-m>
   </offsets>
  </model>
@@ -167,8 +221,8 @@
   <path>Aircraft/Instruments-3d/pa24-fuel-oil-amps/pa24-fuel-amps.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>0.371</y-m>
-   <z-m>0.265</z-m>
+   <y-m>0.377</y-m>
+   <z-m>0.2645</z-m>
   </offsets>
  </model>
 
@@ -177,8 +231,8 @@
   <path>Aircraft/Instruments-3d/pa24-fuel-oil-amps/pa24-oil.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>0.372</y-m>
-   <z-m>0.229</z-m>
+   <y-m>0.376</y-m>
+   <z-m>0.2285</z-m>
   </offsets>
  </model>
 
@@ -187,8 +241,8 @@
   <path>Aircraft/Instruments-3d/egt/egt.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.073</y-m>
-   <z-m>0.081</z-m>
+   <y-m>-0.0735</y-m>
+   <z-m>0.082</z-m>
   </offsets>
  </model>
 
@@ -197,7 +251,7 @@
   <path>Aircraft/Instruments-3d/tach/tach.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>0.335</y-m>
+   <y-m>0.345</y-m>
    <z-m>0.337</z-m>
   </offsets>
  </model>
@@ -207,7 +261,7 @@
   <path>Aircraft/Instruments-3d/mp/mp.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>0.249</y-m>
+   <y-m>0.256</y-m>
    <z-m>0.337</z-m>
   </offsets>
  </model>
@@ -217,8 +271,8 @@
   <path>Aircraft/Instruments-3d/vac/vac.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>0.408</y-m>
-   <z-m>0.324</z-m>
+   <y-m>0.4185</y-m>
+   <z-m>0.3245</z-m>
   </offsets>
  </model>
 
@@ -237,8 +291,8 @@
   <path>Aircraft/Instruments-3d/flap-ind/flap-indicator.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>-0.006</y-m>
-   <z-m>0.066</z-m>
+   <y-m>-0.007</y-m>
+   <z-m>0.0665</z-m>
   </offsets>
  </model>
 
@@ -247,7 +301,7 @@
   <path>Aircraft/pa24-250/Models/radio_stack/radio-stack.xml</path>
   <offsets>
    <x-m>2.12</x-m>
-   <y-m>.12</y-m>
+   <y-m>.122</y-m>
    <z-m>0.16</z-m>
   </offsets>
  </model>
@@ -263,6 +317,16 @@
  </model>
   
  <model>
+  <name>Pilot</name>
+  <path>Aircraft/pa24-250/Models/pilot/pilot.xml</path>
+  <offsets>
+   <x-m>2.30</x-m>
+   <y-m>-0.284</y-m>
+   <z-m>-0.01</z-m>
+  </offsets>
+ </model>
+
+ <model>
   <name>FlapsTrim</name>
   <path>Aircraft/pa24-250/Models/flaps_trim/flaps_trim.xml</path>
   <offsets>
@@ -271,6 +335,7 @@
    <z-m>-0.105</z-m>
   </offsets>
  </model>
+
 
 
  <model>
@@ -320,12 +385,10 @@
   <object-name>WingGroup</object-name>
   <object-name>TailGroup</object-name>
   <object-name>FuselageGroup</object-name>
+  <object-name>PropGroup</object-name>
   <object-name>Panel-3d</object-name>
   <object-name>PlacardGroup</object-name>
   <object-name>WindowGroup</object-name>
-<!--
-  <object-name>FastpropDisc</object-name>
--->
  </animation>
 
  <animation>
@@ -519,7 +582,7 @@
   <factor>-72</factor>
    <property>controls[1]/fuel/switch-position</property>  
   <center>
-   <x-m>2.75</x-m>
+   <x-m>2.68</x-m>
    <y-m>0.0</y-m>
    <z-m>-0.47</z-m>
   </center>
@@ -626,7 +689,7 @@
   <name>YokeLeft</name>
   <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
   <offsets>
-   <x-m>2.14</x-m>
+   <x-m>2.16</x-m>
    <y-m>-0.284</y-m>
    <z-m>0.167</z-m>
   </offsets>
@@ -636,8 +699,8 @@
   <name>YokeRight</name>
   <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
   <offsets>
-   <x-m>2.14</x-m>
-   <y-m>0.277</y-m>
+   <x-m>2.16</x-m>
+   <y-m>0.284</y-m>
    <z-m>0.167</z-m>
   </offsets>
  </model>
@@ -682,7 +745,19 @@
   <type>translate</type>
   <object-name>CarbHeat</object-name>
   <property>/controls/anti-ice/engine/carb-heat[0]</property>
-  <factor>0.05</factor>
+  <factor>0.04</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>ParkBrake</object-name>
+  <property>/controls/gear/brake-parking</property>
+  <factor>0.03</factor>
   <axis>
    <x>1.0</x>
    <y>0.0</y>
