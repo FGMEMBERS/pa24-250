@@ -333,7 +333,7 @@
      <button>0</button>
      <x>-305.4</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -350,7 +350,7 @@
      <button>1</button>
      <x>-305.4</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -365,9 +365,9 @@
    <action>
      <name>small increase</name>
      <button>0</button>
-     <x>-295.4</x>
+     <x>-300.4</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -382,9 +382,9 @@
    <action>
      <name>large increase</name>
      <button>1</button>
-     <x>-295.4</x>
+     <x>-300.4</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -402,7 +402,7 @@
      <button>0</button>
      <x>-249.0</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -419,7 +419,7 @@
      <button>1</button>
      <x>-249.0</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -434,9 +434,9 @@
    <action>
      <name>small increase</name>
      <button>0</button>
-     <x>-239.0</x>
+     <x>-244.0</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -451,9 +451,9 @@
    <action>
      <name>large increase</name>
      <button>1</button>
-     <x>-239.0</x>
+     <x>-244.0</x>
      <y>216</y>
-     <w>10</w>
+     <w>5</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
