@@ -315,16 +315,6 @@
    <z-m>-0.015</z-m>
   </offsets>
  </model>
-  
- <model>
-  <name>Pilot</name>
-  <path>Aircraft/pa24-250/Models/pilot/pilot.xml</path>
-  <offsets>
-   <x-m>2.30</x-m>
-   <y-m>-0.284</y-m>
-   <z-m>-0.01</z-m>
-  </offsets>
- </model>
 
  <model>
   <name>FlapsTrim</name>
@@ -382,6 +372,7 @@
   <object-name>SwitchesGroup</object-name>
   <object-name>TogglesGroup</object-name>
   <object-name>InteriorGroup</object-name>
+  <object-name>pilotGroup</object-name>
   <object-name>WingGroup</object-name>
   <object-name>TailGroup</object-name>
   <object-name>FuselageGroup</object-name>
@@ -389,6 +380,25 @@
   <object-name>Panel-3d</object-name>
   <object-name>PlacardGroup</object-name>
   <object-name>WindowGroup</object-name>
+ </animation>
+
+<!--  Hide the pilot for inside view -->
+
+ <animation>
+  <type>select</type>
+  <object-name>CPT-Helmet</object-name>
+  <object-name>CPT-Pilot-Head</object-name>
+  <object-name>CPT-Pilot-Body</object-name>
+  <object-name>Glasses</object-name>
+  <object-name>Headset</object-name>
+  <condition>
+   <not>
+    <equals>
+    <property>/sim/current-view/view-number</property>
+    <value>0</value>
+    </equals>
+   </not>
+  </condition>
  </animation>
 
  <animation>
@@ -817,6 +827,7 @@
   <object-name>RightAileron</object-name>
   <property>/surface-positions/right-aileron-pos-norm</property>
   <factor>20</factor>
+  <offset-deg>1.5</offset-deg>
   <center>
    <x-m>3.23</x-m>
    <y-m>4.155</y-m>
