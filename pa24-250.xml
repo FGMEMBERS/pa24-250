@@ -108,7 +108,7 @@
 </gear>
 
 
-<gear x="-2.79" y="1.51" z="-1.10" compression=".2" retract-time="5"> <!--  -1.17 left main -->
+<gear x="-2.79" y="1.51" z="-1.165" compression=".2" retract-time="5"> <!--  -1.17 left main -->
   <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -116,7 +116,7 @@
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 </gear>
 
-<gear x="-2.79" y="-1.51" z="-1.10" compression=".2" retract-time="5"> <!--  -1.17 right main -->
+<gear x="-2.79" y="-1.51" z="-1.165" compression=".2" retract-time="5"> <!--  -1.17 right main -->
   <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>

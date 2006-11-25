@@ -74,36 +74,36 @@
   <bottom-left>
     <x-m>2.14</x-m>
     <y-m>-0.530</y-m>
-    <z-m>-0.140</z-m>
+    <z-m>-0.168</z-m>
   </bottom-left>
   <bottom-right>
     <x-m>2.14</x-m>
     <y-m>0.530</y-m>
-    <z-m>-0.140</z-m>
+    <z-m>-0.168</z-m>
   </bottom-right>
   <top-left>
     <x-m>2.14</x-m>
     <y-m>-0.530</y-m>
-    <z-m>0.4</z-m>
+    <z-m>0.372</z-m>
   </top-left>
 </panel>
 
 <panel>
   <path>Aircraft/pa24-250/Panel/fuel-select-panel.xml</path>
   <bottom-left>
-    <x-m>2.93</x-m>
+    <x-m>2.91</x-m>
     <y-m>-0.530</y-m>
-    <z-m>-0.47</z-m>
+    <z-m>-0.50</z-m>  <!--  -0.47 org -->
   </bottom-left>
   <bottom-right>
-    <x-m>2.93</x-m>
+    <x-m>2.91</x-m>
     <y-m>0.530</y-m>
-    <z-m>-0.47</z-m>
+    <z-m>-0.50</z-m>
   </bottom-right>
   <top-left>
-    <x-m>2.40</x-m>
+    <x-m>2.38</x-m>
     <y-m>-0.530</y-m>
-    <z-m>-0.47</z-m>
+    <z-m>-0.50</z-m>
   </top-left>
 </panel>
 
@@ -113,7 +113,7 @@
   <offsets>
    <x-m>2.2551</x-m>
    <y-m>0.000</y-m>
-   <z-m>0.5839</z-m>
+   <z-m>0.5539</z-m>  <!--  0.5839 -->
   </offsets>
  </model>
 
@@ -123,7 +123,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.470</y-m>
-   <z-m>0.298</z-m>
+   <z-m>0.270</z-m>  <!-- 0.298   down 0.028-->
   </offsets>
  </model>
 
@@ -133,7 +133,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.397</y-m>
-   <z-m>0.309</z-m>
+   <z-m>0.281</z-m>
   </offsets>
  </model>
 
@@ -143,7 +143,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.1595</y-m>
-   <z-m>0.3175</z-m>
+   <z-m>0.2895</z-m>
   </offsets>
  </model>
 
@@ -153,7 +153,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.3952</y-m>
-   <z-m>0.2197</z-m>
+   <z-m>0.1917</z-m>
   </offsets>
  </model>
 
@@ -163,7 +163,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.009</y-m>
-   <z-m>0.334</z-m>
+   <z-m>0.306</z-m>
   </offsets>
  </model>
 
@@ -173,7 +173,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.009</y-m>
-   <z-m>0.243</z-m>
+   <z-m>0.215</z-m>
   </offsets>
  </model>
 
@@ -183,7 +183,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.0105</y-m>
-   <z-m>0.1485</z-m>
+   <z-m>0.1205</z-m>
   </offsets>
  </model>
 
@@ -193,7 +193,7 @@
   <offsets>
    <x-m>2.115</x-m>
    <y-m>0.082</y-m>
-   <z-m>0.337</z-m>
+   <z-m>0.309</z-m>
   </offsets>
  </model>
 
@@ -203,7 +203,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.196</y-m>
-   <z-m>0.197</z-m>
+   <z-m>0.169</z-m>
   </offsets>
  </model>
 
@@ -213,7 +213,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.282</y-m>
-   <z-m>0.316</z-m>
+   <z-m>0.288</z-m>
   </offsets>
  </model>
 
@@ -223,7 +223,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.107</y-m>
-   <z-m>0.197</z-m>
+   <z-m>0.169</z-m>
   </offsets>
  </model>
 
@@ -233,7 +233,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>0.377</y-m>
-   <z-m>0.2645</z-m>
+   <z-m>0.2365</z-m>
   </offsets>
  </model>
 
@@ -243,7 +243,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>0.376</y-m>
-   <z-m>0.2285</z-m>
+   <z-m>0.2005</z-m>
   </offsets>
  </model>
 
@@ -253,7 +253,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.0735</y-m>
-   <z-m>0.082</z-m>
+   <z-m>0.054</z-m>
   </offsets>
  </model>
 
@@ -263,7 +263,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>0.345</y-m>
-   <z-m>0.337</z-m>
+   <z-m>0.309</z-m>
   </offsets>
  </model>
 
@@ -273,7 +273,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>0.256</y-m>
-   <z-m>0.337</z-m>
+   <z-m>0.309</z-m>
   </offsets>
  </model>
 
@@ -283,7 +283,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>0.4185</y-m>
-   <z-m>0.3245</z-m>
+   <z-m>0.2965</z-m>
   </offsets>
  </model>
 
@@ -303,7 +303,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>-0.007</y-m>
-   <z-m>0.0665</z-m>
+   <z-m>0.0385</z-m>
   </offsets>
  </model>
 
@@ -313,7 +313,7 @@
   <offsets>
    <x-m>2.12</x-m>
    <y-m>.122</y-m>
-   <z-m>0.16</z-m>
+   <z-m>0.132</z-m>
   </offsets>
  </model>
 
@@ -323,7 +323,7 @@
   <offsets>
    <x-m>2.125</x-m>
    <y-m>-0.145</y-m>
-   <z-m>-0.015</z-m>
+   <z-m>-0.043</z-m>
   </offsets>
  </model>
 
@@ -333,7 +333,7 @@
   <offsets>
    <x-m>2.09</x-m>
    <y-m>0.13</y-m>
-   <z-m>-0.105</z-m>
+   <z-m>-0.133</z-m>
   </offsets>
  </model>
 
@@ -355,7 +355,7 @@
   <offsets>
    <x-m>2.64913</x-m>
    <y-m>-5.39677</y-m>
-   <z-m>0.0403258</z-m>
+   <z-m>0.0</z-m>
   </offsets>
  </model>
 
@@ -365,7 +365,7 @@
   <offsets>
    <x-m>2.64913</x-m>
    <y-m>5.39677</y-m>
-   <z-m>0.0403258</z-m>
+   <z-m>0.0</z-m>
   </offsets>
  </model>
 
@@ -447,7 +447,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -465,7 +465,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -482,7 +482,7 @@
 <center>
  <x-m>2.13</x-m>
    <y-m>-0.35</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -499,7 +499,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -525,7 +525,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -542,7 +542,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -559,7 +559,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -576,7 +576,7 @@
 <center>
  <x-m>2.125</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
+   <z-m>-0.028</z-m>
 </center>
  </animation>
 
@@ -593,7 +593,7 @@
    <center>
      <x-m>2.125</x-m>
      <y-m>0.00</y-m>
-     <z-m>0.00</z-m>
+     <z-m>-0.028</z-m>
    </center>
  </animation>
 
@@ -610,7 +610,7 @@
    <center>
      <x-m>2.125</x-m>
      <y-m>0.00</y-m>
-     <z-m>0.00</z-m>
+     <z-m>-0.028</z-m>
    </center>
  </animation>
 
@@ -624,9 +624,9 @@
   <factor>-72</factor>
    <property>controls[1]/fuel/switch-position</property>  
   <center>
-   <x-m>2.68</x-m>
+   <x-m>2.666</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.47</z-m>
+   <z-m>-0.505</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -702,7 +702,7 @@
   <offsets>
    <x-m>2.16</x-m>
    <y-m>-0.284</y-m>
-   <z-m>0.167</z-m>
+   <z-m>0.139</z-m>
   </offsets>
  </model>
 
@@ -712,7 +712,7 @@
   <offsets>
    <x-m>2.16</x-m>
    <y-m>0.284</y-m>
-   <z-m>0.167</z-m>
+   <z-m>0.139</z-m>
   </offsets>
  </model>
 
@@ -797,7 +797,7 @@
   <center>
    <x-m>2.12</x-m>
    <y-m>0.14</y-m>
-   <z-m>0.08</z-m>
+   <z-m>0.052</z-m>
   </center>
   <axis>
     <x>0.0</x>
@@ -814,7 +814,7 @@
   <center>
    <x-m>3.23</x-m>
    <y-m>-4.155</y-m>
-   <z-m>-0.025</z-m>
+   <z-m>-0.077</z-m>    <!--  was -0.025 -->
   </center>
   <axis>
    <x>0.173</x>
@@ -832,7 +832,7 @@
   <center>
    <x-m>3.23</x-m>
    <y-m>4.155</y-m>
-   <z-m>-0.025</z-m>
+   <z-m>-0.077</z-m>
   </center>
   <axis>
    <x>-0.173</x>
@@ -849,7 +849,7 @@
   <center>
    <x-m>3.64</x-m>
    <y-m>-1.89</y-m>
-   <z-m>-0.335</z-m>
+   <z-m>-0.390</z-m>
   </center>
   <axis>
    <x>0.177</x>
@@ -866,7 +866,7 @@
   <center>
    <x-m>3.64</x-m>
    <y-m>1.89</y-m>
-   <z-m>-0.335</z-m>
+   <z-m>-0.390</z-m>
   </center>
   <axis>
    <x>-0.177</x>
@@ -884,7 +884,7 @@
   <center>
    <x-m>6.96</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.31</z-m>
+   <z-m>0.22</z-m>    <!--  was 0.31  -->
   </center>
   <axis>
    <x>0.0</x>
@@ -901,7 +901,7 @@
   <center>
    <x-m>7.51</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.36</z-m>
+   <z-m>0.27</z-m>      <!-- was 0.36  -->
   </center>
   <axis>
    <x>0.0</x>
@@ -918,7 +918,7 @@
   <center>
    <x-m>7.51</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.36</z-m>
+   <z-m>0.27</z-m>
   </center>
   <axis>
    <x>0.0</x>
@@ -1044,10 +1044,10 @@
   <center>
    <x-m>1.2</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.675</z-m>
+   <z-m>-0.59</z-m>
   </center>
   <axis>
-   <x>0.148</x>
+   <x>0.1774</x>
    <y>0.0</y>
    <z>1.0</z>
   </axis>
@@ -1068,7 +1068,55 @@
   <center>
    <x-m>1.23</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.42</z-m>
+   <z-m>-0.44</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>NoseWheel</object-name>
+  <object-name>NoseWheelStrut</object-name>
+  <object-name>sczors-bot</object-name>
+  <property>/gear/gear[0]/compression-m</property>
+  <factor>1.0</factor>
+  <axis>
+   <x>0.1774</x>
+   <y>0.0</y>
+   <z>1.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sczors-top</object-name>
+  <property>/gear/gear[0]/theta0</property>
+  <factor>57.3</factor>
+  <center>
+   <x-m>1.16</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.57.3</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sczors-bot</object-name>
+  <property>/gear/gear[0]/theta0</property>
+  <factor>-57.3</factor>
+  <center>
+   <x-m>1.13</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.77</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1088,7 +1136,7 @@
   <center>
    <x-m>1.11</x-m>
    <y-m>0.14</y-m>
-   <z-m>-0.41</z-m>
+   <z-m>-0.43</z-m>
   </center>
   <axis>
    <x>1</x>
@@ -1105,17 +1153,65 @@
   <object-name>sczors-left-top</object-name>
   <object-name>sczors-left-bottom</object-name>
   <property>/gear/gear[1]/position-norm</property>
-  <factor>-84</factor>
-  <offset-deg>84</offset-deg>
+  <factor>-88.5</factor>
+  <offset-deg>88.5</offset-deg>
   <center>
    <x-m>3.1</x-m>
    <y-m>-1.4</y-m>
-   <z-m>-0.35</z-m>
+   <z-m>-0.40</z-m>
   </center>
   <axis>
    <x>1</x>
    <y>-0.2</y>
    <z>-0.2</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>LeftWheel</object-name>
+  <object-name>LeftFork</object-name>
+  <object-name>sczors-left-bottom</object-name>
+  <property>/gear/gear[1]/compression-m</property>
+  <factor>1.0</factor>
+  <axis>
+   <x>0.0476</x>
+   <y>0.0</y>
+   <z>1.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sczors-left-top</object-name>
+  <property>/gear/gear[1]/theta1</property>
+  <factor>-57.3</factor>
+  <center>
+   <x-m>3.131</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.521</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sczors-left-bottom</object-name>
+  <property>/gear/gear[1]/theta1</property>
+  <factor>57.3</factor>
+  <center>
+   <x-m>3.120</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.705</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
   </axis>
  </animation>
 
@@ -1128,12 +1224,12 @@
   <center>
    <x-m>3.05</x-m>
    <y-m>-1.48</y-m>
-   <z-m>-0.44</z-m>
+   <z-m>-0.49</z-m>
   </center>
   <axis>
    <x>1</x>
    <y>-0.2</y>
-   <z>-0.1</z>
+   <z>-0.03</z>
   </axis>
  </animation>
 
@@ -1145,17 +1241,65 @@
   <object-name>sczors-right-top</object-name>
   <object-name>sczors-right-bottom</object-name>
 <property>/gear/gear[2]/position-norm</property>
-  <factor>84</factor>
-  <offset-deg>-84</offset-deg>
+  <factor>88.5</factor>
+  <offset-deg>-88.5</offset-deg>
   <center>
    <x-m>3.1</x-m>
    <y-m>1.4</y-m>
-   <z-m>-0.35</z-m>
+   <z-m>-0.40</z-m>
   </center>
   <axis>
    <x>1</x>
    <y>0.2</y>
    <z>-0.2</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>RightWheel</object-name>
+  <object-name>RightFork</object-name>
+  <object-name>sczors-right-bottom</object-name>
+  <property>/gear/gear[2]/compression-m</property>
+  <factor>1.0</factor>
+  <axis>
+   <x>0.0476</x>
+   <y>0.0</y>
+   <z>1.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sczors-right-top</object-name>
+  <property>/gear/gear[2]/theta2</property>
+  <factor>-57.3</factor>
+  <center>
+   <x-m>3.131</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.521</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>sczors-right-bottom</object-name>
+  <property>/gear/gear[2]/theta2</property>
+  <factor>57.3</factor>
+  <center>
+   <x-m>3.120</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.705</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
   </axis>
  </animation>
 
@@ -1168,12 +1312,12 @@
   <center>
    <x-m>3.05</x-m>
    <y-m>1.48</y-m>
-   <z-m>-0.44</z-m>
+   <z-m>-0.49</z-m>
   </center>
   <axis>
    <x>1</x>
    <y>0.2</y>
-   <z>-0.1</z>
+   <z>-0.03</z>
   </axis>
  </animation>
 

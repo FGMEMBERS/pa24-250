@@ -24,10 +24,13 @@ ebus2_volts = 0.0;
 fuel_pres_ave = 0.0;
 oil_pres_ave = 0.0;
 ammeter_ave = 0.0;
+theta0 = 0.0;
+theta1 = 0.0;
+theta2 = 0.0;
 
 ##
 # Initialize the electrical system
-#
+##
 
 init_electrical = func {
     print("Initializing Nasal Electrical System");
@@ -45,6 +48,10 @@ init_electrical = func {
     setprop("/controls/switches/starter", 0);
     setprop("/controls/switches/strobe-lights", 0);
     setprop("/controls/switches/master-avionics", 0);
+    setprop("/gear/gear[0]/theta0", 0);
+    setprop("/gear/gear[1]/theta1", 0);
+    setprop("/gear/gear[2]/theta2", 0);
+
     # Request that the update fuction be called next frame
     settimer(update_electrical, 0);
 }
@@ -263,6 +270,7 @@ update_virtual_bus = func( dt ) {
     fuel_pres_ave = 0.8 * fuel_pres_ave + 0.2 * fuel_pres;
     oil_pres_ave = 0.8 * oil_pres_ave + 0.2 * oil_pres;
 # print( " rpm = ", rpm, " fuel pres = ", fuel_pres_ave, " oil pres = ", oil_pres_ave ); 
+
 ##
 #  Save a factor used to make the prop disc disapear as rpm increases
 ##
@@ -270,6 +278,47 @@ update_virtual_bus = func( dt ) {
     if ( factor < 0.0 ) {
         factor = 0.0;
     }
+
+    down = 0;
+    down += getprop("gear/gear[0]/wow");
+    down += getprop("gear/gear[1]/wow");
+    down += getprop("gear/gear[2]/wow");
+#    print( " down = ", down);
+##
+#  Are we on the ground?  If yes, compute the scissor link angles due to strut compression
+##
+    if ( down > 0 ) {
+
+        # Compute the angle the nose gear scissor rotates due to nose gear strut compression
+
+        H = 0.202;  # Nose gear oleo strut extended length in m
+        L = 0.134;  # Nose gear scissor length in m
+        phi = 0.8537;
+        C = getprop("gear/gear[0]/compression-m");
+        theta0 = scissor_angle(H,C,L,phi);
+
+        # Compute the angle the right gear scissor rotates due to right gear strut compression
+      
+        H = 0.18433;  # Right gear oleo strut extended length in m
+        L = 0.10917;  # Right gear scissor length in m
+        phi = 1.0051;
+        C = getprop("gear/gear[1]/compression-m");
+        theta1 = scissor_angle(H,C,L,phi);
+
+        # Compute the angle the left gear scissor rotates due to left gear strut compression
+
+        H = 0.18433;  # Left gear oleo strut extended length in m
+        L = 0.10917;  # Left gear scissor length in m
+        phi = 1.0051;
+        C = getprop("gear/gear[2]/compression-m");
+        theta2 = scissor_angle(H,C,L,phi);
+
+        setprop("/gear/gear[0]/theta0", theta0);
+        setprop("/gear/gear[1]/theta1", theta1);
+        setprop("/gear/gear[2]/theta2", theta2);
+
+    }
+
 
     # outputs
     setprop("/sim/models/materials/propdisc/factor", factor);  
@@ -282,6 +331,12 @@ update_virtual_bus = func( dt ) {
     return load;
 }
 
+scissor_angle = func(H,C,L,phi) {
+    a = (H - C)/2/L;
+    # Use 2 iterates of Newton's method and 4th order Taylor series to approximate theta where sin(phi - theta) = a
+    theta = phi - 2*a/3 - a/3/(1-a*a/2);
+    return theta;
+}
 
 electrical_bus_1 = func() {
     # we are fed from the "virtual" bus
