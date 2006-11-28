@@ -30,11 +30,11 @@
 
  <animation>
   <type>material</type>
-  <object-name>CompasHousing</object-name>
+  <object-name>CompasNeedle</object-name>
   <emission>
-   <red>0.15</red>
-   <green>0.03</green>
-   <blue>0.00001</blue>
+   <red>0.45</red>
+   <green>0.09</green>
+   <blue>0.000045</blue>
    <factor-prop>/sim/model/material/instruments/factor</factor-prop>
   </emission>
  </animation>
@@ -311,7 +311,7 @@
   <name>RadioStack</name>
   <path>Aircraft/pa24-250/Models/radio_stack/radio-stack.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
+   <x-m>2.125</x-m>
    <y-m>.122</y-m>
    <z-m>0.132</z-m>
   </offsets>
@@ -404,7 +404,7 @@
   <object-name>SwitchesGroup</object-name>
   <object-name>TogglesGroup</object-name>
   <object-name>InteriorGroup</object-name>
-  <object-name>pilotGroup</object-name>
+  <object-name>PilotGroup</object-name>
   <object-name>WingGroup</object-name>
   <object-name>TailGroup</object-name>
   <object-name>FuselageGroup</object-name>
@@ -423,6 +423,7 @@
   <object-name>CPT-Pilot-Body</object-name>
   <object-name>Glasses</object-name>
   <object-name>Headset</object-name>
+  <object-name>PilotFeet</object-name>
   <condition>
    <not>
     <equals>
@@ -1018,28 +1019,13 @@
  </animation>
 
  <animation>
-  <type>select</type>
-  <object-name>NoseWheel</object-name>
-  <object-name>NoseCylinder</object-name>
-  <object-name>NoseWheelStrut</object-name>
-  <object-name>sczors-top</object-name>
-  <object-name>sczors-bot</object-name>
-  <condition>
-   <greater-than>
-    <property>/gear/gear[0]/position-norm</property>
-    <value>0.1</value>
-   </greater-than>
-  </condition>
- </animation>
- 
- <animation>
   <type>rotate</type>
   <object-name>NoseWheel</object-name>
   <object-name>NoseCylinder</object-name>
   <object-name>NoseWheelStrut</object-name>
   <object-name>sczors-top</object-name>
   <object-name>sczors-bot</object-name>
-  <property>/surface-positions/rudder-pos-norm</property>
+  <property>/gear/gear[0]/turn-pos-norm</property>
   <factor>-17.5</factor>
   <center>
    <x-m>1.2</x-m>
@@ -1063,7 +1049,7 @@
   <property>/gear/gear[0]/position-norm</property>
   <factor>120</factor>
   <offset-deg>-120</offset-deg>
-  <min-deg>-100</min-deg>
+  <min-deg>-105</min-deg>
   <max-deg>10</max-deg>
   <center>
    <x-m>1.23</x-m>
@@ -1131,12 +1117,12 @@
   <property>/gear/gear[0]/position-norm</property>
   <factor>360</factor>
   <offset-deg>-90</offset-deg>
-  <min-deg>-90</min-deg>
+  <min-deg>-87</min-deg>
   <max-deg>0</max-deg>
   <center>
-   <x-m>1.11</x-m>
-   <y-m>0.14</y-m>
-   <z-m>-0.43</z-m>
+   <x-m>1.10</x-m>
+   <y-m>0.11</y-m>
+   <z-m>-0.525</z-m>
   </center>
   <axis>
    <x>1</x>
@@ -1219,11 +1205,11 @@
   <type>rotate</type>
   <object-name>LeftGearDoor</object-name>
   <property>/gear/gear[1]/position-norm</property>
-  <factor>-120</factor>
-  <offset-deg>115</offset-deg>
+  <factor>-115</factor>
+  <offset-deg>105</offset-deg>
   <center>
-   <x-m>3.05</x-m>
-   <y-m>-1.48</y-m>
+   <x-m>3.17</x-m>
+   <y-m>-1.47</y-m>
    <z-m>-0.49</z-m>
   </center>
   <axis>
@@ -1307,11 +1293,11 @@
   <type>rotate</type>
   <object-name>RightGearDoor</object-name>
   <property>/gear/gear[2]/position-norm</property>
-  <factor>120</factor>
-  <offset-deg>-115</offset-deg>
+  <factor>115</factor>
+  <offset-deg>-105</offset-deg>
   <center>
-   <x-m>3.05</x-m>
-   <y-m>1.48</y-m>
+   <x-m>3.17</x-m>
+   <y-m>1.47</y-m>
    <z-m>-0.49</z-m>
   </center>
   <axis>
@@ -1431,6 +1417,60 @@
    <z>0.0</z>
   </axis>
  </animation>
+
+<!--   Wheel Roll - Not compatable with strut compression(yet)  -->
+<!--
+ <animation>
+  <type>spin</type>
+  <object-name>NoseWheel</object-name>
+  <property>gear/gear[0]/rpm</property>
+  <factor>1</factor>
+  <center>
+   <x-m>1.13261</x-m>
+   <y-m>0</y-m>
+   <z-m>-1.03788</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>LeftWheel</object-name>
+  <property>gear/gear[1]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>3.06319</x-m>
+   <y-m>1.38621</y-m>
+   <z-m>-0.946451</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>RightWheel</object-name>
+  <property>gear/gear[2]/rpm</property>
+  <factor>-1</factor>
+  <center>
+   <x-m>3.06319</x-m>
+   <y-m>1.38621</y-m>
+   <z-m>-0.946451</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+-->
 
 
 </PropertyList>

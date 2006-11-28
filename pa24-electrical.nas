@@ -27,6 +27,11 @@ ammeter_ave = 0.0;
 theta0 = 0.0;
 theta1 = 0.0;
 theta2 = 0.0;
+rpm0_ave = 0.0;
+rpm1_ave = 0.0;
+rpm2_ave = 0.0;
+nose_gear_pos_norm = 0.0;
+rudder_position = 0.0;
 
 ##
 # Initialize the electrical system
@@ -280,9 +285,11 @@ update_virtual_bus = func( dt ) {
     }
 
     down = 0;
-    down += getprop("gear/gear[0]/wow");
-    down += getprop("gear/gear[1]/wow");
-    down += getprop("gear/gear[2]/wow");
+    nose_down = getprop("gear/gear[0]/wow");
+    left_down = getprop("gear/gear[1]/wow");
+    right_down = getprop("gear/gear[2]/wow");
+    down = nose_down + left_down + right_down;
+
 #    print( " down = ", down);
 ##
 #  Are we on the ground?  If yes, compute the scissor link angles due to strut compression
@@ -316,11 +323,60 @@ update_virtual_bus = func( dt ) {
         setprop("/gear/gear[0]/theta0", theta0);
         setprop("/gear/gear[1]/theta1", theta1);
         setprop("/gear/gear[2]/theta2", theta2);
+    }
+#  Update wheel rotation data
+#
+    vn_fps = getprop("/velocities/speed-north-fps");
+    ve_fps = getprop("/velocities/speed-east-fps");
+    speed_sq = vn_fps*vn_fps + ve_fps*ve_fps;
+    if (speed_sq > 0) {
+	speed = sqrt_it(speed_sq, 1);
+        speed = sqrt_it(speed_sq, speed);
+        speed = sqrt_it(speed_sq, speed);
+    } else {
+        speed = 0.0
+    }
+    speed_mpm = speed*195;
+    circumference = 2.733183;     # = 2*Pi*0.435 in meters - same for nose and mains
 
+    if (nose_down) {
+       rpm0 = speed_mpm/circumference;
+    } else {
+       rpm0 = 0.0;
+    }
+    rpm0_ave = (9*rpm0_ave + rpm0)/10;
+
+    if (left_down) {
+        rpm1 = speed_mpm/circumference;
+    } else {
+        rpm1 = 0.0;
+    }
+    rpm1_ave = (9*rpm1_ave + rpm1)/10;
+
+    if (right_down) {
+        rpm2 = speed_mpm/circumference;
+    } else {
+        rpm2 = 0.0;
+    }
+    rpm2_ave = (9*rpm1_ave + rpm2)/10;
+
+##
+#  Disengage nose wheel steering from the rudder pedals if not locked down
+##
+    nose_gear_pos_norm = getprop("gear/gear[0]/position-norm");
+
+    if ( nose_gear_pos_norm < 1) {
+        rudder_position = 0.0;
+    } else {
+        rudder_position = getprop("surface-positions/rudder-pos-norm");
     }
 
-
     # outputs
+
+    setprop("/gear/gear[0]/rpm", rpm0_ave);
+    setprop("/gear/gear[1]/rpm", rpm1_ave);
+    setprop("/gear/gear[2]/rpm", rpm2_ave);
+    setprop("/gear/gear[0]/turn-pos-norm", rudder_position);
     setprop("/sim/models/materials/propdisc/factor", factor);  
     setprop("/engines/engine/fuel-pressure-psi", fuel_pres_ave);
     setprop("/engines/engine/oil-pressure-psi", oil_pres_ave);
@@ -336,6 +392,11 @@ scissor_angle = func(H,C,L,phi) {
     # Use 2 iterates of Newton's method and 4th order Taylor series to approximate theta where sin(phi - theta) = a
     theta = phi - 2*a/3 - a/3/(1-a*a/2);
     return theta;
+}
+
+sqrt_it = func(a,x0) {
+    x1 = (x0 + a/x0)/2;
+    return x1;
 }
 
 electrical_bus_1 = func() {
