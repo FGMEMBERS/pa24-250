@@ -20,16 +20,6 @@
   <object-name>PitotHeatSwitch</object-name>
   <object-name>StrobeSwitch</object-name>
   <object-name>AvionicsMasterSwitch</object-name>
-  <emission>
-   <red>0.45</red>
-   <green>0.09</green>
-   <blue>0.000045</blue>
-   <factor-prop>/sim/model/material/instruments/factor</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
   <object-name>CompasNeedle</object-name>
   <emission>
    <red>0.45</red>
@@ -369,7 +359,26 @@
   </offsets>
  </model>
 
-  
+ <model>
+  <name>YokeLeft</name>
+  <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
+  <offsets>
+   <x-m>2.16</x-m>
+   <y-m>-0.284</y-m>
+   <z-m>0.139</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>YokeRight</name>
+  <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
+  <offsets>
+   <x-m>2.16</x-m>
+   <y-m>0.284</y-m>
+   <z-m>0.139</z-m>
+  </offsets>
+ </model>
+
  <!-- Visible up to 10km (6mi) -->
  <animation>
   <type>range</type>
@@ -394,23 +403,34 @@
   <object-name>OIL</object-name>
   <object-name>FlapIndicator</object-name>
   <object-name>VAC</object-name>
-  <object-name>RadioStack</object-name>
   <object-name>GPS</object-name>
+ </animation>
+
+ <animation>
+  <name>YokeGroup</name>
+  <object-name>YokeLeft</object-name>
+  <object-name>YokeRight</object-name>
  </animation>
 
  <animation>
   <name>PanelAlphaOrderGroup</name>
   <object-name>InstrumentGroup</object-name>
+  <object-name>Panel-3d</object-name>
+  <object-name>RadioStack</object-name>
+  <object-name>PlacardGroup</object-name>
   <object-name>SwitchesGroup</object-name>
   <object-name>TogglesGroup</object-name>
-  <object-name>InteriorGroup</object-name>
+  <object-name>YokeGroup</object-name>
   <object-name>PilotGroup</object-name>
+  <object-name>InteriorGroup</object-name>
   <object-name>WingGroup</object-name>
+  <object-name>MainGearGroup</object-name>
+  <object-name>NoseGearGroup</object-name>
   <object-name>TailGroup</object-name>
   <object-name>FuselageGroup</object-name>
+  <object-name>LightsGroup</object-name>
+  <object-name>AntenaGroup</object-name>
   <object-name>PropGroup</object-name>
-  <object-name>Panel-3d</object-name>
-  <object-name>PlacardGroup</object-name>
   <object-name>WindowGroup</object-name>
  </animation>
 
@@ -696,26 +716,6 @@
    <z>0.0</z>
   </axis>
  </animation>
-
- <model>
-  <name>YokeLeft</name>
-  <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
-  <offsets>
-   <x-m>2.16</x-m>
-   <y-m>-0.284</y-m>
-   <z-m>0.139</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>YokeRight</name>
-  <path>Aircraft/Instruments-3d/yoke/yoke-pa24.xml</path>
-  <offsets>
-   <x-m>2.16</x-m>
-   <y-m>0.284</y-m>
-   <z-m>0.139</z-m>
-  </offsets>
- </model>
 
  <animation>
   <type>translate</type>
@@ -1083,9 +1083,9 @@
   <property>/gear/gear[0]/theta0</property>
   <factor>57.3</factor>
   <center>
-   <x-m>1.16</x-m>
+   <x-m>1.149944</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.57.3</z-m>
+   <z-m>-0.565240</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1100,9 +1100,9 @@
   <property>/gear/gear[0]/theta0</property>
   <factor>-57.3</factor>
   <center>
-   <x-m>1.13</x-m>
+   <x-m>1.11746</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.77</z-m>
+   <z-m>-0.767699</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1173,9 +1173,9 @@
   <property>/gear/gear[1]/theta1</property>
   <factor>-57.3</factor>
   <center>
-   <x-m>3.131</x-m>
+   <x-m>3.135242</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.521</z-m>
+   <z-m>-0.494984</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1190,9 +1190,9 @@
   <property>/gear/gear[1]/theta1</property>
   <factor>57.3</factor>
   <center>
-   <x-m>3.120</x-m>
+   <x-m>3.119376</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.705</z-m>
+   <z-m>-0.703486</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1205,7 +1205,7 @@
   <type>rotate</type>
   <object-name>LeftGearDoor</object-name>
   <property>/gear/gear[1]/position-norm</property>
-  <factor>-115</factor>
+  <factor>-110</factor>
   <offset-deg>105</offset-deg>
   <center>
    <x-m>3.17</x-m>
@@ -1261,9 +1261,9 @@
   <property>/gear/gear[2]/theta2</property>
   <factor>-57.3</factor>
   <center>
-   <x-m>3.131</x-m>
+   <x-m>3.135242</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.521</z-m>
+   <z-m>-0.494984</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1278,9 +1278,9 @@
   <property>/gear/gear[2]/theta2</property>
   <factor>57.3</factor>
   <center>
-   <x-m>3.120</x-m>
+   <x-m>3.119376</x-m>
    <y-m>0.0</y-m>
-   <z-m>-0.705</z-m>
+   <z-m>-0.703486</z-m>
   </center>
   <axis>
    <x>0</x>
@@ -1293,7 +1293,7 @@
   <type>rotate</type>
   <object-name>RightGearDoor</object-name>
   <property>/gear/gear[2]/position-norm</property>
-  <factor>115</factor>
+  <factor>110</factor>
   <offset-deg>-105</offset-deg>
   <center>
    <x-m>3.17</x-m>
@@ -1418,17 +1418,17 @@
   </axis>
  </animation>
 
-<!--   Wheel Roll - Not compatable with strut compression(yet)  -->
-<!--
+<!--   Wheel Roll   -->
+
  <animation>
   <type>spin</type>
   <object-name>NoseWheel</object-name>
-  <property>gear/gear[0]/rpm</property>
-  <factor>1</factor>
+  <property>gear/gear[0]/rollspeed-ms</property>
+  <factor>-21.95</factor>
   <center>
-   <x-m>1.13261</x-m>
+   <x-m>1.134200</x-m>
    <y-m>0</y-m>
-   <z-m>-1.03788</z-m>
+   <z-m>-1.009518</z-m>
   </center>
   <axis>
    <x>0.0</x>
@@ -1440,12 +1440,12 @@
  <animation>
   <type>spin</type>
   <object-name>LeftWheel</object-name>
-  <property>gear/gear[1]/rpm</property>
-  <factor>-1</factor>
+  <property>gear/gear[1]/rollspeed-ms</property>
+  <factor>-21.95</factor>
   <center>
-   <x-m>3.06319</x-m>
+   <x-m>3.059953</x-m>   <!-- 3.06319 -->
    <y-m>1.38621</y-m>
-   <z-m>-0.946451</z-m>
+   <z-m>-0.945484</z-m>
   </center>
   <axis>
    <x>0.0</x>
@@ -1457,8 +1457,8 @@
  <animation>
   <type>spin</type>
   <object-name>RightWheel</object-name>
-  <property>gear/gear[2]/rpm</property>
-  <factor>-1</factor>
+  <property>gear/gear[2]/rollspeed-ms</property>
+  <factor>-21.95</factor>
   <center>
    <x-m>3.06319</x-m>
    <y-m>1.38621</y-m>
@@ -1470,7 +1470,6 @@
    <z>0.0</z>
   </axis>
  </animation>
--->
 
 
 </PropertyList>

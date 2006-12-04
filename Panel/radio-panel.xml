@@ -5,7 +5,7 @@
 <PropertyList>
 
  <name>Radio-Panel</name>
- <background>Aircraft/pa24-250/Panel/transparent-bg.rgb</background>
+<background>Aircraft/pa24-250/Panel/transparent-bg.rgb</background>
  <w>512</w>
  <h>1024</h>
 <instruments>
@@ -60,18 +60,16 @@
    <w>512</w>
    <h>150</h>
   </instrument>
-<!--
-  <instrument include="../../Instruments/autopilot_gui.xml">
-   <name>Autopilot</name>
+
+  <instrument include="../../Instruments/KAP140TwoAxisAlt.xml">
+   <name>KAP140 Autopilot</name>
    <x>256</x>
-   <y>450</y>
+   <y>300</y>
    <w>512</w>
-   <h>100</h>
+   <h>150</h>
   </instrument>
--->
+
 <!-- end radio stack -->
-
-
 
 </instruments>
 

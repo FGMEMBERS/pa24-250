@@ -26,6 +26,9 @@ a 150 lb copilot and no bagage.
   </startup>
 
   <systems>
+   <autopilot>
+    <path>Aircraft/c172p/Systems/KAP140.xml</path>
+   </autopilot>
    <electrical>
     <path></path>
    </electrical>
@@ -43,6 +46,7 @@ a 150 lb copilot and no bagage.
   <model>
    <path archive="y">Aircraft/pa24-250/Models/pa24-250.xml</path>
   </model>
+
   <panel>
    <visibility archive="y">false</visibility>
   </panel>
@@ -388,10 +392,15 @@ a 150 lb copilot and no bagage.
 </input>
 
 <nasal>
-	<pa24>
-          <file>Aircraft/pa24-250/Models/pa24.nas</file>
-          <file>Aircraft/pa24-250/pa24-electrical.nas</file>
-	</pa24>
+
+  <pa24>
+    <file>Aircraft/pa24-250/Models/pa24.nas</file>
+    <file>Aircraft/pa24-250/pa24-electrical.nas</file>
+  </pa24>
+  <kap140>
+    <file>Aircraft/pa24-250/kap140.nas</file>
+  </kap140>
+
 </nasal>
 
 </PropertyList>

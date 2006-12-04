@@ -24,12 +24,6 @@ ebus2_volts = 0.0;
 fuel_pres_ave = 0.0;
 oil_pres_ave = 0.0;
 ammeter_ave = 0.0;
-theta0 = 0.0;
-theta1 = 0.0;
-theta2 = 0.0;
-rpm0_ave = 0.0;
-rpm1_ave = 0.0;
-rpm2_ave = 0.0;
 nose_gear_pos_norm = 0.0;
 rudder_position = 0.0;
 
@@ -284,6 +278,9 @@ update_virtual_bus = func( dt ) {
         factor = 0.0;
     }
 
+    theta0 = 0.0;
+    theta1 = 0.0;
+    theta2 = 0.0;
     down = 0;
     nose_down = getprop("gear/gear[0]/wow");
     left_down = getprop("gear/gear[1]/wow");
@@ -294,72 +291,39 @@ update_virtual_bus = func( dt ) {
 ##
 #  Are we on the ground?  If yes, compute the scissor link angles due to strut compression
 ##
-    if ( down > 0 ) {
+    if ( nose_down > 0 ) {
 
         # Compute the angle the nose gear scissor rotates due to nose gear strut compression
 
-        H = 0.202;  # Nose gear oleo strut extended length in m
-        L = 0.134;  # Nose gear scissor length in m
-        phi = 0.8537;
+        H = 0.205048;  # Nose gear oleo strut extended length in m
+        L = 0.107564;  # Nose gear scissor length in m
+        phi = 1.2673;
         C = getprop("gear/gear[0]/compression-m");
         theta0 = scissor_angle(H,C,L,phi);
+        setprop("/gear/gear[0]/theta0", theta0);
+    }
 
+    if ( right_down > 0 ) {
         # Compute the angle the right gear scissor rotates due to right gear strut compression
       
-        H = 0.18433;  # Right gear oleo strut extended length in m
-        L = 0.10917;  # Right gear scissor length in m
-        phi = 1.0051;
+        H = 0.205048;  # Right gear oleo strut extended length in m
+        L = 0.107564;  # Right gear scissor length in m
+        phi = 1.2673;
         C = getprop("gear/gear[1]/compression-m");
         theta1 = scissor_angle(H,C,L,phi);
+        setprop("/gear/gear[1]/theta1", theta1);
+    }
 
+    if ( right_down > 0 ) {
         # Compute the angle the left gear scissor rotates due to left gear strut compression
 
-        H = 0.18433;  # Left gear oleo strut extended length in m
-        L = 0.10917;  # Left gear scissor length in m
-        phi = 1.0051;
+        H = 0.205048;  # Left gear oleo strut extended length in m
+        L = 0.107564;  # Left gear scissor length in m
+        phi = 1.2673;
         C = getprop("gear/gear[2]/compression-m");
         theta2 = scissor_angle(H,C,L,phi);
-
-        setprop("/gear/gear[0]/theta0", theta0);
-        setprop("/gear/gear[1]/theta1", theta1);
         setprop("/gear/gear[2]/theta2", theta2);
     }
-#  Update wheel rotation data
-#
-    vn_fps = getprop("/velocities/speed-north-fps");
-    ve_fps = getprop("/velocities/speed-east-fps");
-    speed_sq = vn_fps*vn_fps + ve_fps*ve_fps;
-    if (speed_sq > 0) {
-	speed = sqrt_it(speed_sq, 1);
-        speed = sqrt_it(speed_sq, speed);
-        speed = sqrt_it(speed_sq, speed);
-    } else {
-        speed = 0.0
-    }
-    speed_mpm = speed*195;
-    circumference = 2.733183;     # = 2*Pi*0.435 in meters - same for nose and mains
-
-    if (nose_down) {
-       rpm0 = speed_mpm/circumference;
-    } else {
-       rpm0 = 0.0;
-    }
-    rpm0_ave = (9*rpm0_ave + rpm0)/10;
-
-    if (left_down) {
-        rpm1 = speed_mpm/circumference;
-    } else {
-        rpm1 = 0.0;
-    }
-    rpm1_ave = (9*rpm1_ave + rpm1)/10;
-
-    if (right_down) {
-        rpm2 = speed_mpm/circumference;
-    } else {
-        rpm2 = 0.0;
-    }
-    rpm2_ave = (9*rpm1_ave + rpm2)/10;
-
 ##
 #  Disengage nose wheel steering from the rudder pedals if not locked down
 ##
@@ -373,9 +337,6 @@ update_virtual_bus = func( dt ) {
 
     # outputs
 
-    setprop("/gear/gear[0]/rpm", rpm0_ave);
-    setprop("/gear/gear[1]/rpm", rpm1_ave);
-    setprop("/gear/gear[2]/rpm", rpm2_ave);
     setprop("/gear/gear[0]/turn-pos-norm", rudder_position);
     setprop("/sim/models/materials/propdisc/factor", factor);  
     setprop("/engines/engine/fuel-pressure-psi", fuel_pres_ave);
@@ -392,11 +353,6 @@ scissor_angle = func(H,C,L,phi) {
     # Use 2 iterates of Newton's method and 4th order Taylor series to approximate theta where sin(phi - theta) = a
     theta = phi - 2*a/3 - a/3/(1-a*a/2);
     return theta;
-}
-
-sqrt_it = func(a,x0) {
-    x1 = (x0 + a/x0)/2;
-    return x1;
 }
 
 electrical_bus_1 = func() {
@@ -608,6 +564,10 @@ avionics_bus_2 = func() {
 }
 
 
-# Setup a timer based call to initialized the electrical system as
-# soon as possible.
+# Setup listener call to initialize the electrical system once the fdm is initialized
+# 
+#setlistener("/sim/signals/fdm-initialized", init_electrical);  
+# This caused Melchior's error on my system, but the following should work.
+setlistener("/sim/signals/fdm-initialized", func { print("fdm initialized") });
+# OK to init_electrical
 settimer(init_electrical, 0);
