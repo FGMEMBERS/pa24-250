@@ -182,7 +182,7 @@
 
    <action>
     <name>Increase Mixture</name>
-    <button>0</button>     <x>-58</x>
+    <button>0</button>     <x>-58</x>
      <y>-224</y>
      <w>25</w>
      <h>96</h>
@@ -195,7 +195,7 @@
 
    <action>
     <name>Decrease Mixture</name>
-    <button>0</button>     <x>-42</x>
+    <button>0</button>     <x>-42</x>
      <y>-320</y>
      <w>25</w>
      <h>96</h>
@@ -208,7 +208,7 @@
 
    <action>
     <name>Increase Throttle</name>
-    <button>0</button>     <x>-10</x>
+    <button>0</button>     <x>-10</x>
      <y>-224</y>
      <w>25</w>
      <h>96</h>
@@ -221,7 +221,7 @@
 
    <action>
     <name>Decrease Throttle</name>
-    <button>0</button>     <x>6</x>
+    <button>0</button>     <x>6</x>
      <y>-320</y>
      <w>25</w>
      <h>96</h>
@@ -234,7 +234,7 @@
 
    <action>
     <name>Increase Prop RPM</name>
-    <button>0</button>     <x>48</x>
+    <button>0</button>     <x>48</x>
      <y>-224</y>
      <w>25</w>
      <h>96</h>
@@ -247,7 +247,7 @@
 
    <action>
     <name>Decrease Prop RPM</name>
-    <button>0</button>     <x>64</x>
+    <button>0</button>     <x>64</x>
      <y>-320</y>
      <w>25</w>
      <h>96</h>
