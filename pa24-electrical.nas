@@ -32,7 +32,6 @@ rudder_position = 0.0;
 ##
 
 init_electrical = func {
-    print("Initializing Nasal Electrical System");
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
 
@@ -47,9 +46,42 @@ init_electrical = func {
     setprop("/controls/switches/starter", 0);
     setprop("/controls/switches/strobe-lights", 0);
     setprop("/controls/switches/master-avionics", 0);
+    setprop("/systems/electrical/outputs/starter[0]", 0.0);
+    setprop("/engines/engine/fuel-pressure-psi", 0.0);
+    setprop("/engines/engine/oil-pressure-psi", 0.0);
+    setprop("/systems/electrical/amps", 0.0);
+    setprop("/systems/electrical/volts", 0.0);
+    setprop("/systems/electrical/outputs/cabin-lights", 0.0);
+    setprop("/systems/electrical/outputs/instr-ignition-switch", 0.0);
+    setprop("/systems/electrical/outputs/fuel-pump", 0.0);
+    setprop("/systems/electrical/outputs/landing-light", 0.0);
+    setprop("/controls/lighting/landing-lights", 0);
+    setprop("/systems/electrical/outputs/flashing-beacon", 0.0 );
+    setprop("/controls/lighting/beacon", 0);
+    setprop("/systems/electrical/outputs/strobe-lights", 0.0 );
+    setprop("/controls/lighting/beacon", 0);
+    setprop("/systems/electrical/outputs/flaps", 0.0);
+    setprop("/systems/electrical/outputs/turn-coordinator", 0.0);
+    setprop("/systems/electrical/outputs/nav-lights", 0.0);      
+    setprop("/controls/lighting/nav-lights", 0);
+    setprop("/systems/electrical/outputs/instrument-lights", 0.0);      
+    setprop("/systems/electrical/outputs/pitot-heat", 0.0);
+    setprop("/systems/electrical/outputs/landing-gear", 0.0);
+    setprop("/systems/electrical/outputs/nav[0]", 0.0);
+    setprop("/systems/electrical/outputs/comm[0]", 0.0);
+    setprop("/systems/electrical/outputs/dme", 0.0);
+    setprop("/systems/electrical/outputs/nav[1]", 0.0);
+    setprop("/systems/electrical/outputs/comm[1]", 0.0);
+    setprop("/systems/electrical/outputs/transponder", 0.0);
+    setprop("/systems/electrical/outputs/autopilot", 0.0);
+    setprop("/systems/electrical/outputs/adf", 0.0);
+  
     setprop("/gear/gear[0]/theta0", 0);
     setprop("/gear/gear[1]/theta1", 0);
     setprop("/gear/gear[2]/theta2", 0);
+    setprop("/gear/gear[0]/position-norm", 0);  #Cheat since this was still nil after fdm-initialize
+    setprop("/sim/signals/elec-initialized", 1);
+    print("Nasal Electrical System Initialized");  # used by setlistener in kap140.nas
 
     # Request that the update fuction be called next frame
     settimer(update_electrical, 0);
@@ -281,17 +313,15 @@ update_virtual_bus = func( dt ) {
     theta0 = 0.0;
     theta1 = 0.0;
     theta2 = 0.0;
-    down = 0;
+
     nose_down = getprop("gear/gear[0]/wow");
     left_down = getprop("gear/gear[1]/wow");
     right_down = getprop("gear/gear[2]/wow");
-    down = nose_down + left_down + right_down;
 
-#    print( " down = ", down);
 ##
 #  Are we on the ground?  If yes, compute the scissor link angles due to strut compression
 ##
-    if ( nose_down > 0 ) {
+    if ( nose_down ) {
 
         # Compute the angle the nose gear scissor rotates due to nose gear strut compression
 
@@ -303,7 +333,7 @@ update_virtual_bus = func( dt ) {
         setprop("/gear/gear[0]/theta0", theta0);
     }
 
-    if ( right_down > 0 ) {
+    if ( right_down ) {
         # Compute the angle the right gear scissor rotates due to right gear strut compression
       
         H = 0.205048;  # Right gear oleo strut extended length in m
@@ -314,7 +344,7 @@ update_virtual_bus = func( dt ) {
         setprop("/gear/gear[1]/theta1", theta1);
     }
 
-    if ( right_down > 0 ) {
+    if ( right_down ) {
         # Compute the angle the left gear scissor rotates due to left gear strut compression
 
         H = 0.205048;  # Left gear oleo strut extended length in m
@@ -327,9 +357,9 @@ update_virtual_bus = func( dt ) {
 ##
 #  Disengage nose wheel steering from the rudder pedals if not locked down
 ##
-    nose_gear_pos_norm = getprop("gear/gear[0]/position-norm");
+#    nose_gear_pos_norm = getprop("gear/gear[0]/position-norm");
 
-    if ( nose_gear_pos_norm < 1) {
+    if ( getprop("gear/gear[0]/position-norm") < 1) {
         rudder_position = 0.0;
     } else {
         rudder_position = getprop("surface-positions/rudder-pos-norm");
@@ -566,8 +596,5 @@ avionics_bus_2 = func() {
 
 # Setup listener call to initialize the electrical system once the fdm is initialized
 # 
-#setlistener("/sim/signals/fdm-initialized", init_electrical);  
-# This caused Melchior's error on my system, but the following should work.
-setlistener("/sim/signals/fdm-initialized", func { print("fdm initialized") });
-# OK to init_electrical
-settimer(init_electrical, 0);
+setlistener("/sim/signals/fdm-initialized", init_electrical);  
+

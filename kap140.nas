@@ -31,13 +31,10 @@ alt_captured = 0;
 old_alt_number_state = ["off", 0];
 old_vs_number_state = ["off", 0];
 
+volts = 0.0;
+last_volts = 0.0;
 
 flasher = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   flash_timer = -1.0;
   annunciator = arg[0];
   flash_interval = arg[1];
@@ -54,10 +51,6 @@ flash_annunciator = func {
   ##print(flash_interval);
   ##print(flash_count);
 
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##
   # If flash_timer is set to -1 then flashing is aborted
   if (flash_timer < -0.5)
@@ -93,11 +86,6 @@ flash_annunciator = func {
 
 pt_check = func {
   ##print("pitch trim check");
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
 
   if (getprop(Locks, "pitch-mode") == "off")
   {
@@ -148,13 +136,11 @@ pt_check = func {
 
 
 ap_init = func {
-##  print("ap init");
+  ##print("ap init");
 
   ##
   # Initialises the autopilot.
   ##
-
-#  if (getprop(Power) < 8.0) { return};
 
   setprop(Locks, "alt-hold", "off");
   setprop(Locks, "apr-hold", "off");
@@ -196,17 +182,27 @@ ap_init = func {
   setprop(Annunciators, "bs-hpa-number", "off");
   setprop(Annunciators, "bs-inhg-number", "off");
   setprop(Annunciators, "ap", "off");
+  setprop(Annunciators, "alt-alert", "off");
 
 }
   
+ap_power = func {
+
+## Monitor autopilot power
+## Call ap_init if the power < 8.0 volts
+
+  if (getprop(Power) < 8.0) {
+  ## Re-initialize the autopilot settings if power is lost
+#  print("Re-initializing autopilot");
+  ap_init();
+  }
+  settimer(ap_power, 0);
+}
 
 ap_button = func {
   ##print("ap_button");
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
+##  Disable ap button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   ##
   # Engages the autopilot in Wings level mode (ROL) and Vertical speed hold
@@ -314,12 +310,6 @@ ap_button = func {
 
 hdg_button = func {
   ##print("hdg_button");
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
-
 
   ##
   # Engages the heading mode (HDG) and vertical speed hold mode (VS). The
@@ -517,11 +507,6 @@ hdg_button = func {
 nav_button = func {
   ##print("nav_button");
 
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
-
   ##
   # If we are in HDG mode we switch to the 45 degree angle intercept NAV mode
   ##
@@ -571,12 +556,6 @@ nav_button = func {
 
 nav_arm_from_hdg = func
 {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
-
   ##
   # Abort the NAV-ARM mode if something has changed the arm mode to something
   # else than NAV-ARM.
@@ -626,11 +605,6 @@ nav_arm_from_hdg = func
 
 nav_arm_from_rol = func
 {
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
-
   ##
   # Abort the NAV-ARM mode if something has changed the arm mode to something
   # else than NAV-ARM.
@@ -690,11 +664,6 @@ nav_arm_from_rol = func
 }
 
 apr_button = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##print("apr_button");
   ##
   # If we are in HDG mode we switch to the 45 degree intercept angle APR mode
@@ -737,11 +706,6 @@ apr_button = func {
 
 apr_arm_from_hdg = func
 {
- 
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##
   # Abort the APR-ARM mode if something has changed the arm mode to something
   # else than APR-ARM.
@@ -794,10 +758,6 @@ apr_arm_from_hdg = func
 
 apr_arm_from_rol = func
 {
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##
   # Abort the APR-ARM mode if something has changed the roll mode to something
   # else than APR-ARM.
@@ -862,11 +822,6 @@ apr_arm_from_rol = func
 
 
 gs_arm = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##
   # Abort the GS-ARM mode if something has changed the arm mode to something
   # else than GS-ARM.
@@ -912,11 +867,6 @@ gs_arm = func {
 
 
 rev_button = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##print("rev_button");
   ##
   # If we are in HDG mode we switch to the 45 degree intercept angle REV mode
@@ -954,10 +904,6 @@ rev_button = func {
 
 rev_arm_from_hdg = func
 {
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##
   # Abort the REV-ARM mode if something has changed the arm mode to something
   # else than REV-ARM.
@@ -1008,10 +954,6 @@ rev_arm_from_hdg = func
 
 rev_arm_from_rol = func
 {
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##
   # Abort the REV-ARM mode if something has changed the arm mode to something
   # else than REV-ARM.
@@ -1073,11 +1015,6 @@ rev_arm_from_rol = func
 
 
 alt_button_timer = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("alt button timer");
   #print(alt_button_timer_ignore);
   
@@ -1096,11 +1033,6 @@ alt_button_timer = func {
 
 
 alt_button = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##print("alt_button");
 
   if (getprop(Locks, "pitch-mode") == "alt")
@@ -1168,11 +1100,6 @@ alt_button = func {
 
 
 dn_button = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##print("dn_button");
 
   if (baro_timer_running == 0)
@@ -1205,11 +1132,6 @@ dn_button = func {
 }
 
 up_button = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   ##print("up_button");
 
   if (baro_timer_running == 0)
@@ -1242,11 +1164,6 @@ up_button = func {
 }
 
 arm_button = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("arm button");
   
   pitch_arm = getprop(Locks, "pitch-arm");
@@ -1267,11 +1184,6 @@ arm_button = func {
 
 
 baro_button_timer = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("baro button timer");
 
   baro_timer_running = 0;
@@ -1297,11 +1209,6 @@ baro_button_timer = func {
 }
 
 baro_button_press = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("baro putton press");
 
   if (baro_button_down == 0 and
@@ -1333,11 +1240,6 @@ baro_button_press = func {
 
 
 baro_button_release = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("baro button release");
 
   baro_button_down = 0;
@@ -1345,22 +1247,12 @@ baro_button_release = func {
 
 
 pow = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print(arg[0],arg[1]);
   return math.exp(arg[1]*math.ln(arg[0]));
 }
 
 
 pressureToHeight = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   p0 = arg[1];    # [Pa]
   p = arg[0];     # [Pa]
   t0 = 288.15;    # [K]
@@ -1374,11 +1266,6 @@ pressureToHeight = func {
 
 
 heightToPressure = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   p0 = arg[1];    # [Pa]
   z = arg[0];     # [m]
   t0 = 288.15;    # [K]
@@ -1392,11 +1279,6 @@ heightToPressure = func {
 
 
 alt_alert = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("alt alert");
   
   alt_pressure = getprop("/systems/static/pressure-inhg");
@@ -1464,11 +1346,6 @@ alt_alert = func {
     
 
 knob_s_up = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("knob small up");
 
   if (baro_timer_running == 1)
@@ -1516,11 +1393,6 @@ knob_s_up = func {
 
 
 knob_l_up = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("knob large up");
 
   if (baro_timer_running == 1)
@@ -1568,11 +1440,6 @@ knob_l_up = func {
 
 
 knob_s_dn = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("knob small down");
 
   if (baro_timer_running == 1)
@@ -1620,11 +1487,6 @@ knob_s_dn = func {
 
 
 knob_l_dn = func {
-
-##  getprop(Power) returns the voltage available to the autopilot.
-##  Putting in this aborted return links this nas file to the electrical system
-##  so the master switch and the avionics switch must be on to use the kap140. 
-  if (getprop(Power) < 8.0) { return};
   #print("knob large down");
 
   if (baro_timer_running == 1)
@@ -1669,10 +1531,13 @@ knob_l_dn = func {
     }
   }
 }
-##  Make sure the autopilot voltage is initialized in case we get here 
-##  before the electrical system has been initialized.
-setprop(Power, 0.0);
+
 
 ap_init();
 
-alt_alert();
+#alt_alert();
+
+
+#print("calling ap_power");
+
+setlistener("/sim/signals/elec-initialized", ap_power);
