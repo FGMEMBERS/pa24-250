@@ -31,8 +31,9 @@ alt_captured = 0;
 old_alt_number_state = ["off", 0];
 old_vs_number_state = ["off", 0];
 
-volts = 0.0;
-last_volts = 0.0;
+v_test = 0;
+lv = 0;
+nv = 0;
 
 flasher = func {
   flash_timer = -1.0;
@@ -182,26 +183,41 @@ ap_init = func {
   setprop(Annunciators, "bs-hpa-number", "off");
   setprop(Annunciators, "bs-inhg-number", "off");
   setprop(Annunciators, "ap", "off");
-  setprop(Annunciators, "alt-alert", "off");
 
 }
   
 ap_power = func {
 
 ## Monitor autopilot power
-## Call ap_init if the power < 8.0 volts
+## Call ap_init if the power < 8.0 volts and then returns
 
   if (getprop(Power) < 8.0) {
-  ## Re-initialize the autopilot settings if power is lost
-#  print("Re-initializing autopilot");
-  ap_init();
+    nv = 0;
+  } else {
+    nv = 1;
   }
+
+  v_test = nv - lv;
+#  print("v_test = ", v_test);
+  if (v_test == 1){
+    # autopilot just powered up
+    print("power up");
+    ap_init();
+    alt_alert();
+  } elsif (v_test == -1) {
+    # autopilot just lost power
+    print("power lost");
+    ap_init();
+    setprop(Annunciators, "alt-alert", "off");
+    # note: all button and knobs disabled in functions below
+  }
+  lv = nv;
   settimer(ap_power, 0);
 }
 
 ap_button = func {
   ##print("ap_button");
-##  Disable ap button if too little power
+##  Disable button if too little power
   if (getprop(Power) < 8.0) { return; }
 
   ##
@@ -310,6 +326,8 @@ ap_button = func {
 
 hdg_button = func {
   ##print("hdg_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   ##
   # Engages the heading mode (HDG) and vertical speed hold mode (VS). The
@@ -506,6 +524,8 @@ hdg_button = func {
 
 nav_button = func {
   ##print("nav_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   ##
   # If we are in HDG mode we switch to the 45 degree angle intercept NAV mode
@@ -665,6 +685,9 @@ nav_arm_from_rol = func
 
 apr_button = func {
   ##print("apr_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
+
   ##
   # If we are in HDG mode we switch to the 45 degree intercept angle APR mode
   ##
@@ -848,7 +871,7 @@ gs_arm = func {
   # If the deviation is less than 1 degrees turn off the GS-ARM annunciator
   # and show the GS annunciator. Activate the GS pitch mode.
   ##
-  elsif (abs(deviation) < 3.1)
+  elsif (abs(deviation) < 1.1)
   {
     #print("capture");
     setprop(Annunciators, "alt", "off");
@@ -868,6 +891,9 @@ gs_arm = func {
 
 rev_button = func {
   ##print("rev_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
+
   ##
   # If we are in HDG mode we switch to the 45 degree intercept angle REV mode
   ##
@@ -1034,6 +1060,8 @@ alt_button_timer = func {
 
 alt_button = func {
   ##print("alt_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (getprop(Locks, "pitch-mode") == "alt")
   {
@@ -1101,6 +1129,8 @@ alt_button = func {
 
 dn_button = func {
   ##print("dn_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_timer_running == 0)
   {
@@ -1133,6 +1163,8 @@ dn_button = func {
 
 up_button = func {
   ##print("up_button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_timer_running == 0)
   {
@@ -1165,6 +1197,8 @@ up_button = func {
 
 arm_button = func {
   #print("arm button");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
   
   pitch_arm = getprop(Locks, "pitch-arm");
 
@@ -1210,6 +1244,8 @@ baro_button_timer = func {
 
 baro_button_press = func {
   #print("baro putton press");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_button_down == 0 and
       baro_timer_running == 0 and
@@ -1241,6 +1277,8 @@ baro_button_press = func {
 
 baro_button_release = func {
   #print("baro button release");
+##  Disable button if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   baro_button_down = 0;
 }
@@ -1280,6 +1318,8 @@ heightToPressure = func {
 
 alt_alert = func {
   #print("alt alert");
+##  Disable if too little power
+  if (getprop(Power) < 8.0) { return; }
   
   alt_pressure = getprop("/systems/static/pressure-inhg");
   alt_m = pressureToHeight(alt_pressure*3386.389, 
@@ -1347,6 +1387,8 @@ alt_alert = func {
 
 knob_s_up = func {
   #print("knob small up");
+##  Disable knob if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_timer_running == 1)
   {
@@ -1394,6 +1436,8 @@ knob_s_up = func {
 
 knob_l_up = func {
   #print("knob large up");
+##  Disable knob if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_timer_running == 1)
   {
@@ -1441,6 +1485,8 @@ knob_l_up = func {
 
 knob_s_dn = func {
   #print("knob small down");
+##  Disable knob if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_timer_running == 1)
   {
@@ -1488,6 +1534,8 @@ knob_s_dn = func {
 
 knob_l_dn = func {
   #print("knob large down");
+##  Disable knob if too little power
+  if (getprop(Power) < 8.0) { return; }
 
   if (baro_timer_running == 1)
   {
@@ -1533,7 +1581,7 @@ knob_l_dn = func {
 }
 
 
-ap_init();
+#ap_init();
 
 #alt_alert();
 

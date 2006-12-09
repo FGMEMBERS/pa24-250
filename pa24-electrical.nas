@@ -344,7 +344,7 @@ update_virtual_bus = func( dt ) {
         setprop("/gear/gear[1]/theta1", theta1);
     }
 
-    if ( right_down ) {
+    if ( left_down ) {
         # Compute the angle the left gear scissor rotates due to left gear strut compression
 
         H = 0.205048;  # Left gear oleo strut extended length in m
