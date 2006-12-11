@@ -111,9 +111,9 @@
   <name>CLOCK</name>
   <path>Aircraft/Instruments-3d/clock/clock.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.470</y-m>
-   <z-m>0.270</z-m>  <!-- 0.298   down 0.028-->
+   <x-m>2.119</x-m>
+   <y-m>-0.4687</y-m>
+   <z-m>0.2706</z-m>  <!-- 0.298   down 0.028-->
   </offsets>
  </model>
 
@@ -121,7 +121,7 @@
   <name>ASI</name>
   <path>Aircraft/Instruments-3d/asi-pa24/asi.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
+   <x-m>2.119</x-m>
    <y-m>-0.397</y-m>
    <z-m>0.281</z-m>
   </offsets>
@@ -131,7 +131,7 @@
   <name>AI</name>
   <path>Aircraft/Instruments-3d/ai/ai.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
+   <x-m>2.119</x-m>
    <y-m>-0.1595</y-m>
    <z-m>0.2895</z-m>
   </offsets>
@@ -141,29 +141,29 @@
   <name>ALT</name>
   <path>Aircraft/Instruments-3d/alt/alt.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.3952</y-m>
-   <z-m>0.1917</z-m>
+   <x-m>2.119</x-m>
+   <y-m>-0.3942</y-m>
+   <z-m>0.192</z-m>
   </offsets>
  </model>
 
  <model>
   <name>VOR1</name>
-  <path>Aircraft/Instruments-3d/vor/vor.xml</path>
+  <path>Aircraft/pa24-250/Models/vor/vor.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.009</y-m>
-   <z-m>0.306</z-m>
+   <x-m>2.1202</x-m>
+   <y-m>-0.0072</y-m>
+   <z-m>0.3073</z-m>
   </offsets>
  </model>
 
  <model>
   <name>VOR2</name>
-  <path>Aircraft/Instruments-3d/vor/vor2.xml</path>
+  <path>Aircraft/pa24-250/Models/vor/vor2.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.009</y-m>
-   <z-m>0.215</z-m>
+   <x-m>2.1202</x-m>
+   <y-m>-0.0072</y-m>
+   <z-m>0.2163</z-m>
   </offsets>
  </model>
 
@@ -171,8 +171,8 @@
   <name>GPS</name>
   <path>Aircraft/Instruments-3d/gps-ind/gps.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.0105</y-m>
+   <x-m>2.119</x-m>
+   <y-m>-0.0108</y-m>
    <z-m>0.1205</z-m>
   </offsets>
  </model>
@@ -181,8 +181,8 @@
   <name>ADF</name>
   <path>Aircraft/Instruments-3d/adf/adf.xml</path>
   <offsets>
-   <x-m>2.115</x-m>
-   <y-m>0.082</y-m>
+   <x-m>2.119</x-m>
+   <y-m>0.0826</y-m>
    <z-m>0.309</z-m>
   </offsets>
  </model>
@@ -191,7 +191,7 @@
   <name>TC</name>
   <path>Aircraft/Instruments-3d/tc/tc.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
+   <x-m>2.119</x-m>
    <y-m>-0.196</y-m>
    <z-m>0.169</z-m>
   </offsets>
@@ -201,7 +201,7 @@
   <name>HI</name>
   <path>Aircraft/Instruments-3d/hi/hi.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
+   <x-m>2.119</x-m>
    <y-m>-0.282</y-m>
    <z-m>0.288</z-m>
   </offsets>
@@ -211,8 +211,8 @@
   <name>VSI</name>
   <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.107</y-m>
+   <x-m>2.119</x-m>
+   <y-m>-0.1055</y-m>
    <z-m>0.169</z-m>
   </offsets>
  </model>
@@ -221,9 +221,9 @@
   <name>FUEL-AMPS</name>
   <path>Aircraft/Instruments-3d/pa24-fuel-oil-amps/pa24-fuel-amps.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>0.377</y-m>
-   <z-m>0.2365</z-m>
+   <x-m>2.115</x-m>
+   <y-m>0.3808</y-m>
+   <z-m>0.2360</z-m>
   </offsets>
  </model>
 
@@ -231,9 +231,9 @@
   <name>OIL</name>
   <path>Aircraft/Instruments-3d/pa24-fuel-oil-amps/pa24-oil.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>0.376</y-m>
-   <z-m>0.2005</z-m>
+   <x-m>2.115</x-m>
+   <y-m>0.3803</y-m>
+   <z-m>0.2000</z-m>
   </offsets>
  </model>
 
@@ -241,9 +241,9 @@
   <name>EGT</name>
   <path>Aircraft/Instruments-3d/egt/egt.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.0735</y-m>
-   <z-m>0.054</z-m>
+   <x-m>2.119</x-m>
+   <y-m>-0.0728</y-m>
+   <z-m>0.055</z-m>
   </offsets>
  </model>
 
@@ -251,8 +251,8 @@
   <name>TACH</name>
   <path>Aircraft/Instruments-3d/tach/tach.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>0.345</y-m>
+   <x-m>2.119</x-m>
+   <y-m>0.349</y-m>
    <z-m>0.309</z-m>
   </offsets>
  </model>
@@ -261,9 +261,9 @@
   <name>MP</name>
   <path>Aircraft/Instruments-3d/mp/mp.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>0.256</y-m>
-   <z-m>0.309</z-m>
+   <x-m>2.119</x-m>
+   <y-m>0.2590</y-m>
+   <z-m>0.3087</z-m>
   </offsets>
  </model>
 
@@ -271,9 +271,9 @@
   <name>VAC</name>
   <path>Aircraft/Instruments-3d/vac/vac.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>0.4185</y-m>
-   <z-m>0.2965</z-m>
+   <x-m>2.119</x-m>
+   <y-m>0.4188</y-m>
+   <z-m>0.2963</z-m>
   </offsets>
  </model>
 
@@ -291,9 +291,9 @@
   <name>FlapIndicator</name>
   <path>Aircraft/Instruments-3d/flap-ind/flap-indicator.xml</path>
   <offsets>
-   <x-m>2.12</x-m>
-   <y-m>-0.007</y-m>
-   <z-m>0.0385</z-m>
+   <x-m>2.119</x-m>
+   <y-m>-0.0048</y-m>
+   <z-m>0.043</z-m>
   </offsets>
  </model>
 
@@ -301,8 +301,8 @@
   <name>RadioStack</name>
   <path>Aircraft/pa24-250/Models/radio_stack/radio-stack.xml</path>
   <offsets>
-   <x-m>2.125</x-m>
-   <y-m>.122</y-m>
+   <x-m>2.115</x-m>
+   <y-m>.1268</y-m>
    <z-m>0.132</z-m>
   </offsets>
  </model>
@@ -311,7 +311,7 @@
   <name>mags</name>
   <path>Aircraft/pa24-250/Models/mag.sw/mags.xml</path>
   <offsets>
-   <x-m>2.125</x-m>
+   <x-m>2.1205</x-m>
    <y-m>-0.145</y-m>
    <z-m>-0.043</z-m>
   </offsets>
@@ -403,6 +403,7 @@
   <object-name>OIL</object-name>
   <object-name>FlapIndicator</object-name>
   <object-name>VAC</object-name>
+  <object-name>RadioStack</object-name>
   <object-name>GPS</object-name>
  </animation>
 
@@ -413,11 +414,14 @@
  </animation>
 
  <animation>
+  <name>PropellerGroup</name>
+  <object-name>PropDisc</object-name>
+  <object-name>PropGroup</object-name>
+ </animation>
+
+ <animation>
   <name>PanelAlphaOrderGroup</name>
   <object-name>InstrumentGroup</object-name>
-  <object-name>Panel-3d</object-name>
-  <object-name>RadioStack</object-name>
-  <object-name>PlacardGroup</object-name>
   <object-name>SwitchesGroup</object-name>
   <object-name>TogglesGroup</object-name>
   <object-name>YokeGroup</object-name>
@@ -430,7 +434,9 @@
   <object-name>FuselageGroup</object-name>
   <object-name>LightsGroup</object-name>
   <object-name>AntenaGroup</object-name>
-  <object-name>PropGroup</object-name>
+  <object-name>PropellerGroup</object-name>
+  <object-name>Panel-3d</object-name>
+  <object-name>PlacardGroup</object-name>
   <object-name>WindowGroup</object-name>
  </animation>
 

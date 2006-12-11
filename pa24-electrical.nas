@@ -26,6 +26,7 @@ oil_pres_ave = 0.0;
 ammeter_ave = 0.0;
 nose_gear_pos_norm = 0.0;
 rudder_position = 0.0;
+C = 0.0;
 
 ##
 # Initialize the electrical system
@@ -76,10 +77,14 @@ init_electrical = func {
     setprop("/systems/electrical/outputs/autopilot", 0.0);
     setprop("/systems/electrical/outputs/adf", 0.0);
   
-    setprop("/gear/gear[0]/theta0", 0);
-    setprop("/gear/gear[1]/theta1", 0);
-    setprop("/gear/gear[2]/theta2", 0);
-    setprop("/gear/gear[0]/position-norm", 0);  #Cheat since this was still nil after fdm-initialize
+    setprop("/gear/gear[0]/theta0", 0.0);
+    setprop("/gear/gear[1]/theta1", 0.0);
+    setprop("/gear/gear[2]/theta2", 0.0);
+    setprop("/gear/gear[0]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
+    setprop("/gear/gear[1]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
+    setprop("/gear/gear[2]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
+
+    setprop("/gear/gear[0]/position-norm", 0);   #Cheat since this was still nil after fdm-initialize
     setprop("/sim/signals/elec-initialized", 1);
     print("Nasal Electrical System Initialized");  # used by setlistener in kap140.nas
 
@@ -314,46 +319,43 @@ update_virtual_bus = func( dt ) {
     theta1 = 0.0;
     theta2 = 0.0;
 
-    nose_down = getprop("gear/gear[0]/wow");
-    left_down = getprop("gear/gear[1]/wow");
-    right_down = getprop("gear/gear[2]/wow");
-
 ##
 #  Are we on the ground?  If yes, compute the scissor link angles due to strut compression
 ##
-    if ( nose_down ) {
 
-        # Compute the angle the nose gear scissor rotates due to nose gear strut compression
+    # Compute the angle the nose gear scissor rotates due to nose gear strut compression
 
-        H = 0.205048;  # Nose gear oleo strut extended length in m
-        L = 0.107564;  # Nose gear scissor length in m
-        phi = 1.2673;
-        C = getprop("gear/gear[0]/compression-m");
-        theta0 = scissor_angle(H,C,L,phi);
-        setprop("/gear/gear[0]/theta0", theta0);
+    H = 0.205048;  # Nose gear oleo strut extended length in m
+    L = 0.107564;  # Nose gear scissor length in m
+    phi = 1.2673;
+    C = getprop("gear/gear[0]/compression-m");
+    if (C > 0.0) {
+      theta0 = scissor_angle(H,C,L,phi);
     }
+    setprop("/gear/gear[0]/theta0", theta0);
 
-    if ( right_down ) {
-        # Compute the angle the right gear scissor rotates due to right gear strut compression
+    # Compute the angle the right gear scissor rotates due to right gear strut compression
       
-        H = 0.205048;  # Right gear oleo strut extended length in m
-        L = 0.107564;  # Right gear scissor length in m
-        phi = 1.2673;
-        C = getprop("gear/gear[1]/compression-m");
-        theta1 = scissor_angle(H,C,L,phi);
-        setprop("/gear/gear[1]/theta1", theta1);
+    H = 0.205048;  # Right gear oleo strut extended length in m
+    L = 0.107564;  # Right gear scissor length in m
+    phi = 1.2673;
+    C = getprop("gear/gear[1]/compression-m");
+    if (C > 0.0) {
+      theta1 = scissor_angle(H,C,L,phi);
     }
+    setprop("/gear/gear[1]/theta1", theta1);
 
-    if ( left_down ) {
-        # Compute the angle the left gear scissor rotates due to left gear strut compression
+    # Compute the angle the left gear scissor rotates due to left gear strut compression
 
-        H = 0.205048;  # Left gear oleo strut extended length in m
-        L = 0.107564;  # Left gear scissor length in m
-        phi = 1.2673;
-        C = getprop("gear/gear[2]/compression-m");
-        theta2 = scissor_angle(H,C,L,phi);
-        setprop("/gear/gear[2]/theta2", theta2);
+    H = 0.205048;  # Left gear oleo strut extended length in m
+    L = 0.107564;  # Left gear scissor length in m
+    phi = 1.2673;
+    C = getprop("gear/gear[2]/compression-m");
+    if (C > 0.0) {
+      theta2 = scissor_angle(H,C,L,phi);
     }
+    setprop("/gear/gear[2]/theta2", theta2);
+
 ##
 #  Disengage nose wheel steering from the rudder pedals if not locked down
 ##
@@ -380,7 +382,8 @@ update_virtual_bus = func( dt ) {
 
 scissor_angle = func(H,C,L,phi) {
     a = (H - C)/2/L;
-    # Use 2 iterates of Newton's method and 4th order Taylor series to approximate theta where sin(phi - theta) = a
+    # Use 2 iterates of Newton's method and 4th order Taylor series to 
+    # approximate theta where sin(phi - theta) = a
     theta = phi - 2*a/3 - a/3/(1-a*a/2);
     return theta;
 }
@@ -597,4 +600,5 @@ avionics_bus_2 = func() {
 # Setup listener call to initialize the electrical system once the fdm is initialized
 # 
 setlistener("/sim/signals/fdm-initialized", init_electrical);  
+
 

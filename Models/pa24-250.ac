@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "DefaultWhite" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
+MATERIAL "ac3dmat1" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
 MATERIAL "ac3dmat2" rgb 0.431 0.137 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 0  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.631 0.631 0.631  shi 16  trans 0
@@ -22,7 +22,7 @@ MATERIAL "ac3dmat5" rgb 0.851 0.878 0.824  amb 0.094 0.098 0.094  emis 0 0 0  sp
 MATERIAL "ac3dmat0" rgb 0.153 0.149 0.133  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 113  trans 0
 MATERIAL "WhitePaint" rgb 0.921387 0.921387 0.921387  amb 0 0 0  emis 0 0 0  spec 1 1 1  shi 27  trans 0
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.804 0.804 0.804  shi 128  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 0  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.376 0.376 0.376  shi 58  trans 0
 MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.6 0.6 0.6  shi 128  trans 0
 MATERIAL "ac3dmat7" rgb 0.271 0.525 0.455  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.204 0.204 0.204  shi 0  trans 0
 MATERIAL "RedLightOff" rgb 1 0 0  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 128  trans 0
@@ -22239,7 +22239,7 @@ refs 4
 kids 0
 OBJECT poly
 name "LandingPlacard"
-loc 0.426575 -0.15901 0.241625
+loc 0.426575 -0.157784 0.247141
 texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/placards.rgb"
 crease 45.000000
 numvert 6
@@ -26695,41 +26695,6 @@ refs 4
 26 0.066703 0.543985
 kids 0
 OBJECT poly
-name "Panel-3d"
-loc 2.12049 -0.0065572 -0.00312828
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/panel2.rgb"
-crease 45.000000
-numvert 12
-0.00495005 0.378105 0.417635
-0.00495005 0.378105 0.27939
-0.00420499 0.321182 0.577995
-0.00420499 0.321182 -0.572196
--0.00101185 -0.0772736 0.00289917
-0.00495005 0.378105 0.00289917
-0.00495005 0.378105 0.55588
--0.00101185 -0.0772736 0.577995
--0.00101185 -0.0772736 -0.572196
-0.00495005 0.378105 -0.553767
-0.00495005 0.378105 -0.275434
-0.00495005 0.378105 -0.4146
-numsurf 1
-SURF 0x20
-mat 23
-refs 12
-5 0.500708 0.984539
-1 0.258832 0.984539
-0 0.137894 0.984539
-6 0.0169568 0.984539
-2 0.0169568 0.891766
-7 0.0169568 0.242352
-4 0.500708 0.242352
-8 0.98446 0.242352
-3 0.98446 0.891766
-9 0.98446 0.984539
-11 0.863522 0.984539
-10 0.742584 0.984539
-kids 0
-OBJECT poly
 name "Glareshield"
 loc 0.1906 0.00545732 -0.0001559
 texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/glareshield.rgb"
@@ -28389,7 +28354,7 @@ refs 3
 kids 0
 OBJECT poly
 name "GearYellow-e"
-loc 2.1257 0.756712 0.860475
+loc 2.1257 0.759776 0.861701
 crease 45.000000
 numvert 3
 -0.00869846 -0.664462 -0.736305
@@ -28405,7 +28370,7 @@ refs 3
 kids 0
 OBJECT poly
 name "GearYellow-d"
-loc 2.12667 0.830448 0.82839
+loc 2.12667 0.833512 0.829616
 crease 45.000000
 numvert 3
 -0.0100048 -0.764225 -0.719593
@@ -28421,7 +28386,7 @@ refs 3
 kids 0
 OBJECT poly
 name "GearGreen-d"
-loc 2.11614 0.0401144 0.122657
+loc 2.11614 0.042566 0.123883
 crease 45.000000
 numvert 3
 -4.81606e-05 -0.00371233 -0.0118524
@@ -28437,7 +28402,7 @@ refs 3
 kids 0
 OBJECT poly
 name "GearGreen-e"
-loc 2.11614 0.0402377 0.122608
+loc 2.11614 0.0426893 0.123834
 crease 45.000000
 numvert 3
 -0.000398636 -0.0304399 0.00148159
@@ -52312,4 +52277,34 @@ refs 3
 0 0.641294 0.792225
 52 0.638068 0.7786
 1 0.638068 0.780452
+kids 0
+OBJECT poly
+name "Panel-3d"
+loc 2.12006 0 0
+texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/panel2.rgb"
+crease 45.000000
+numvert 8
+0 -0.0756697 0
+0 -0.0756697 -0.573198
+0 0.372408 -0.573198
+0 0.372408 0
+0 -0.0756697 0
+0 -0.0756697 0.573198
+0 0.372408 0.573198
+0 0.372408 0
+numsurf 2
+SURF 0x0
+mat 23
+refs 4
+0 0.498696 0.249389
+1 0.983304 0.249389
+2 0.983304 0.987704
+3 0.498696 0.987704
+SURF 0x0
+mat 23
+refs 4
+7 0.500121 0.987704
+6 0.0169374 0.987704
+5 0.0169374 0.249389
+4 0.500121 0.249389
 kids 0
