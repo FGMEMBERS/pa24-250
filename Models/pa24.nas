@@ -3,6 +3,12 @@ INIT = func {
     fswitch = props.globals.getNode("/controls[1]/fuel/switch-position");
 }
 
+oatswitch = nil;
+
+INIT = func {
+    oatswitch = props.globals.getNode("/controls/switches/oat-switch");
+}
+
 fuel_switch = func {
 node = props.globals.getNode("/consumables/fuel/tank[0]/selected",0);
 node.setBoolValue(0);
@@ -111,6 +117,18 @@ primer = func {
 toggle=getprop("/controls/engines/engine/primer-pump");
 toggle=1-toggle;
 setprop("/controls/engines/engine/primer-pump",toggle);
+}
+
+oat_switch = func {
+val = getprop("/controls/switches/oat-switch");
+      test = 1 + val;
+      if(test > 2){test=0};
+setprop("/controls/switches/oat-switch",test);
+settimer(oat_off, 300);
+}
+
+oat_off = func {
+setprop("/controls/switches/oat-switch",0);
 }
 
 ##

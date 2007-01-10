@@ -239,7 +239,7 @@
 
  <model>
   <name>EGT</name>
-  <path>Aircraft/Instruments-3d/egt/egt.xml</path>
+  <path>Aircraft/pa24-250/Models/egt/egt.xml</path>
   <offsets>
    <x-m>2.119</x-m>
    <y-m>-0.0728</y-m>
@@ -304,6 +304,16 @@
    <x-m>2.115</x-m>
    <y-m>.1268</y-m>
    <z-m>0.132</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>OAT</name>
+  <path>Aircraft/pa24-250/Models/oat/oat_3d.xml</path>
+  <offsets>
+   <x-m>2.435</x-m>
+   <y-m>-0.56</y-m>
+   <z-m>0.375</z-m>
   </offsets>
  </model>
 
@@ -404,6 +414,7 @@
   <object-name>FlapIndicator</object-name>
   <object-name>VAC</object-name>
   <object-name>RadioStack</object-name>
+  <object-name>OAT</object-name>
   <object-name>GPS</object-name>
  </animation>
 
@@ -424,6 +435,7 @@
   <object-name>InstrumentGroup</object-name>
   <object-name>SwitchesGroup</object-name>
   <object-name>TogglesGroup</object-name>
+  <object-name>Glareshield</object-name>
   <object-name>YokeGroup</object-name>
   <object-name>PilotGroup</object-name>
   <object-name>InteriorGroup</object-name>

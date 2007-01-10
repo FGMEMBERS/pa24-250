@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>OAT-Panel</name>
+<background>Aircraft/pa24-250/Panel/transparent-bg.rgb</background>
+ <w>128</w>
+ <h>128</h>
+<instruments>
+  <instrument include="../Models/oat/oat.xml">
+   <name>Digital OAT</name>
+   <x>0</x>
+   <y>0</y>
+   <w>128</w>
+   <h>128</h>
+  </instrument>
+</instruments>
+
+</PropertyList>

@@ -603,7 +603,74 @@
      </binding>
    </action>
 
-  
+<!--		ASI Pressure Altitude adjust  -->
+   <action>
+     <name>small decrease</name>
+     <button>0</button>
+     <x>-366.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large decrease</name>
+     <button>1</button>
+     <x>-366.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+    <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>-5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>small increase</name>
+     <button>0</button>
+     <x>-358.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
+   
+   <action>
+     <name>large increase</name>
+     <button>1</button>
+     <x>-358.6</x>
+     <y>206</y>
+     <w>8</w>
+     <h>20</h>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/airspeed-indicator/pressure-alt-offset-deg</property>
+       <step>5</step>
+       <min>0</min>
+       <max>360</max>
+       <wrap>1</wrap>
+     </binding>
+   </action>
   
   <!--             Altimeter              -->  
  

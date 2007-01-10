@@ -24,9 +24,11 @@ ebus2_volts = 0.0;
 fuel_pres_ave = 0.0;
 oil_pres_ave = 0.0;
 ammeter_ave = 0.0;
+egt_ave = 0.0;
 nose_gear_pos_norm = 0.0;
 rudder_position = 0.0;
 C = 0.0;
+egt = 0.0;
 
 ##
 # Initialize the electrical system
@@ -39,6 +41,7 @@ init_electrical = func {
     setprop("/controls/electric/battery-switch", 0);
     setprop("/controls/electric/engine/generator", 0);
     setprop("/controls/engines/engine[0]/fuel-pump",0);
+    setprop("/controls/switches/oat-switch", 0);
     setprop("/controls/switches/nav-lights", 0);    
     setprop("/controls/switches/landing-light", 0);
     setprop("/controls/switches/flashing-beacon",0);
@@ -83,8 +86,10 @@ init_electrical = func {
     setprop("/gear/gear[0]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
     setprop("/gear/gear[1]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
     setprop("/gear/gear[2]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
+    setprop("engines/engine[0]/fuel-flow-gph", 0.0);
 
     setprop("/gear/gear[0]/position-norm", 0);   #Cheat since this was still nil after fdm-initialize
+    setprop("/instrumentation/airspeed-indicator/pressure-alt-offset-deg", 0.0);
     setprop("/sim/signals/elec-initialized", 1);
     print("Nasal Electrical System Initialized");  # used by setlistener in kap140.nas
 
@@ -315,13 +320,22 @@ update_virtual_bus = func( dt ) {
         factor = 0.0;
     }
 
-    theta0 = 0.0;
-    theta1 = 0.0;
-    theta2 = 0.0;
-
+##
+#  Simulate egt from pilot's perspective using fuel flow and rpm
+##
+    fuel_flow = getprop("engines/engine[0]/fuel-flow-gph");
+    egt = 325 - abs(fuel_flow - 12)*20;
+    if (egt < 20) {egt = 20; }
+    egt = egt*(rpm/2400)*(rpm/2400);
+#   Smooth and add some lag
+    egt_ave = 0.995*egt_ave + 0.005*egt;
 ##
 #  Are we on the ground?  If yes, compute the scissor link angles due to strut compression
 ##
+
+    theta0 = 0.0;
+    theta1 = 0.0;
+    theta2 = 0.0;
 
     # Compute the angle the nose gear scissor rotates due to nose gear strut compression
 
@@ -369,6 +383,7 @@ update_virtual_bus = func( dt ) {
 
     # outputs
 
+    setprop("/engines/engine[0]/egt-degf-fix", egt_ave);
     setprop("/gear/gear[0]/turn-pos-norm", rudder_position);
     setprop("/sim/models/materials/propdisc/factor", factor);  
     setprop("/engines/engine/fuel-pressure-psi", fuel_pres_ave);
