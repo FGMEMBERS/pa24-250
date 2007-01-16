@@ -87,9 +87,12 @@ init_electrical = func {
     setprop("/gear/gear[1]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
     setprop("/gear/gear[2]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
     setprop("engines/engine[0]/fuel-flow-gph", 0.0);
+    setprop("/surface-positions/flap-pos-norm", 0.0);
+    setprop("/instrumentation/airspeed-indicator/indicated-speed-kt", 0.0);
 
     setprop("/gear/gear[0]/position-norm", 0);   #Cheat since this was still nil after fdm-initialize
     setprop("/instrumentation/airspeed-indicator/pressure-alt-offset-deg", 0.0);
+    setprop("/accelerations/pilot-g", 1.0);
     setprop("/sim/signals/elec-initialized", 1);
     print("Nasal Electrical System Initialized");  # used by setlistener in kap140.nas
 
@@ -318,6 +321,23 @@ update_virtual_bus = func( dt ) {
     factor = 1.0 - rpm/2400;
     if ( factor < 0.0 ) {
         factor = 0.0;
+    }
+
+##
+#  Stall Warning
+##
+    ias = getprop("/instrumentation/airspeed-indicator/indicated-speed-kt");
+    flaps = getprop("/surface-positions/flap-pos-norm");
+    gforce = getprop("/accelerations/pilot-g");
+#    print("ias = ", ias, "  flaps = ", flaps);
+#  pa24-250 Vs = 65 knots,  warn at 67
+    stall = 65 - 7*flaps + 20*(gforce - 1.0);
+    node = props.globals.getNode("/sim/alarms/stall-warning",1);
+    if ( ias > stall ) {
+      node.setBoolValue(0);
+    }
+    else {
+      node.setBoolValue(1);
     }
 
 ##

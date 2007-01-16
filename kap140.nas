@@ -837,7 +837,7 @@ apr_arm_from_rol = func
     setprop(Locks, "nav-hold", "off");
     setprop(Locks, "roll-axis", "trn");
     setprop(Locks, "roll-mode", "apr");
-    setprop(Locks, "roll-arm", "gs-arm");
+    setprop(Locks, "pitch-arm", "gs-arm");
 
     gs_arm();
   }

@@ -130,6 +130,46 @@
    </condition>
   </gear>
 
+  <gear>
+   <name>gear-horn</name>
+   <mode>looped</mode>
+   <path>Sounds/stall.wav</path>
+   <condition>
+    <and>
+     <property>/controls/electric/battery-switch</property>
+     <less-than>
+      <property>/engines/engine[0]/mp-osi</property>
+      <value>12</value>
+     </less-than>
+     <or> 
+      <less-than>
+       <property>gear/gear[0]/position-norm</property>
+       <value>1</value>
+      </less-than>
+      <less-than>
+       <property>gear/gear[1]/position-norm</property>
+       <value>1</value>
+      </less-than>
+      <less-than>
+       <property>gear/gear[2]/position-norm</property>
+       <value>1</value>
+      </less-than>
+     </or>  
+    </and>
+   </condition>
+   <volume>
+    <property>/sim/current-view/internal</property>
+    <offset>0.5</offset>
+    <factor>1.5</factor>
+   </volume>
+   <pitch>
+    <property>/controls/electric/battery-switch</property>
+    <offset>0.1</offset>
+    <factor>0.1</factor>
+   </pitch>
+   <reference-dist>10.0</reference-dist>
+   <max-dist>20.0</max-dist>
+  </gear>
 
   <squeal>
    <name>squeal</name>
@@ -227,6 +267,7 @@
    <path>Sounds/stall.wav</path>
    <condition>
     <and>
+     <property>/controls/electric/battery-switch</property>
      <property>/sim/alarms/stall-warning</property>
      <greater-than>
        <property>/velocities/airspeed-kt</property>
@@ -238,11 +279,11 @@
        <property>/gear/gear[2]/wow</property>
      </not>
     </and>
-    <!-- <property>/sim/current-view/internal</property> -->
    </condition>
    <volume>
-    <property>/sim/alarms/stall-warning</property>
-    <max>1.0</max>
+    <property>/sim/current-view/internal</property>
+    <offset>0.5</offset>
+    <factor>0.5</factor>
    </volume>
    <reference-dist>10.0</reference-dist>
    <max-dist>20.0</max-dist>
@@ -251,7 +292,7 @@
  <!--                  Toggle Switches                  -->     
       <click> 
         <name>Battery on</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <property>controls/electric/battery-switch</property>
         </condition>
@@ -261,7 +302,7 @@
       </click>
       <click> 
         <name>Battery off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
          <condition> 
           <not> 
             <property>controls/electric/battery-switch</property>
@@ -274,7 +315,7 @@
  
       <click> 
         <name>Fuel Pump on</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <property>controls/engines/engine/fuel-pump</property>
         </condition>
@@ -284,7 +325,7 @@
       </click>
       <click> 
         <name>Fuel Pump off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <not> 
             <property>controls/engines/engine/fuel-pump</property>
@@ -297,22 +338,22 @@
 
       <click> 
         <name>Nav Light On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <property>controls/switches/nav-lights</property>
-	  </condition>
+         <property>controls/switches/nav-lights</property>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
       </click>
       <click> 
         <name>Nav Light Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <not>
-	 <property>controls/switches/nav-lights</property>
-	  </not>
-	  </condition>
+         <not>
+          <property>controls/switches/nav-lights</property>
+         </not>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -320,7 +361,7 @@
  
       <click>
         <name>Landing Light On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
           <property>controls/switches/landing-light</property>
         </condition>
@@ -331,7 +372,7 @@
       
       <click>
         <name>Landing Light Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
           <not>
             <property>controls/switches/landing-light</property>
@@ -344,7 +385,7 @@
 
       <click> 
         <name>Turn and Bank On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <property>instrumentation/turn-indicator/serviceable</property>
         </condition>
@@ -354,7 +395,7 @@
       </click>
       <click> 
         <name>Turn and Bank Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <not> 
             <property>instrumentation/turn-indicator/serviceable</property>
@@ -367,7 +408,7 @@
   
       <click> 
         <name>Flashing Beacon On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <property>controls/switches/flashing-beacon</property>
         </condition>
@@ -377,12 +418,12 @@
       </click>
       <click> 
         <name>Flashing Beacon Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
-	<not>
+         <not>
           <property>controls/switches/flashing-beacon</property>
-        </not>
-	</condition>
+         </not>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -390,10 +431,10 @@
 
       <click> 
         <name>Pitot Heat On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
           <property>controls/anti-ice/pitot-heat</property>
-	  </condition>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -401,12 +442,12 @@
  
       <click> 
         <name>Pitot Heat Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <not>
+         <not>
            <property>controls/anti-ice/pitot-heat</property>
-	  </not>
-	  </condition>
+         </not>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -414,12 +455,12 @@
       
       <click> 
         <name>Magnetos-off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <not>
+         <not>
           <property>controls/engines/engine/magnetos</property>
          </not>
-	  </condition>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -427,13 +468,13 @@
 	 
       <click> 
         <name>Magnetos-R</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	<equals>
-	 <property>controls/engines/engine/magnetos</property>
-         <value>1</value>
-	 </equals>
-	 </condition>
+         <equals>
+          <property>controls/engines/engine/magnetos</property>
+          <value>1</value>
+         </equals>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -441,13 +482,13 @@
   
       <click> 
         <name>Magnetos-L</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <equals>
-	 <property>controls/engines/engine/magnetos</property>
-         <value>2</value>
-	 </equals>
-	  </condition>
+         <equals>
+          <property>controls/engines/engine/magnetos</property>
+          <value>2</value>
+         </equals>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -455,13 +496,13 @@
   
       <click> 
         <name>Magnetos-B</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <equals>
-	 <property>controls/engines/engine/magnetos</property>
-         <value>3</value>
-	 </equals>
-	  </condition>
+         <equals>
+          <property>controls/engines/engine/magnetos</property>
+          <value>3</value>
+         </equals>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -469,7 +510,7 @@
 
       <click> 
         <name>Strobe Lights On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition> 
           <property>controls/switches/strobe-lights</property>
         </condition>
@@ -479,7 +520,7 @@
       </click>
       <click> 
         <name>Strobe Lights Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
          <not> 
           <property>controls/switches/strobe-lights</property>
@@ -492,10 +533,10 @@
 
       <click> 
         <name>Avionics Master On</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
           <property>controls/switches/master-avionics</property>
-	  </condition>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -503,12 +544,12 @@
  
       <click> 
         <name>Avionics Master Off</name>
-        <path>Aircraft/pa24-250/Sounds/click.wav</path>
+        <path>Sounds/click.wav</path>
         <condition>
-	 <not>
-           <property>controls/switches/master-avionics</property>
-	  </not>
-	  </condition>
+         <not>
+          <property>controls/switches/master-avionics</property>
+         </not>
+        </condition>
         <volume> 
           <factor>1.0</factor>
         </volume>
@@ -516,10 +557,10 @@
 
       <squish> 
         <name>Primer Out</name>
-        <path>Aircraft/pa24-250/Sounds/squish.wav</path>
+        <path>Sounds/squeal.wav</path>
         <condition>
           <property>controls/engines/engine/primer-pump</property>
-	  </condition>
+        </condition>
         <volume> 
           <factor>0.1</factor>
         </volume>
@@ -527,12 +568,12 @@
  
       <squish> 
         <name>Primer In</name>
-        <path>Aircraft/pa24-250/Sounds/squish.wav</path>
+        <path>Sounds/squeal.wav</path>
         <condition>
-	 <not>
-           <property>controls/engines/engine/primer-pump</property>
-	  </not>
-	  </condition>
+         <not>
+          <property>controls/engines/engine/primer-pump</property>
+         </not>
+        </condition>
         <volume> 
           <factor>0.1</factor>
         </volume>
