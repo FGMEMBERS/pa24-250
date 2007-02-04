@@ -27,7 +27,7 @@ a 150 lb copilot and no bagage.
 
   <systems>
    <autopilot>
-    <path>Aircraft/c172p/Systems/KAP140.xml</path>
+    <path>Aircraft/pa24-250/Systems/KAP140.xml</path>
    </autopilot>
    <electrical>
     <path></path>
@@ -131,6 +131,9 @@ a 150 lb copilot and no bagage.
     <tumble-flag>true</tumble-flag>
    </config>
   </attitude-indicator>
+  <encoder>
+   <serviceable type="bool">true</serviceable>
+  </encoder>
  </instrumentation>
 
 
@@ -398,7 +401,7 @@ a 150 lb copilot and no bagage.
     <file>Aircraft/pa24-250/pa24-electrical.nas</file>
   </pa24>
   <kap140>
-    <file>Aircraft/pa24-250/kap140.nas</file>
+    <file>Aircraft/Generic/kap140.nas</file>
   </kap140>
 
 </nasal>

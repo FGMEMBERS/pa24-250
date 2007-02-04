@@ -93,8 +93,7 @@ init_electrical = func {
     setprop("/gear/gear[0]/position-norm", 0);   #Cheat since this was still nil after fdm-initialize
     setprop("/instrumentation/airspeed-indicator/pressure-alt-offset-deg", 0.0);
     setprop("/accelerations/pilot-g", 1.0);
-    setprop("/sim/signals/elec-initialized", 1);
-    print("Nasal Electrical System Initialized");  # used by setlistener in kap140.nas
+    print("Nasal Electrical System Initialized");  
 
     # Request that the update fuction be called next frame
     settimer(update_electrical, 0);
