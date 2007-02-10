@@ -327,7 +327,7 @@
    </action>   
 
    <!--             Heading Offset             -->
-
+<!--
    <action>
      <name>small decrease</name>
      <button>0</button>
@@ -395,8 +395,9 @@
        <wrap>1</wrap>
      </binding>
    </action>
-
+-->
 <!--            Autopilot HdgBug           -->
+<!--
    <action>
      <name>small decrease</name>
      <button>0</button>
@@ -464,8 +465,8 @@
        <wrap>1</wrap>
      </binding>
    </action>
-
-<!--		VOR 1 Radial adjust  -->
+-->
+<!--		VOR 1 Radial adjust  
    <action>
      <name>small decrease</name>
      <button>0</button>
@@ -533,8 +534,8 @@
        <wrap>1</wrap>
      </binding>
    </action>
-
-<!--		VOR 2 Radial adjust  -->
+-->
+<!--		VOR 2 Radial adjust  
    <action>
      <name>small decrease</name>
      <button>0</button>
@@ -602,7 +603,7 @@
        <wrap>1</wrap>
      </binding>
    </action>
-
+-->
 <!--		ASI Pressure Altitude adjust  -->
    <action>
      <name>small decrease</name>
@@ -671,9 +672,9 @@
        <wrap>1</wrap>
      </binding>
    </action>
-  
-  <!--             Altimeter              -->  
  
+  <!--             Altimeter              -->  
+<!--  
 <action>
   <name>decrease calibrate fine</name>
   <button>0</button>
@@ -741,7 +742,7 @@
     <wrap>false</wrap>
   </binding>
 </action>
-
+-->
 <!--		magneto switch		-->
    <action>
      <name>decrease mags</name>

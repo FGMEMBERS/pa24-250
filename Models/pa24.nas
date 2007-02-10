@@ -53,6 +53,9 @@ node.setBoolValue(0);}
  }
 }
 
+setprop("/controls[1]/fuel/switch-position", -1);
+fuel_switch();
+
 master_switch = func {
 toggle=getprop("/controls/electric/battery-switch");
 toggle=1-toggle;

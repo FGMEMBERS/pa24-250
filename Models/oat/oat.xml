@@ -34,7 +34,7 @@ properties' values.
   <layer>
    <name>base</name>
    <texture>
-    <path>Aircraft/pa24-250/Models/oat/OAT_base.rgb</path>
+    <path>Aircraft/pa24-250/Models/oat/OAT_win_base.rgb</path>
     <x1>0.0</x1>
     <y1>0.0</y1>
     <x2>1.0</x2>
@@ -211,22 +211,5 @@ properties' values.
    </transformations>
   </layer> 
  </layers>
-
- <actions>
-
-  <action>
-   <name>OAT switch</name>
-   <button>0</button>
-   <x>25</x>
-   <y>-30</y>
-   <w>12</w>
-   <h>12</h>
-   <binding>
-    <command>nasal</command>
-    <script>pa24.oat_switch()</script>
-   </binding>
-  </action>
-
- </actions>
 
 </PropertyList>
