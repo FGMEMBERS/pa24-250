@@ -319,7 +319,7 @@
 
  <model>
   <name>mags</name>
-  <path>Aircraft/Instruments-3d/mag.sw/mags.xml</path>
+  <path>Aircraft/Instruments-3d/magneto-switch/mags.xml</path>
   <offsets>
    <x-m>2.1205</x-m>
    <y-m>-0.145</y-m>
