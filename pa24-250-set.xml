@@ -94,6 +94,12 @@ a 150 lb copilot and no bagage.
    </config>
   </view>
 
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+   </config>
+  </view>
+
   <weight n="0">
     <name>Pilot</name>
     <weight-lb>200</weight-lb>
