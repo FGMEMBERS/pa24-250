@@ -50,6 +50,8 @@ init_electrical = func {
     setprop("/controls/switches/starter", 0);
     setprop("/controls/switches/strobe-lights", 0);
     setprop("/controls/switches/master-avionics", 0);
+    setprop("/controls/switches/map-lights",0);
+    setprop("/controls/switches/cabin-lights",0);
     setprop("/systems/electrical/outputs/starter[0]", 0.0);
     setprop("/engines/engine/fuel-pressure-psi", 0.0);
     setprop("/engines/engine/oil-pressure-psi", 0.0);
@@ -428,13 +430,32 @@ electrical_bus_1 = func() {
     load = 0.0;
     
     # Cabin Lights Power
-    if ( getprop("/controls/circuit-breakers/cabin-lights-pwr") ) {
+    if ( getprop("/controls/switches/cabin-lights") ) {
         setprop("/systems/electrical/outputs/cabin-lights", bus_volts);
-        load += 0.2;
     } else {
         setprop("/systems/electrical/outputs/cabin-lights", 0.0);
     }
+    if ( getprop("/systems/electrical/outputs/cabin-lights") > vcutoff)
+    {
+        setprop("/controls/lighting/cabin-lights", 1);
+        load += 0.2;
+    } else {
+        setprop("/controls/lighting/cabin-lights", 0);
+    }
 
+   # Map Lights Power
+    if ( getprop("/controls/switches/map-lights") ) {
+        setprop("/systems/electrical/outputs/map-lights", bus_volts);
+    } else {
+        setprop("/systems/electrical/outputs/map-lights", 0.0);
+    }
+    if ( getprop("/systems/electrical/outputs/map-lights") > vcutoff)
+    {
+        setprop("/controls/lighting/map-lights", 1);
+        load += 0.2;
+    } else {
+        setprop("/controls/lighting/map-lights", 0);
+    }
     # Instrument Power
     setprop("/systems/electrical/outputs/instr-ignition-switch", bus_volts);
     if (bus_volts > vcutoff) {

@@ -363,8 +363,8 @@ a 150 lb copilot and no bagage.
   </binding>
   </key> 
 
-  <key n="32">
-  <name>space bar</name>
+  <key n="115">
+  <name>s</name>
   <desc>Toggle Starter Switch</desc>
    <binding>
      <command>property-assign</command>

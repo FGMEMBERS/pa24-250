@@ -98,7 +98,8 @@
   </propeller>
   
 
-<gear x="-1.1090" y="0" z="-1.2318" compression=".15" spring=".6" retract-time="5"> <!-- nose -->
+<gear x="-1.1090" y="0" z="-1.2318" compression=".15" sfric="0.9" dfric="0.8" 
+  spring=".6" retract-time="5"> <!-- nose -->
   <control-input axis="/controls/flight/rudder" control="STEER"
                  src0="-1.0" src1="1.0"
                  dst0="-0.1" dst1="0.1"/>
@@ -108,7 +109,8 @@
 </gear>
 
 
-<gear x="-3.076" y="1.51" z="-1.165" compression=".2" spring=".6" retract-time="5"> <!--  -1.17 left main -->
+<gear x="-3.076" y="1.51" z="-1.165" compression=".2" sfric="0.9" dfric="0.8"
+  spring=".6" retract-time="5"> <!--  -1.17 left main -->
   <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -116,7 +118,8 @@
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
 </gear>
 
-<gear x="-3.076" y="-1.51" z="-1.165" compression=".2" spring=".6" retract-time="5"> <!--  -1.17 right main -->
+<gear x="-3.076" y="-1.51" z="-1.165" compression=".2" sfric="0.9" dfric="0.8" 
+  spring=".6" retract-time="5"> <!--  -1.17 right main -->
   <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
   <control-input axis="/controls/gear/gear-down" control="EXTEND"/>

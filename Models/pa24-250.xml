@@ -337,7 +337,15 @@
   </offsets>
  </model>
 
-
+ <model>
+  <name>CeilingPanel</name>
+  <path>Aircraft/pa24-250/Models/ceiling_panel/ceiling_panel.xml</path>
+  <offsets>
+   <x-m>2.44</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.663</z-m>
+  </offsets>
+ </model>
 
  <model>
   <name>PropDisc</name>
@@ -475,7 +483,7 @@
  <animation>
   <type>rotate</type>
   <object-name>MasterToggle</object-name>
-  <property>/controls/electric/battery-switch</property>
+  <property>controls/electric/battery-switch</property>
   <offset>40</offset>
   <factor>40</factor>
   <axis>
@@ -493,7 +501,7 @@
  <animation>
   <type>rotate</type>
   <object-name>FuelPumpToggle</object-name>
-  <property>/controls/engines/engine/fuel-pump</property>
+  <property>controls/engines/engine/fuel-pump</property>
   <offset>40</offset>
   <factor>40</factor>
   <axis>
@@ -511,7 +519,7 @@
    <animation>
   <type>rotate</type>
   <object-name>NavLightToggle</object-name>
-  <property>/controls/switches/nav-lights</property>
+  <property>controls/switches/nav-lights</property>
   <factor>100</factor>
   <axis>
    <x>-1.0</x>
@@ -528,7 +536,7 @@
   <animation>
   <type>rotate</type>
   <object-name>LdgLtLeftToggle</object-name>
-  <property>/controls/switches/landing-light</property>
+  <property>controls/switches/landing-light</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -546,7 +554,7 @@
   <type>select</type>
   <object-name>LdgLt</object-name>
   <condition>
-   <property>/controls/lighting/landing-lights</property>
+   <property>controls/lighting/landing-lights</property>
   </condition>
  </animation>
 
@@ -554,7 +562,7 @@
   <animation>
   <type>rotate</type>
   <object-name>LdgLtRightToggle</object-name>
-  <property>/controls/switches/landing-light</property>
+  <property>controls/switches/landing-light</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -571,7 +579,7 @@
   <animation>
   <type>rotate</type>
   <object-name>TurnBankToggle</object-name>
-  <property>/instrumentation/turn-indicator/serviceable</property>
+  <property>instrumentation/turn-indicator/serviceable</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -588,7 +596,7 @@
   <animation>
   <type>rotate</type>
   <object-name>RotBeaconToggle</object-name>
-  <property>/controls/switches/flashing-beacon</property>
+  <property>controls/switches/flashing-beacon</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -605,7 +613,7 @@
  <animation>
   <type>rotate</type>
   <object-name>PitotHeatToggle</object-name>
-  <property>/controls/anti-ice/pitot-heat</property>
+  <property>controls/anti-ice/pitot-heat</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -622,7 +630,7 @@
  <animation>
    <type>rotate</type>
    <object-name>StrobeToggle</object-name>
-   <property>/controls/switches/strobe-lights</property>
+   <property>controls/switches/strobe-lights</property>
    <factor>40</factor>
    <axis>
      <x>0.0</x>
@@ -639,7 +647,7 @@
  <animation>
    <type>rotate</type>
    <object-name>AvionicsMasterToggle</object-name>
-   <property>/controls/switches/master-avionics</property>
+   <property>controls/switches/master-avionics</property>
    <factor>40</factor>
    <axis>
      <x>0.0</x>
@@ -721,7 +729,7 @@
  <animation>
   <type>spin</type>
   <object-name>Propeller</object-name>
-  <property>/engines/engine[0]/rpm</property>
+  <property>engines/engine[0]/rpm</property>
   <factor>-1</factor>
   <center>
    <x-m>0</x-m>
@@ -762,7 +770,7 @@
  <animation>
   <type>translate</type>
   <object-name>PropCont</object-name>
-  <property>/controls/engines/engine[0]/propeller-pitch</property>
+  <property>controls/engines/engine[0]/propeller-pitch</property>
   <factor>-0.07</factor>
   <axis>
    <x>1.0</x>
@@ -774,7 +782,7 @@
  <animation>
   <type>translate</type>
   <object-name>CarbHeat</object-name>
-  <property>/controls/anti-ice/engine/carb-heat[0]</property>
+  <property>controls/anti-ice/engine/carb-heat[0]</property>
   <factor>0.04</factor>
   <axis>
    <x>1.0</x>
@@ -786,7 +794,7 @@
  <animation>
   <type>translate</type>
   <object-name>ParkBrake</object-name>
-  <property>/controls/gear/brake-parking</property>
+  <property>controls/gear/brake-parking</property>
   <factor>0.03</factor>
   <axis>
    <x>1.0</x>
@@ -810,7 +818,7 @@
  <animation>
   <type>rotate</type>
   <object-name>GearLever</object-name>
-  <property>/controls/gear/gear-down[0]</property>
+  <property>controls/gear/gear-down[0]</property>
   <factor>60</factor>
   <offset-deg>-60</offset-deg>
   <center>
@@ -828,7 +836,7 @@
  <animation>
   <type>rotate</type>
   <object-name>LeftAileron</object-name>
-  <property>/surface-positions/left-aileron-pos-norm</property>
+  <property>surface-positions/left-aileron-pos-norm</property>
   <factor>20</factor>
   <center>
    <x-m>3.23</x-m>
@@ -845,7 +853,7 @@
  <animation>
   <type>rotate</type>
   <object-name>RightAileron</object-name>
-  <property>/surface-positions/right-aileron-pos-norm</property>
+  <property>surface-positions/right-aileron-pos-norm</property>
   <factor>20</factor>
   <offset-deg>1.5</offset-deg>
   <center>
@@ -863,7 +871,7 @@
  <animation>
   <type>rotate</type>
   <object-name>LeftFlap</object-name>
-  <property>/surface-positions/flap-pos-norm</property>
+  <property>surface-positions/flap-pos-norm</property>
   <factor>32</factor>
   <center>
    <x-m>3.64</x-m>
@@ -880,7 +888,7 @@
  <animation>
   <type>rotate</type>
   <object-name>RightFlap</object-name>
-  <property>/surface-positions/flap-pos-norm</property>
+  <property>surface-positions/flap-pos-norm</property>
   <factor>32</factor>
   <center>
    <x-m>3.64</x-m>
@@ -898,7 +906,7 @@
   <type>rotate</type>
   <object-name>Stabilator</object-name>
   <object-name>AntiServoTab</object-name>
-  <property>/surface-positions/elevator-pos-norm</property>
+  <property>surface-positions/elevator-pos-norm</property>
   <factor>15</factor>
   <center>
    <x-m>6.96</x-m>
@@ -915,7 +923,7 @@
  <animation>
   <type>rotate</type>
   <object-name>AntiServoTab</object-name>
-  <property>/surface-positions/elevator-pos-norm</property>
+  <property>surface-positions/elevator-pos-norm</property>
   <factor>30</factor>
   <center>
    <x-m>7.51</x-m>
@@ -932,7 +940,7 @@
  <animation>
   <type>rotate</type>
   <object-name>AntiServoTab</object-name>
-  <property>/controls/flight/elevator-trim</property>
+  <property>controls/flight/elevator-trim</property>
   <factor>-30</factor>
   <center>
    <x-m>7.51</x-m>
@@ -974,7 +982,7 @@
    <object-name>GearGreen-e</object-name>
     <condition>
      <and>
-       <property>/controls/electric/battery-switch</property>
+       <property>controls/electric/battery-switch</property>
        <equals>
         <property>gear/gear[0]/position-norm</property>
         <value>1</value>
@@ -1019,7 +1027,7 @@
    <object-name>GearYellow-e</object-name>
     <condition>
      <and>
-      <property>/controls/electric/battery-switch</property>      
+      <property>controls/electric/battery-switch</property>      
       <equals>
        <property>gear/gear[0]/position-norm</property>
        <value>0</value>
@@ -1043,7 +1051,7 @@
   <object-name>NoseWheelStrut</object-name>
   <object-name>sczors-top</object-name>
   <object-name>sczors-bot</object-name>
-  <property>/gear/gear[0]/turn-pos-norm</property>
+  <property>gear/gear[0]/turn-pos-norm</property>
   <factor>-17.5</factor>
   <center>
    <x-m>1.2</x-m>
@@ -1064,7 +1072,7 @@
   <object-name>NoseWheelStrut</object-name>
   <object-name>sczors-top</object-name>
   <object-name>sczors-bot</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>gear/gear[0]/position-norm</property>
   <factor>120</factor>
   <offset-deg>-120</offset-deg>
   <min-deg>-105</min-deg>
@@ -1086,7 +1094,7 @@
   <object-name>NoseWheel</object-name>
   <object-name>NoseWheelStrut</object-name>
   <object-name>sczors-bot</object-name>
-  <property>/gear/gear[0]/compression-m</property>
+  <property>gear/gear[0]/compression-m</property>
   <factor>1.0</factor>
   <axis>
    <x>0.1774</x>
@@ -1098,7 +1106,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sczors-top</object-name>
-  <property>/gear/gear[0]/theta0</property>
+  <property>gear/gear[0]/theta0</property>
   <factor>57.3</factor>
   <center>
    <x-m>1.149944</x-m>
@@ -1115,7 +1123,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sczors-bot</object-name>
-  <property>/gear/gear[0]/theta0</property>
+  <property>gear/gear[0]/theta0</property>
   <factor>-57.3</factor>
   <center>
    <x-m>1.11746</x-m>
@@ -1132,7 +1140,7 @@
  <animation>
   <type>rotate</type>
   <object-name>NoseWheelDoor</object-name>
-  <property>/gear/gear[0]/position-norm</property>
+  <property>gear/gear[0]/position-norm</property>
   <factor>360</factor>
   <offset-deg>-90</offset-deg>
   <min-deg>-87</min-deg>
@@ -1156,7 +1164,7 @@
   <object-name>LeftCylinder</object-name>
   <object-name>sczors-left-top</object-name>
   <object-name>sczors-left-bottom</object-name>
-  <property>/gear/gear[1]/position-norm</property>
+  <property>gear/gear[1]/position-norm</property>
   <factor>-88.5</factor>
   <offset-deg>88.5</offset-deg>
   <center>
@@ -1176,7 +1184,7 @@
   <object-name>LeftWheel</object-name>
   <object-name>LeftFork</object-name>
   <object-name>sczors-left-bottom</object-name>
-  <property>/gear/gear[1]/compression-m</property>
+  <property>gear/gear[1]/compression-m</property>
   <factor>1.0</factor>
   <axis>
    <x>0.0476</x>
@@ -1188,7 +1196,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sczors-left-top</object-name>
-  <property>/gear/gear[1]/theta1</property>
+  <property>gear/gear[1]/theta1</property>
   <factor>-57.3</factor>
   <center>
    <x-m>3.135242</x-m>
@@ -1205,7 +1213,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sczors-left-bottom</object-name>
-  <property>/gear/gear[1]/theta1</property>
+  <property>gear/gear[1]/theta1</property>
   <factor>57.3</factor>
   <center>
    <x-m>3.119376</x-m>
@@ -1222,7 +1230,7 @@
  <animation>
   <type>rotate</type>
   <object-name>LeftGearDoor</object-name>
-  <property>/gear/gear[1]/position-norm</property>
+  <property>gear/gear[1]/position-norm</property>
   <factor>-110</factor>
   <offset-deg>105</offset-deg>
   <center>
@@ -1244,7 +1252,7 @@
   <object-name>RightCylinder</object-name>
   <object-name>sczors-right-top</object-name>
   <object-name>sczors-right-bottom</object-name>
-<property>/gear/gear[2]/position-norm</property>
+<property>gear/gear[2]/position-norm</property>
   <factor>88.5</factor>
   <offset-deg>-88.5</offset-deg>
   <center>
@@ -1264,7 +1272,7 @@
   <object-name>RightWheel</object-name>
   <object-name>RightFork</object-name>
   <object-name>sczors-right-bottom</object-name>
-  <property>/gear/gear[2]/compression-m</property>
+  <property>gear/gear[2]/compression-m</property>
   <factor>1.0</factor>
   <axis>
    <x>0.0476</x>
@@ -1276,7 +1284,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sczors-right-top</object-name>
-  <property>/gear/gear[2]/theta2</property>
+  <property>gear/gear[2]/theta2</property>
   <factor>-57.3</factor>
   <center>
    <x-m>3.135242</x-m>
@@ -1293,7 +1301,7 @@
  <animation>
   <type>rotate</type>
   <object-name>sczors-right-bottom</object-name>
-  <property>/gear/gear[2]/theta2</property>
+  <property>gear/gear[2]/theta2</property>
   <factor>57.3</factor>
   <center>
    <x-m>3.119376</x-m>
@@ -1310,7 +1318,7 @@
  <animation>
   <type>rotate</type>
   <object-name>RightGearDoor</object-name>
-  <property>/gear/gear[2]/position-norm</property>
+  <property>gear/gear[2]/position-norm</property>
   <factor>110</factor>
   <offset-deg>-105</offset-deg>
   <center>
@@ -1329,7 +1337,7 @@
   <type>rotate</type>
   <object-name>Rudder</object-name>
   <object-name>counterweights</object-name>
-  <property>/surface-positions/rudder-pos-norm</property>
+  <property>surface-positions/rudder-pos-norm</property>
   <factor>17.5</factor>
   <center>
    <x-m>7.07</x-m>
@@ -1358,7 +1366,7 @@
  <animation>
   <type>rotate</type>
   <object-name>BrakePedal-L</object-name>
-  <property>/controls/gear/brake-left[0]</property>
+  <property>controls/gear/brake-left[0]</property>
   <factor>-20</factor>
   <center>
    <x-m>1.88</x-m>
@@ -1388,7 +1396,7 @@
  <animation>
   <type>rotate</type>
   <object-name>BrakePedal-R</object-name>
-  <property>/controls/gear/brake-right[0]</property>
+  <property>controls/gear/brake-right[0]</property>
   <factor>-20</factor>
   <center>
    <x-m>1.88</x-m>

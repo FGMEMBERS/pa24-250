@@ -122,6 +122,18 @@ toggle=1-toggle;
 setprop("/controls/engines/engine/primer-pump",toggle);
 }
 
+map_light_switch = func {
+toggle=getprop("/controls/switches/map-lights");
+toggle=1-toggle;
+setprop("/controls/switches/map-lights",toggle);
+}
+
+cabin_light_switch = func {
+toggle=getprop("/controls/switches/cabin-lights");
+toggle=1-toggle;
+setprop("/controls/switches/cabin-lights",toggle);
+}
+
 oat_switch = func {
 val = getprop("/controls/switches/oat-switch");
       test = 1 + val;

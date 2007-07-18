@@ -327,13 +327,13 @@
    </action>   
 
    <!--             Heading Offset             -->
-<!--
+
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-305.4</x>
-     <y>216</y>
-     <w>5</w>
+     <x>-308.4</x>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -348,9 +348,9 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-305.4</x>
-     <y>216</y>
-     <w>5</w>
+     <x>-308.4</x>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -366,8 +366,8 @@
      <name>small increase</name>
      <button>0</button>
      <x>-300.4</x>
-     <y>216</y>
-     <w>5</w>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -383,8 +383,8 @@
      <name>large increase</name>
      <button>1</button>
      <x>-300.4</x>
-     <y>216</y>
-     <w>5</w>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -395,15 +395,15 @@
        <wrap>1</wrap>
      </binding>
    </action>
--->
+
 <!--            Autopilot HdgBug           -->
-<!--
+
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-249.0</x>
-     <y>216</y>
-     <w>5</w>
+     <x>-252.0</x>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -418,9 +418,9 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-249.0</x>
-     <y>216</y>
-     <w>5</w>
+     <x>-252.0</x>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -436,8 +436,8 @@
      <name>small increase</name>
      <button>0</button>
      <x>-244.0</x>
-     <y>216</y>
-     <w>5</w>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -453,8 +453,8 @@
      <name>large increase</name>
      <button>1</button>
      <x>-244.0</x>
-     <y>216</y>
-     <w>5</w>
+     <y>219</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -465,14 +465,14 @@
        <wrap>1</wrap>
      </binding>
    </action>
--->
-<!--		VOR 1 Radial adjust  
+
+<!--		VOR 1 Radial adjust           -->  
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-50.95</x>
+     <x>-48.95</x>
      <y>247</y>
-     <w>10</w>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -487,9 +487,9 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-50.95</x>
+     <x>-48.95</x>
      <y>247</y>
-     <w>10</w>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -506,7 +506,7 @@
      <button>0</button>
      <x>-40.95</x>
      <y>247</y>
-     <w>10</w>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -523,7 +523,7 @@
      <button>1</button>
      <x>-40.95</x>
      <y>247</y>
-     <w>10</w>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -534,14 +534,14 @@
        <wrap>1</wrap>
      </binding>
    </action>
--->
-<!--		VOR 2 Radial adjust  
+
+<!--		VOR 2 Radial adjust           -->  
    <action>
      <name>small decrease</name>
      <button>0</button>
-     <x>-50.95</x>
-     <y>118</y>
-     <w>10</w>
+     <x>-48.95</x>
+     <y>120</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -556,9 +556,9 @@
    <action>
      <name>large decrease</name>
      <button>1</button>
-     <x>-50.95</x>
-     <y>118</y>
-     <w>10</w>
+     <x>-48.95</x>
+     <y>120</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -574,8 +574,8 @@
      <name>small increase</name>
      <button>0</button>
      <x>-40.95</x>
-     <y>118</y>
-     <w>10</w>
+     <y>120</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -591,8 +591,8 @@
      <name>large increase</name>
      <button>1</button>
      <x>-40.95</x>
-     <y>118</y>
-     <w>10</w>
+     <y>120</y>
+     <w>8</w>
      <h>20</h>
      <binding>
        <command>property-adjust</command>
@@ -603,7 +603,7 @@
        <wrap>1</wrap>
      </binding>
    </action>
--->
+
 <!--		ASI Pressure Altitude adjust  -->
    <action>
      <name>small decrease</name>
@@ -674,12 +674,12 @@
    </action>
  
   <!--             Altimeter              -->  
-<!--  
+  
 <action>
   <name>decrease calibrate fine</name>
   <button>0</button>
-  <x>-416.6</x>
-  <y>83.6</y>
+  <x>-415.6</x>
+  <y>85.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -695,8 +695,8 @@
 <action>
   <name>decrease calibrate coarse</name>
   <button>1</button>
-  <x>-416.6</x>
-  <y>83.6</y>
+  <x>-415.6</x>
+  <y>85.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -712,8 +712,8 @@
 <action>
   <name>increase calibrate fine</name>
   <button>0</button>
-  <x>-408.6.8</x>
-  <y>83.6</y>
+  <x>-407.6.8</x>
+  <y>85.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -729,8 +729,8 @@
 <action>
   <name>increase calibrate coarse</name>
   <button>1</button>
-  <x>-408.6</x>
-  <y>83.6</y>
+  <x>-407.6</x>
+  <y>85.6</y>
   <w>8</w>
   <h>20</h>
   <binding>
@@ -742,15 +742,15 @@
     <wrap>false</wrap>
   </binding>
 </action>
--->
-<!--		magneto switch		
+
+		magneto switch		
 
    <action>
      <name>decrease mags</name>
      <button>0</button>
-     <x>-156.5</x>
-     <y>-213</y>
-     <w>10</w>
+     <x>-156.0</x>
+     <y>-210</y>
+     <w>8</w>
      <h>40</h>
      <binding>
        <command>property-adjust</command>
@@ -764,9 +764,9 @@
    <action>
      <name>increase mags</name>
      <button>0</button>
-     <x>-146.5.0</x>
-     <y>-213</y>
-     <w>10</w>
+     <x>-147.5</x>
+     <y>-210</y>
+     <w>8</w>
      <h>40</h>
      <binding>
        <command>property-adjust</command>
@@ -776,14 +776,14 @@
        <max>3</max>
      </binding>
    </action>
--->
-<!--		Starter		
+
+		Starter		
    <action>
      <name>starter</name>
      <button>0</button>
-     <x>-136.5.0</x>
-     <y>-213</y>
-     <w>10</w>
+     <x>-138.5</x>
+     <y>-210</y>
+     <w>8</w>
      <h>40</h>
    <binding>
      <command>property-assign</command>
@@ -798,11 +798,11 @@
      </binding>
    </mod-up>
    </action>
--->
+
    <action>
     <name>Gear up</name>
     <button>0</button>
-    <x>-156.5.0</x>
+    <x>-156.5</x>
     <y>-73</y>
     <w>20</w>
     <h>40</h>
@@ -822,7 +822,7 @@
    <action>
     <name>Gear down</name>
     <button>0</button>
-    <x>-156.5.0</x>
+    <x>-156.5</x>
     <y>-113</y>
     <w>20</w>
     <h>40</h>
