@@ -217,8 +217,8 @@ properties' values.
   <action>
    <name>OAT switch</name>
    <button>0</button>
-   <x>25</x>
-   <y>-30</y>
+   <x>33</x>
+   <y>-33</y>
    <w>12</w>
    <h>12</h>
    <binding>

@@ -68,10 +68,22 @@ toggle=1-toggle;
 setprop("/controls/engines/engine/fuel-pump",toggle);
 }
 
-nav_light_switch = func {
-toggle=getprop("/controls/switches/nav-lights");
-toggle=1-toggle;
-setprop("/controls/switches/nav-lights",toggle);
+#nav_light_switch = func {
+#toggle=getprop("/controls/switches/nav-lights");
+#toggle=1-toggle;
+#setprop("/controls/switches/nav-lights",toggle);
+#}
+
+panel_light_switch = func {
+  c = arg[0];
+  factor = getprop("/controls/switches/panel-lights-factor");
+  if ( (c > 0) and ( factor > 1 )) { return; } 
+  if ( (c < 0) and ( factor < 0 )) { return; }
+  factor = c*0.01 + factor;
+  setprop("/controls/switches/panel-lights-factor",factor);
+  if (factor > 0.0001 ) { toggle = 1; }
+  else { toggle = 0; }
+  setprop("/controls/switches/nav-lights",toggle);     
 }
 
 landing_light_switch = func {

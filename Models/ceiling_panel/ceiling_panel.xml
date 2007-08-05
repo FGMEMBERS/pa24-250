@@ -9,12 +9,12 @@
   <bottom-left>
     <x-m>0.0</x-m>
     <y-m>-0.3</y-m>
-    <z-m>-0.01</z-m>
+    <z-m>0.0</z-m>
   </bottom-left>
   <bottom-right>
     <x-m>0.0</x-m>
     <y-m>0.3</y-m>
-    <z-m>-0.01</z-m>
+    <z-m>-0.0</z-m>
   </bottom-right>
   <top-left>
     <x-m>0.7</x-m>

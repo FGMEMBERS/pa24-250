@@ -13,6 +13,7 @@
   <object-name>N7764P</object-name>
   <object-name>MasterSwitch</object-name>
   <object-name>FuelPumpSwitch</object-name>
+  <object-name>NavLightToggle</object-name>
   <object-name>LdgLtLeftSwitch</object-name>
   <object-name>LdgLtRightSwitch</object-name>
   <object-name>TurnBankSwitch</object-name>
@@ -33,7 +34,6 @@
   <type>material</type>
   <object-name>MasterToggle</object-name>
   <object-name>FuelPumpToggle</object-name>
-  <object-name>NavLightToggle</object-name>
   <object-name>LdgLtLeftToggle</object-name>
   <object-name>LdgLtRightToggle</object-name>
   <object-name>TurnBankToggle</object-name>
@@ -298,12 +298,22 @@
  </model>
 
  <model>
+  <name>Transponder</name>
+  <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+  <offsets>
+   <x-m>2.1202</x-m>
+   <y-m>0.126</y-m>
+   <z-m>0.037</z-m>
+  </offsets>
+ </model>
+
+ <model>
   <name>RadioStack</name>
   <path>Aircraft/Instruments-3d/radio_stack/radio-stack.xml</path>
   <offsets>
-   <x-m>2.115</x-m>
-   <y-m>.1268</y-m>
-   <z-m>0.132</z-m>
+   <x-m>2.1202</x-m>
+   <y-m>0.126</y-m>
+   <z-m>0.135</z-m>
   </offsets>
  </model>
 
@@ -519,7 +529,7 @@
    <animation>
   <type>rotate</type>
   <object-name>NavLightToggle</object-name>
-  <property>controls/switches/nav-lights</property>
+  <property>controls/switches/panel-lights-factor</property>
   <factor>100</factor>
   <axis>
    <x>-1.0</x>

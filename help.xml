@@ -3,7 +3,7 @@
   <help>
    <title>Piper Comanche 250</title>
     <key> 
-     <name>Space</name>
+     <name>s</name>
      <desc>Start</desc>
    </key>
    <key>
@@ -73,7 +73,7 @@
       <line> 4. electric fuel pump ON ("@" toggles fuel pump switch)</line>
       <line> 5. operate primer pump three times then locked (ctrl-P cycles primer)</line>
       <line> 6. "CLEAR PROP"</line>
-      <line> 7. key to start (or space bar)</line>
+      <line> 7. key to start ("s" engages starter)</line>
       <line> 8. turn and bank ON ("%" toggles tc switch)</line>
       <line> 9. pitot heat ON if IFR ("*" toggles pitot heat switch)</line>
       <line>10. avionics master ON (")" toggles avionics master)</line>

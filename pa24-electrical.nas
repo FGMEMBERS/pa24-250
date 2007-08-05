@@ -43,6 +43,7 @@ init_electrical = func {
     setprop("/controls/engines/engine[0]/fuel-pump",0);
     setprop("/controls/switches/oat-switch", 0);
     setprop("/controls/switches/nav-lights", 0);    
+    setprop("/controls/switches/panel-lights-factor", 0);    
     setprop("/controls/switches/landing-light", 0);
     setprop("/controls/switches/flashing-beacon",0);
     setprop("/instrumentation/turn-indicator/serviceable",0);
@@ -547,13 +548,16 @@ electrical_bus_2 = func() {
     }
 
     # Instrument Lights Power controlled by nav-lights switch on pa24
+    factor = getprop("/controls/switches/panel-lights-factor" );
     if ( getprop("/controls/switches/nav-lights" ) ) {
-    setprop("/systems/electrical/outputs/instrument-lights", bus_volts);
-# Normalize factor by 1/14 = 0.071428571 for max bus_volts
-    setprop("/sim/model/material/instruments/factor", bus_volts * 0.071428571);
-} else {
-    setprop("/systems/electrical/outputs/instrument-lights", 0.0);
-    setprop("/sim/model/material/instruments/factor", 0.0);
+       setprop("/systems/electrical/outputs/instrument-lights", bus_volts);
+       # Normalize factor by 1/14 = 0.071428571 for max bus_volts
+       setprop("/sim/model/material/instruments/factor", bus_volts * 0.071428571 * factor);
+       setprop("/controls/lighting/panel-norm", bus_volts * 0.071428571 * factor);
+    } else {
+       setprop("/systems/electrical/outputs/instrument-lights", 0.0);
+       setprop("/sim/model/material/instruments/factor", 0.0);
+       setprop("/controls/lighting/panel-norm", 0.0);
     }
 
 

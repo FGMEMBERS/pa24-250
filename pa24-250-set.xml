@@ -284,10 +284,21 @@ a 150 lb copilot and no bagage.
 
   <key n="35">
   <name>#</name>
-  <desc>Toggle Nav Lights</desc>
+  <desc>Increase Panel Lights</desc>
+  <repeatable>true</repeatable>
   <binding>
    <command>nasal</command>
-   <script>pa24.nav_light_switch()</script>
+   <script>pa24.panel_light_switch(1)</script>
+  </binding>
+  </key> 
+
+  <key n="51">
+  <name>3</name>
+  <desc>Decrease Panel Lights</desc>
+  <repeatable>true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>pa24.panel_light_switch(-1)</script>
   </binding>
   </key> 
 
