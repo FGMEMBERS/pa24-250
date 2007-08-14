@@ -552,8 +552,8 @@ electrical_bus_2 = func() {
     if ( getprop("/controls/switches/nav-lights" ) ) {
        setprop("/systems/electrical/outputs/instrument-lights", bus_volts);
        # Normalize factor by 1/14 = 0.071428571 for max bus_volts
-       setprop("/sim/model/material/instruments/factor", bus_volts * 0.071428571 * factor);
-       setprop("/controls/lighting/panel-norm", bus_volts * 0.071428571 * factor);
+       setprop("/sim/model/material/instruments/factor", bus_volts * 0.071428571 * (1.0 - factor));
+       setprop("/controls/lighting/panel-norm", bus_volts * 0.071428571 * (1.0 - factor));
     } else {
        setprop("/systems/electrical/outputs/instrument-lights", 0.0);
        setprop("/sim/model/material/instruments/factor", 0.0);
