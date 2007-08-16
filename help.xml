@@ -20,7 +20,11 @@
    </key>
    <key>
     <name>#</name>
-    <desc>toggle nav lights</desc>
+    <desc>turn on nav lights; turn on and/or dim panel lights</desc>
+   </key>
+   <key>
+    <name>3</name>
+    <desc>increase and/or turn off panel lights and nav lights</desc>
    </key>
    <key>
     <name>$</name>
