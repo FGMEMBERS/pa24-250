@@ -11,7 +11,7 @@ a 150 lb copilot and no bagage.
 
  <sim include="help.xml">
 
-  <description>Piper Comanche 250 (1962 model)</description>
+  <description>Piper Comanche 250 with Century IIB Autopilot</description>
   <author>Dave Perry</author>
   <status>early-production</status>
 
@@ -27,8 +27,8 @@ a 150 lb copilot and no bagage.
 
   <systems>
    <autopilot>
-    <path>Aircraft/pa24-250/Systems/CENTURYIII.xml</path>
-   </autopilot>
+    <path>Aircraft/pa24-250/Systems/CENTURYIIB.xml</path>
+   </autopilot> -->
    <electrical>
     <path></path>
    </electrical>
@@ -44,7 +44,7 @@ a 150 lb copilot and no bagage.
   <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
 
   <model>
-   <path archive="y">Aircraft/pa24-250/Models/pa24-250.xml</path>
+   <path archive="y">Aircraft/pa24-250/Models/pa24-250-CIIB.xml</path>
    <hide-yoke>false</hide-yoke>
   </model>
 
@@ -111,13 +111,6 @@ a 150 lb copilot and no bagage.
                   <binding>
                       <command>property-toggle</command>
                       <property>/sim/model/hide-yoke</property>
-                  </binding>
-              </item>
-              <item>
-                  <label>Enable/Disable autotrim</label>
-                  <binding>
-                      <command>property-toggle</command>
-                      <property>/sim/model/enable-auto-trim</property>
                   </binding>
               </item>
           </menu>
@@ -425,12 +418,12 @@ a 150 lb copilot and no bagage.
     <file>Aircraft/pa24-250/Models/pa24.nas</file>
     <file>Aircraft/pa24-250/pa24-electrical.nas</file>
   </pa24>
-  <century3>
-    <file>Aircraft/Generic/century3.nas</file>
-  </century3>
+  <CenturyIIB>
+    <file>Aircraft/Generic/century2b.nas</file>
+  </CenturyIIB>
 
 </nasal>
 
 </PropertyList>
 
-<!-- end of pa24-250-set.xml -->
+<!-- end of pa24-250-CIIB-set.xml -->

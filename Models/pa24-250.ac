@@ -44,13 +44,155 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 1 1 1  shi 128 
 OBJECT world
 kids 45
 OBJECT group
+name "PlacardGroup"
+loc 1.77122 0.133363 -0.15618
+kids 6
+OBJECT poly
+name "StallWarningPlacard"
+loc 0.351686 1.28597e-05 0.0566272
+texture "placards.rgb"
+crease 45.000000
+numvert 4
+0.00283217 0.0809643 0.336742
+0.00283217 0.0809643 0.404551
+0.0032599 0.093202 0.404551
+0.0032599 0.093202 0.336742
+numsurf 1
+SURF 0x20
+mat 7
+refs 4
+3 0.463536 0.509722
+2 0.225255 0.509722
+1 0.225255 0.4648
+0 0.463536 0.4648
+kids 0
+OBJECT poly
+name "N7764P"
+loc 0.356597 0.211097 0.233806
+texture "placards.rgb"
+crease 45.000000
+numvert 4
+0.00015831 0.0120945 -0.029469
+0.00015831 0.0120945 0.029469
+-0.00015831 -0.0120946 0.029469
+-0.00015831 -0.0120946 -0.029469
+numsurf 1
+SURF 0x20
+mat 25
+refs 4
+0 0.883596 0.965626
+1 0.580637 0.965626
+2 0.580637 0.839337
+3 0.883596 0.839337
+kids 0
+OBJECT poly
+name "ParkBrakePlacard"
+loc 0.351686 -0.319916 0.123689
+texture "placards.rgb"
+crease 45.000000
+numvert 4
+0.0032599 0.249089 0.336742
+0.0032599 0.249089 0.404551
+0.00283217 0.216383 0.404551
+0.00283217 0.216383 0.336742
+numsurf 1
+SURF 0x20
+mat 7
+refs 4
+0 0.469175 0.724014
+1 0.229281 0.724014
+2 0.229281 0.596327
+3 0.469175 0.596327
+kids 0
+OBJECT poly
+name "TakeOffPlacard"
+loc -1.76728 0.428523 -0.640781
+texture "placards.rgb"
+crease 45.000000
+numvert 4
+2.12322 -0.274651 0.843479
+2.12322 -0.274651 0.898405
+2.12239 -0.338217 0.898405
+2.12239 -0.338217 0.843479
+numsurf 2
+SURF 0x20
+mat 25
+refs 3
+2 0.639636 0.0935543
+0 0.874839 0.338204
+1 0.639636 0.338204
+SURF 0x20
+mat 25
+refs 3
+0 0.874839 0.338204
+2 0.639636 0.0935543
+3 0.874839 0.0935543
+kids 0
+OBJECT poly
+name "LandingPlacard"
+loc 0.356232 -0.158567 0.235248
+texture "placards.rgb"
+crease 45.000000
+numvert 6
+-0.000705957 0.15764 0.0306472
+-0.0012424 0.116713 0.0306472
+-0.0012424 0.116713 0.0932703
+-0.000705957 0.15764 0.0932703
+-0.00097394 0.137177 0.0932703
+-0.00097394 0.137177 0.0306472
+numsurf 4
+SURF 0x0
+mat 25
+refs 3
+4 0.620509 0.644083
+0 0.839716 0.721231
+3 0.620509 0.721231
+SURF 0x0
+mat 25
+refs 3
+0 0.839716 0.721231
+4 0.620509 0.644083
+5 0.839716 0.644083
+SURF 0x0
+mat 25
+refs 3
+2 0.620509 0.566935
+5 0.839716 0.644083
+4 0.620509 0.644083
+SURF 0x0
+mat 25
+refs 3
+5 0.839716 0.644083
+2 0.620509 0.566935
+1 0.839716 0.566935
+kids 0
+OBJECT poly
+name "gear-speed"
+loc 0.351084 -0.161148 -0.00859024
+texture "placards.rgb"
+crease 45.000000
+numvert 4
+0.00128961 0.0984257 0.344746
+0.00128961 0.0984257 0.394218
+0.000890017 0.0679564 0.394218
+0.000890017 0.0679564 0.344746
+numsurf 1
+SURF 0x20
+mat 7
+refs 4
+0 0.191967 0.985813
+1 0.0103888 0.985813
+2 0.0103888 0.880256
+3 0.191967 0.880256
+kids 0
+OBJECT group
 name "PilotGroup"
 loc 2.69197 0.136972 0.245103
 kids 7
 OBJECT poly
 name "CPT-Pilot-Head"
 loc 0.0996425 0.291048 0.0467881
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/face.rgb"
+texture "face.rgb"
 crease 121.000000
 numvert 213
 0.0315199 0.0248981 -0.0697338
@@ -7834,7 +7976,7 @@ kids 0
 OBJECT poly
 name "CPT-Helmet"
 loc 4.4612 -0.047091 0.0457871
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/face.rgb"
+texture "face.rgb"
 crease 66.000000
 numvert 35
 -4.36428 0.488044 0
@@ -10467,7 +10609,7 @@ kids 0
 OBJECT poly
 name "LeftFrontSeat"
 loc -2.47231 -0.056733 -0.205265
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/seats.rgb"
+texture "seats.rgb"
 crease 45.000000
 numvert 59
 2.69559 0.243576 0.0819399
@@ -15134,7 +15276,7 @@ kids 5
 OBJECT poly
 name "RightAileron"
 loc -0.546372 -0.0284188 -0.103101
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/wing2.rgb"
+texture "wing2.rgb"
 crease 45.000000
 numvert 8
 2.92441 0.389317 -4.67175
@@ -15222,7 +15364,7 @@ kids 0
 OBJECT poly
 name "LeftFlap"
 loc -0.54608 -0.0258058 -0.106026
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/wing2.rgb"
+texture "wing2.rgb"
 crease 45.000000
 numvert 12
 3.29137 0.187724 3.74705
@@ -15332,7 +15474,7 @@ kids 0
 OBJECT poly
 name "wing"
 loc 2.18491 0.108449 0.418259
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/wing2.rgb"
+texture "wing2.rgb"
 crease 70.000000
 numvert 279
 -0.074533 -0.225022 1.44078
@@ -17272,7 +17414,7 @@ kids 0
 OBJECT poly
 name "RightFlap"
 loc -0.546082 -0.0258058 -0.106031
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/wing2.rgb"
+texture "wing2.rgb"
 crease 45.000000
 numvert 12
 3.29137 0.187724 -2.69846
@@ -17382,7 +17524,7 @@ kids 0
 OBJECT poly
 name "LeftAileron"
 loc -0.546372 -0.0284188 -0.103101
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/wing2.rgb"
+texture "wing2.rgb"
 crease 45.000000
 numvert 8
 2.92441 0.389317 5.71449
@@ -17528,129 +17670,6 @@ refs 4
 13 0 0
 14 0 0
 15 0 0
-kids 0
-OBJECT group
-name "PlacardGroup"
-loc 1.70088 0.13258 -0.168073
-kids 5
-OBJECT poly
-name "gear-speed"
-loc 0.421427 -0.160365 0.0033025
-texture "placards.rgb"
-crease 45.000000
-numvert 4
-0.00128961 0.0984257 0.344746
-0.00128961 0.0984257 0.394218
-0.000890017 0.0679564 0.394218
-0.000890017 0.0679564 0.344746
-numsurf 1
-SURF 0x20
-mat 7
-refs 4
-0 0.191967 0.985813
-1 0.0103888 0.985813
-2 0.0103888 0.880256
-3 0.191967 0.880256
-kids 0
-OBJECT poly
-name "LandingPlacard"
-loc 0.426575 -0.157784 0.247141
-texture "placards.rgb"
-crease 45.000000
-numvert 6
--0.000705957 0.15764 0.0306472
--0.0012424 0.116713 0.0306472
--0.0012424 0.116713 0.0932703
--0.000705957 0.15764 0.0932703
--0.00097394 0.137177 0.0932703
--0.00097394 0.137177 0.0306472
-numsurf 4
-SURF 0x0
-mat 25
-refs 3
-4 0.620509 0.644083
-0 0.839716 0.721231
-3 0.620509 0.721231
-SURF 0x0
-mat 25
-refs 3
-0 0.839716 0.721231
-4 0.620509 0.644083
-5 0.839716 0.644083
-SURF 0x0
-mat 25
-refs 3
-2 0.620509 0.566935
-5 0.839716 0.644083
-4 0.620509 0.644083
-SURF 0x0
-mat 25
-refs 3
-5 0.839716 0.644083
-2 0.620509 0.566935
-1 0.839716 0.566935
-kids 0
-OBJECT poly
-name "TakeOffPlacard"
-loc -1.69694 0.429306 -0.628888
-texture "placards.rgb"
-crease 45.000000
-numvert 4
-2.12322 -0.274651 0.843479
-2.12322 -0.274651 0.898405
-2.12239 -0.338217 0.898405
-2.12239 -0.338217 0.843479
-numsurf 2
-SURF 0x20
-mat 25
-refs 3
-2 0.639636 0.0935543
-0 0.874839 0.338204
-1 0.639636 0.338204
-SURF 0x20
-mat 25
-refs 3
-0 0.874839 0.338204
-2 0.639636 0.0935543
-3 0.874839 0.0935543
-kids 0
-OBJECT poly
-name "ParkBrakePlacard"
-loc 0.422029 -0.319133 0.135582
-texture "placards.rgb"
-crease 45.000000
-numvert 4
-0.0032599 0.249089 0.336742
-0.0032599 0.249089 0.404551
-0.00283217 0.216383 0.404551
-0.00283217 0.216383 0.336742
-numsurf 1
-SURF 0x20
-mat 7
-refs 4
-0 0.469175 0.724014
-1 0.229281 0.724014
-2 0.229281 0.596327
-3 0.469175 0.596327
-kids 0
-OBJECT poly
-name "N7764P"
-loc 0.42694 0.21188 0.245699
-texture "placards.rgb"
-crease 45.000000
-numvert 4
-0.00015831 0.0120945 -0.029469
-0.00015831 0.0120945 0.029469
--0.00015831 -0.0120946 0.029469
--0.00015831 -0.0120946 -0.029469
-numsurf 1
-SURF 0x20
-mat 25
-refs 4
-0 0.883596 0.965626
-1 0.580637 0.965626
-2 0.580637 0.839337
-3 0.883596 0.839337
 kids 0
 OBJECT poly
 name "ParkBrake"
@@ -19184,7 +19203,7 @@ kids 9
 OBJECT poly
 name "FuelPumpSwitch"
 loc -0.000320435 4.20213e-06 0.190661
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.12956 -0.22347 -0.389871
@@ -19339,7 +19358,7 @@ kids 0
 OBJECT poly
 name "StrobeSwitch"
 loc 0.000169516 -2.22027e-06 -0.391102
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.13004 -0.223464 -0.397191
@@ -19494,7 +19513,7 @@ kids 0
 OBJECT poly
 name "AvionicsMasterSwitch"
 loc 0.000169516 -2.22027e-06 -0.427117
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/avionics.rgb"
+texture "avionics.rgb"
 crease 45.000000
 numvert 28
 -1.12764 -0.192632 -0.412615
@@ -19649,7 +19668,7 @@ kids 0
 OBJECT poly
 name "PitotHeatSwitch"
 loc -0.000141144 1.81794e-06 0.0133638
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.12764 -0.192632 -0.412615
@@ -19804,7 +19823,7 @@ kids 0
 OBJECT poly
 name "RotBeaconSwitch"
 loc 0.000139475 -1.84774e-06 0.0468638
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.13004 -0.223464 -0.397191
@@ -19959,7 +19978,7 @@ kids 0
 OBJECT poly
 name "TurnBankSwitch"
 loc 0.000139475 -1.84774e-06 0.0821818
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.12764 -0.192632 -0.412615
@@ -20114,7 +20133,7 @@ kids 0
 OBJECT poly
 name "LdgLtRightSwitch"
 loc 0.000139475 -1.84774e-06 0.115401
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.13004 -0.223464 -0.397191
@@ -20269,7 +20288,7 @@ kids 0
 OBJECT poly
 name "LdgLtLeftSwitch"
 loc 1.93119e-05 -2.5332e-07 0.148441
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.12764 -0.192632 -0.412615
@@ -20424,7 +20443,7 @@ kids 0
 OBJECT poly
 name "MasterSwitch"
 loc -0.000320435 4.20213e-06 0.221308
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 28
 -1.12716 -0.192639 -0.404319
@@ -20579,7 +20598,7 @@ kids 0
 OBJECT poly
 name "Glareshield"
 loc 0.1906 0.00545732 -0.0001559
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/glareshield.rgb"
+texture "glareshield.rgb"
 crease 45.000000
 numvert 85
 1.93225 0.292701 0.503901
@@ -25361,7 +25380,7 @@ kids 0
 OBJECT poly
 name "cylinders"
 loc 0.730918 -0.00231098 -0.293905
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/cylinders.rgb"
+texture "cylinders.rgb"
 crease 45.000000
 numvert 56
 0.0188206 0.00176318 0.129425
@@ -26298,7 +26317,7 @@ kids 0
 OBJECT poly
 name "cylinders"
 loc 0.95121 -0.00476657 -0.293905
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/cylinders.rgb"
+texture "cylinders.rgb"
 crease 45.000000
 numvert 56
 -0.0507231 0.0750589 0.701673
@@ -26788,7 +26807,7 @@ kids 0
 OBJECT poly
 name "cylinders"
 loc 1.1715 -0.00722216 -0.293905
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/cylinders.rgb"
+texture "cylinders.rgb"
 crease 45.000000
 numvert 56
 0.10277 0.00176318 0.129425
@@ -28460,7 +28479,7 @@ kids 4
 OBJECT poly
 name "fuselage"
 loc 2.94531 -0.0258269 0.280931
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 crease 45.000000
 numvert 380
 -1.85715 -0.653763 0.346776
@@ -31041,7 +31060,7 @@ kids 0
 OBJECT poly
 name "window-rect"
 loc -0.961962 -0.0154014 0.280418
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 crease 45.000000
 numvert 9
 3.07578 0.451703 -0.546928
@@ -31073,7 +31092,7 @@ kids 0
 OBJECT poly
 name "air-filter-intake"
 loc -1.02658 -0.442057 0.175508
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 crease 61.000000
 numvert 67
 0.624554 -0.0733401 0.049849
@@ -31518,7 +31537,7 @@ kids 0
 OBJECT poly
 name "tail-cone"
 loc -0.956763 0.483286 -0.736858
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 crease 145.000000
 numvert 70
 7.40655 -0.534913 0.979284
@@ -32012,7 +32031,7 @@ kids 0
 OBJECT poly
 name "LeftFork"
 loc -2.29861 -0.369517 -0.411934
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 90.000000
 numvert 58
 4.55095 -0.141563 1.28055
@@ -32652,7 +32671,7 @@ kids 0
 OBJECT poly
 name "LeftWheel"
 loc 0.310894 0.597476 3.3734
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/tire.rgb"
+texture "tire.rgb"
 crease 169.000000
 numvert 107
 2.1678 -1.07067 -2.45906
@@ -33577,7 +33596,7 @@ kids 0
 OBJECT poly
 name "RightFork"
 loc -2.29803 -0.370648 -0.411934
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 90.000000
 numvert 58
 4.60369 0.157032 -1.38698
@@ -34958,7 +34977,7 @@ kids 0
 OBJECT poly
 name "RightWheel"
 loc 0.310894 0.597476 3.3734
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/tire.rgb"
+texture "tire.rgb"
 crease 169.000000
 numvert 107
 2.07448 -1.06946 -5.10768
@@ -36133,7 +36152,7 @@ kids 4
 OBJECT poly
 name "NoseWheel"
 loc -0.19254 0.467045 1.81893
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/tire.rgb"
+texture "tire.rgb"
 crease 169.000000
 numvert 107
 2.07448 -1.06946 -2.45906
@@ -37235,7 +37254,7 @@ kids 0
 OBJECT poly
 name "NoseWheelStrut"
 loc -0.87308 -0.337308 -0.574921
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 90.000000
 numvert 58
 2.7035 -0.00549048 0.000314789
@@ -38614,7 +38633,7 @@ kids 2
 OBJECT poly
 name "Spinner"
 loc -0.185267 0.00441238 0.109429
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 35
 0.443676 0.125003 -0.113488
@@ -43489,7 +43508,7 @@ kids 4
 OBJECT poly
 name "AntiServoTab"
 loc 0.106514 -0.125009 0.00662076
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/wing2.rgb"
+texture "wing2.rgb"
 crease 45.000000
 numvert 27
 2.88949 -0.075011 -0.00019266
@@ -43744,7 +43763,7 @@ kids 0
 OBJECT poly
 name "Rudder"
 loc 0.238944 0.657218 0.00874495
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 texoff 0.005 0.015
 crease 45.000000
 numvert 32
@@ -44005,7 +44024,7 @@ kids 0
 OBJECT poly
 name "vertical-stab"
 loc -0.451968 -0.407198 -0.0219865
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 texoff 0.391 0.411
 crease 50.000000
 numvert 57
@@ -44677,7 +44696,7 @@ kids 0
 OBJECT poly
 name "Stabilator"
 loc 0.106514 -0.125009 0.00662076
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pa24-250-fus2.rgb"
+texture "pa24-250-fus2.rgb"
 crease 45.000000
 numvert 135
 2.09626 -0.06112 -0.000225011
@@ -46068,7 +46087,7 @@ kids 0
 OBJECT poly
 name "BrakePedal-R"
 loc -0.321573 0.0457368 0.224763
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pedal.rgb"
+texture "pedal.rgb"
 crease 45.000000
 numvert 32
 -1.11946 -0.4708 0.276754
@@ -46276,7 +46295,7 @@ kids 0
 OBJECT poly
 name "BrakePedal-L"
 loc -0.321573 0.0457368 0.224763
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/pedal.rgb"
+texture "pedal.rgb"
 crease 45.000000
 numvert 32
 -1.11926 -0.472021 0.406632
@@ -49114,7 +49133,7 @@ kids 0
 OBJECT poly
 name "FuelSel"
 loc 1.67745 -0.571044 -1.15606
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/fuel-valve.rgb"
+texture "fuel-valve.rgb"
 crease 45.000000
 numvert 4
 -2.22522 0.0291299 1.30873
@@ -49151,7 +49170,7 @@ kids 0
 OBJECT poly
 name "RightFrontSeat"
 loc -0.321576 0.0457368 0.224763
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/seats.rgb"
+texture "seats.rgb"
 crease 45.000000
 numvert 59
 -0.427708 -0.289872 -0.290725
@@ -49632,7 +49651,7 @@ kids 0
 OBJECT poly
 name "RearSeat"
 loc -0.321576 0.0457368 0.224763
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/seats.rgb"
+texture "seats.rgb"
 crease 45.000000
 numvert 66
 0.828492 0.220785 -0.0760755
@@ -50571,7 +50590,7 @@ kids 1
 OBJECT poly
 name "headliner"
 loc -0.321573 0.0457368 0.224763
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/headliner.rgb"
+texture "headliner.rgb"
 crease 45.000000
 numvert 75
 1.22632 0.23384 0.511148
@@ -51047,7 +51066,7 @@ kids 10
 OBJECT poly
 name "MasterToggle"
 loc 0.112431 -0.0200694 0.162341
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.10122 0.193072 0.421738
@@ -51176,7 +51195,7 @@ kids 0
 OBJECT poly
 name "FuelPumpToggle"
 loc 0.112292 -0.0200675 0.13184
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.12673 0.204606 0.421738
@@ -51305,7 +51324,7 @@ kids 0
 OBJECT poly
 name "LdgLtLeftToggle"
 loc 0.112631 -0.0200719 0.0896207
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.1017 0.193079 0.414418
@@ -51434,7 +51453,7 @@ kids 0
 OBJECT poly
 name "LdgLtRightToggle"
 loc 0.112751 -0.0200736 0.0565807
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.12722 0.204612 0.414418
@@ -51563,7 +51582,7 @@ kids 0
 OBJECT poly
 name "TurnBankToggle"
 loc 0.112751 -0.0200736 0.0233615
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.10171 0.193079 0.414418
@@ -51692,7 +51711,7 @@ kids 0
 OBJECT poly
 name "RotBeaconToggle"
 loc 0.112751 -0.0200736 -0.0119575
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.12722 0.204612 0.414418
@@ -51821,7 +51840,7 @@ kids 0
 OBJECT poly
 name "PitotHeatToggle"
 loc 0.112471 -0.0200699 -0.0454575
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.10171 0.193079 0.414418
@@ -51950,7 +51969,7 @@ kids 0
 OBJECT poly
 name "AvionicsMasterToggle"
 loc 0.112781 -0.0200739 -0.485938
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.10171 0.193079 0.414418
@@ -52079,7 +52098,7 @@ kids 0
 OBJECT poly
 name "StrobeToggle"
 loc 0.112921 -0.0200758 -0.450069
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/spinner.rgb"
+texture "spinner.rgb"
 crease 45.000000
 numvert 17
 -1.12722 0.204613 0.414418
@@ -52208,7 +52227,7 @@ kids 0
 OBJECT poly
 name "NavLightToggle"
 loc -1.01378 0.180649 0.528697
-texture "/usr/local/FlightGear-0.9/data/Aircraft/pa24-250/Models/switches.rgb"
+texture "switches.rgb"
 crease 45.000000
 numvert 29
 0.0053556 0.000322372 0.000392079

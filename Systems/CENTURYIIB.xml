@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<!-- pa24-250 Century IIB Autopilot Configuration -->
+<!-- Written by Dave Perry to match the performance described in -->
+<!-- CENTURY IIB AUTOPILOT FLIGHT SYSTEM - PILOT'S OPERATING HANDBOOK -->
+<!-- Each component is evaluated in the order specified.  You can make up -->
+<!-- property names to pass the result of one component on to a subsequent -->
+<!-- component. -->
+<PropertyList>
+
+  <!-- =============================================================== -->
+  <!-- Roll Axis Modes                                                 -->
+  <!-- =============================================================== -->
+
+  <!-- NAV hold Filter-->
+
+   <filter>
+    <name>heading-needle-filter</name>
+    <debug>false</debug>
+    <type>double-exponential</type>
+    <input>/instrumentation/nav/heading-needle-deflection</input>
+    <output>/autopilot/internal/filtered-heading-needle-deflection</output>
+    <filter-time>2</filter-time>
+   </filter>
+
+  <pid-controller>
+    <name>NAV hold (NAV) Mode</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/CENTURYIIB/locks/nav-hold</prop>
+      <value type="bool">true</value>
+    </enable>
+    <input>
+      <prop>/autopilot/internal/filtered-heading-needle-deflection</prop>
+    </input>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <output>
+      <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
+    </output>
+    <config>
+      <Kp>20.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.5</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>70.0</Ti>        <!-- integrator time -->
+      <Td>0.01</Td>        <!-- derivator time -->
+      <u_min>-45.0</u_min> <!-- minimum output clamp -->
+      <u_max>45.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- OMNI hold (OMNI) Mode-->
+
+  <pid-controller>
+    <name>OMNI hold (OMNI) Mode</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/CENTURYIIB/locks/omni-hold</prop>
+      <value type="bool">true</value>
+    </enable>
+    <input>
+      <prop>/instrumentation/nav/heading-needle-deflection</prop>
+    </input>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <output>
+      <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
+    </output>
+    <config>
+      <Kp>20</Kp>          <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.5</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>70</Ti>          <!-- integrator time -->
+      <Td>0.01</Td>        <!-- derivator time -->
+      <u_min>-45.0</u_min> <!-- minimum output clamp -->
+      <u_max>45.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Approach hold (APR) Mode-->
+  <pid-controller>
+    <name>Approach hold (APR) Mode</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/CENTURYIIB/locks/apr-hold</prop>
+      <value type="bool">true</value>
+    </enable>
+    <input>
+      <prop>/instrumentation/nav/heading-needle-deflection</prop>
+    </input>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <output>
+      <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
+    </output>
+    <config>
+      <Kp>6.5</Kp>         <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.5</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>15</Ti>          <!-- integrator time -->
+      <Td>0.0001</Td>      <!-- derivator time -->
+      <u_min>-45.0</u_min> <!-- minimum output clamp -->
+      <u_max>45.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Backcourse hold (REV) Mode-->
+  <pid-controller>
+    <name>Backcourse hold (REV) Mode</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/CENTURYIIB/locks/rev-hold</prop>
+      <value type="bool">true</value>
+    </enable>
+    <input>
+      <prop>/instrumentation/nav/heading-needle-deflection</prop>
+      <scale>-1.0</scale>
+    </input>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <output>
+      <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
+    </output>
+    <config>
+      <Kp>6.5</Kp>         <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.5</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>15.0</Ti>        <!-- integrator time -->
+      <Td>0.0001</Td>      <!-- derivator time -->
+      <u_min>-45.0</u_min> <!-- minimum output clamp -->
+      <u_max>45.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Heading Select (HDG) Mode -->
+
+  <pid-controller>
+    <name>Heading Select (HDG) Mode</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/CENTURYIIB/locks/hdg-hold</prop>
+      <value type="bool">true</value>
+    </enable>
+    <input>
+      <prop>/autopilot/internal/heading-bug-error-deg</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/CENTURYIIB/settings/target-roll-deg</prop>
+    </output>
+    <config>
+      <Kp>-2.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>3.0</Ti>         <!-- integrator time -->
+      <Td>0.0</Td>         <!-- derivator time -->
+      <u_min>-20.0</u_min> <!-- minimum output clamp -->
+      <u_max>20.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Wing leveler (ROL) Mode --> 
+
+  <pid-controller>
+    <name>Wing Leveler (ROL) Mode</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/CENTURYIIB/locks/roll-axis</prop>
+      <value type="bool">true</value>
+    </enable>
+    <input>
+      <prop>/instrumentation/attitude-indicator/indicated-roll-deg</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/CENTURYIIB/settings/target-roll-deg</prop>
+    </reference>
+    <output>
+      <prop>/controls/flight/aileron</prop>
+    </output>
+    <config>
+      <Kp>0.25</Kp>       <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>20</Ti>         <!-- integrator time -->
+      <Td>0.025</Td>      <!-- derivator time -->
+      <u_min>-0.5</u_min> <!-- minimum output clamp -->
+      <u_max>0.5</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+</PropertyList>

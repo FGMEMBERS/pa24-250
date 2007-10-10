@@ -29,6 +29,8 @@ nose_gear_pos_norm = 0.0;
 rudder_position = 0.0;
 C = 0.0;
 egt = 0.0;
+BSW = 0.0;
+OnGround = 0.0;
 
 ##
 # Initialize the electrical system
@@ -334,14 +336,18 @@ update_virtual_bus = func( dt ) {
 #    print("ias = ", ias, "  flaps = ", flaps);
 #  pa24-250 Vs = 65 knots,  warn at 67
     stall = 65 - 7*flaps + 20*(gforce - 1.0);
+
+    BSW = getprop("/controls/electric/battery-switch");
+    OnGround = ( getprop("/gear/gear[0]/wow") );
+
     node = props.globals.getNode("/sim/alarms/stall-warning",1);
-    if ( ias > stall ) {
+                      
+    if ( BSW and ( ias < stall ) and !OnGround ) {
+      node.setBoolValue(1);
+    } else {
       node.setBoolValue(0);
     }
-    else {
-      node.setBoolValue(1);
-    }
-
+   
 ##
 #  Simulate egt from pilot's perspective using fuel flow and rpm
 ##

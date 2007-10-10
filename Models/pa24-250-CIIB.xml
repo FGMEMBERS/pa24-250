@@ -120,7 +120,7 @@
 
  <model>
   <name>AP-Mode</name>
-  <path>Aircraft/Instruments-3d/Century-III/AutopilotMode.xml</path>
+  <path>Aircraft/Instruments-3d/Century-IIB/AutopilotMode.xml</path>
   <offsets>
    <x-m>2.119</x-m>
    <y-m>-0.48</y-m>
@@ -129,11 +129,11 @@
  </model>
 
  <model>
-  <name>Century-III</name>
-  <path>Aircraft/Instruments-3d/Century-III/CenturyIII.xml</path>
+  <name>Century-IIB</name>
+  <path>Aircraft/Instruments-3d/Century-IIB/Century-IIB.xml</path>
   <offsets>
    <x-m>2.119</x-m>
-   <y-m>-0.443</y-m>
+   <y-m>-0.468</y-m>
    <z-m>0.105</z-m> 
   </offsets>
  </model>
@@ -175,16 +175,6 @@
    <x-m>2.119</x-m>
    <y-m>-0.27</y-m>
    <z-m>0.2</z-m>
-  </offsets>
- </model>   
-
- <model>
-  <name>GlideSlopeCapture</name>
-  <path>Aircraft/pa24-250/Models/ControlLight.xml</path>
-  <offsets>
-   <x-m>2.119</x-m>
-   <y-m>-0.1595</y-m>
-   <z-m>0.34</z-m>
   </offsets>
  </model>   
 

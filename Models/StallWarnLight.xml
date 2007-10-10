@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<PropertyList>
+    <path>StallWarnLight.ac</path>
+    <animation>
+      <type>material</type>
+      <object-name>SW-light</object-name>
+      <emission>
+       <red>0.75</red>
+       <green>0.75</green>
+       <blue>0.5</blue>
+       <factor-prop>/sim/alarms/stall-warning</factor-prop>
+      </emission>
+    </animation>
+</PropertyList>

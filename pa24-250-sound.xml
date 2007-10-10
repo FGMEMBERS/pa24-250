@@ -266,19 +266,7 @@
    <mode>looped</mode>
    <path>Sounds/stall.wav</path>
    <condition>
-    <and>
-     <property>/controls/electric/battery-switch</property>
      <property>/sim/alarms/stall-warning</property>
-     <greater-than>
-       <property>/velocities/airspeed-kt</property>
-       <value>10</value>
-     </greater-than>
-     <not>
-       <property>/gear/gear[0]/wow</property>
-       <property>/gear/gear[1]/wow</property>
-       <property>/gear/gear[2]/wow</property>
-     </not>
-    </and>
    </condition>
    <volume>
     <property>/sim/current-view/internal</property>

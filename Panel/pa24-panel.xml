@@ -862,7 +862,7 @@
       <repeatable>true</repeatable>
       <interval-sec>1</interval-sec>
       <x>161</x>
-      <y>-79</y>
+      <y>-6</y>
       <w>10</w>
       <h>20</h>
       <binding>
@@ -879,7 +879,7 @@
       <button>3</button>
       <repeatable>false</repeatable>
       <x>161</x>
-      <y>-79</y>
+      <y>-6</y>
       <w>10</w>
       <h>20</h>
       <binding>
@@ -896,7 +896,7 @@
       <button>4</button>
       <repeatable>false</repeatable>
       <x>161</x>
-      <y>-79</y>
+      <y>-6</y>
       <w>10</w>
       <h>20</h>
       <binding>
@@ -915,7 +915,7 @@
       <repeatable>true</repeatable>
       <interval-sec>1</interval-sec>
       <x>171</x>
-      <y>-79</y>
+      <y>-6</y>
       <w>10</w>
       <h>20</h>
       <binding>
@@ -932,7 +932,7 @@
       <button>3</button>
       <repeatable>false</repeatable>
       <x>171</x>
-      <y>-79</y>
+      <y>-6</y>
       <w>10</w>
       <h>20</h>
       <binding>
@@ -949,7 +949,7 @@
       <button>4</button>
       <repeatable>false</repeatable>
       <x>171</x>
-      <y>-79</y>
+      <y>-6</y>
       <w>10</w>
       <h>20</h>
       <binding>
@@ -970,7 +970,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>52</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -988,7 +988,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>52</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1006,7 +1006,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>52</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1025,7 +1025,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>62</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1043,7 +1043,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>62</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1061,7 +1061,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>62</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1082,7 +1082,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>80</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1100,7 +1100,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>80</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1118,7 +1118,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>80</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1137,7 +1137,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>90</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1155,7 +1155,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>90</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1173,7 +1173,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>90</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1194,7 +1194,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>108</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1212,7 +1212,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>108</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1230,7 +1230,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>108</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1249,7 +1249,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>118</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1267,7 +1267,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>118</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
        <binding>
@@ -1285,7 +1285,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>118</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
        <binding>
@@ -1306,7 +1306,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>136</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
        <binding>
@@ -1324,7 +1324,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>136</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
        <binding>
@@ -1342,7 +1342,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>136</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
        <binding>
@@ -1361,7 +1361,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>146</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
        <binding>
@@ -1379,7 +1379,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>146</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1397,7 +1397,7 @@
       <repeatable>true</repeatable>
       <interval-sec>0.5</interval-sec>
       <x>146</x>
-      <y>-101</y>
+      <y>-28</y>
       <w>10</w>
       <h>16</h>
       <binding>
@@ -1417,7 +1417,7 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <x>42</x>
-      <y>-66</y>
+      <y>7</y>  <!-- was -66 -->
       <w>10</w>
       <h>6</h>
       <binding>
@@ -1441,7 +1441,7 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <x>168</x>
-      <y>-98</y>
+      <y>-25</y>  <!-- was -98 -->
       <w>10</w>
       <h>6</h>
       <binding>
