@@ -215,7 +215,7 @@ a 150 lb copilot and no bagage.
    <rudder-trim>0.00</rudder-trim>
   </flight>
   <switches>
-   <taxi-lights type="bool">0</taxi-lights>		<!--  avionics master off	-->
+   <master-avionics type="bool">0</master-avionics>	<!--  avionics master off	-->
   </switches>
  </controls>
  <instrumentation>
@@ -424,6 +424,7 @@ a 150 lb copilot and no bagage.
   <pa24>
     <file>Aircraft/pa24-250/Models/pa24.nas</file>
     <file>Aircraft/pa24-250/pa24-electrical.nas</file>
+    <file>Aircraft/pa24-250/action-sim.nas</file>
   </pa24>
   <century3>
     <file>Aircraft/Generic/century3.nas</file>

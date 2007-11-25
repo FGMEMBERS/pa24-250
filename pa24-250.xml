@@ -45,7 +45,7 @@
           width="1.125" taper="0.258" midpoint="0"/>
 
 <wing x="-2.97" y="0.58" z="-0.58" taper="0.538" incidence="1.05" twist="-2"
-      length="5.01" chord="1.89" sweep="0" dihedral="5" camber="0.1">
+      length="5.01" chord="1.89" sweep="0" dihedral="5" camber="0.1" idrag="1.05">
   <stall aoa="16" width="1.0" peak="1.5"/>
   <flap0 start="0" end="0.58" lift="1.4" drag="1.5"/>
   <flap1 start="0.58" end="0.98" lift="1.2" drag="1.1"/>

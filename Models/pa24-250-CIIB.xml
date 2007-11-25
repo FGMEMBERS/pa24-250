@@ -620,7 +620,7 @@
   <animation>
   <type>rotate</type>
   <object-name>TurnBankToggle</object-name>
-  <property>instrumentation/turn-indicator/serviceable</property>
+  <property>controls/switches/turn-indicator</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>

@@ -39,12 +39,12 @@
       <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
     </output>
     <config>
-      <Kp>20.0</Kp>        <!-- proportional gain -->
+      <Kp>25.0</Kp>        <!-- proportional gain -->
       <beta>1.0</beta>     <!-- input value weighing factor -->
       <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
       <gamma>0.5</gamma>   <!-- input value weighing factor for -->
                            <!-- unfiltered derivative error -->
-      <Ti>70.0</Ti>        <!-- integrator time -->
+      <Ti>60.0</Ti>        <!-- integrator time -->
       <Td>0.01</Td>        <!-- derivator time -->
       <u_min>-45.0</u_min> <!-- minimum output clamp -->
       <u_max>45.0</u_max>  <!-- maximum output clamp -->
@@ -70,12 +70,12 @@
       <prop>/autopilot/CENTURYIIB/settings/target-intercept-angle</prop>
     </output>
     <config>
-      <Kp>20</Kp>          <!-- proportional gain -->
+      <Kp>25</Kp>          <!-- proportional gain -->
       <beta>1.0</beta>     <!-- input value weighing factor -->
       <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
       <gamma>0.5</gamma>   <!-- input value weighing factor for -->
                            <!-- unfiltered derivative error -->
-      <Ti>70</Ti>          <!-- integrator time -->
+      <Ti>60</Ti>          <!-- integrator time -->
       <Td>0.01</Td>        <!-- derivator time -->
       <u_min>-45.0</u_min> <!-- minimum output clamp -->
       <u_max>45.0</u_max>  <!-- maximum output clamp -->
@@ -174,6 +174,17 @@
     </config>
   </pid-controller>
 
+  <!--  Filter target roll -->
+
+   <filter>
+    <name>target-roll-filter</name>
+    <debug>false</debug>
+    <type>double-exponential</type>
+    <input>/autopilot/CENTURYIIB/settings/target-roll-deg</input>
+    <output>/autopilot/internal/filtered-target-roll-deg</output>
+    <filter-time>0.1</filter-time>
+   </filter>
+
   <!-- Wing leveler (ROL) Mode --> 
 
   <pid-controller>
@@ -187,7 +198,7 @@
       <prop>/instrumentation/attitude-indicator/indicated-roll-deg</prop>
     </input>
     <reference>
-      <prop>/autopilot/CENTURYIIB/settings/target-roll-deg</prop>
+      <prop>/autopilot/internal/filtered-target-roll-deg</prop>
     </reference>
     <output>
       <prop>/controls/flight/aileron</prop>
