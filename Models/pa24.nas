@@ -1,16 +1,6 @@
-var fswitch = nil;
 var value = 0;
 var test = 0;
 var toggle = 0;
-INIT = func {
-    fswitch = props.globals.getNode("/controls[1]/fuel/switch-position");
-}
-
-var oatswitch = nil;
-
-INIT = func {
-    oatswitch = props.globals.getNode("/controls/switches/oat-switch");
-}
 
 var fuel_switch = func {
   node = props.globals.getNode("/consumables/fuel/tank[0]/selected",0);

@@ -8,8 +8,6 @@
 var rpm = nil;
 var fuel_pres = 0.0;
 var oil_pres = 0.0;
-var fuel_pres_ave = 0.0;
-var oil_pres_ave = 0.0;
 var factor = nil;
 var ias = nil;
 var flaps = nil;
@@ -20,12 +18,17 @@ var node = nil;
 var OnGround = nil;
 var fuel_flow = nil;
 var egt = nil;
-var egt_ave = 0.0;
 var H = nil;
 var L = nil;
 var phi = nil;
 var C = nil;
 var rudder_position = nil;
+
+# set up filters for these actions
+
+var fuel_pres_lowpass = aircraft.lowpass.new(0.5);
+var oil_pres_lowpass = aircraft.lowpass.new(0.5);
+var egt_lowpass = aircraft.lowpass.new(0.95);
 
 var init_actions = func {
     setprop("/gear/gear[0]/theta0", 0.0);
@@ -52,16 +55,16 @@ var update_actions = func {
 ##
     rpm = getprop("/engines/engine/rpm");
     if (rpm > 600.0) {
-    fuel_pres = 3.2;
-    oil_pres = 41.5;
+       fuel_pres = 6.8-3000/rpm;
+       oil_pres = 62-12600/rpm;
+    } else {
+       fuel_pres = 0.0;
+       oil_pres = 0.0;
     }
+
     if (getprop("/controls/engines/engine/fuel-pump")) {
-    fuel_pres += 3.1;
+    fuel_pres += 1.5;
     }
-    # filter both presures
-    fuel_pres_ave = 0.8 * fuel_pres_ave + 0.2 * fuel_pres;
-    oil_pres_ave = 0.8 * oil_pres_ave + 0.2 * oil_pres;
-# print( " rpm = ", rpm, " fuel pres = ", fuel_pres_ave, " oil pres = ", oil_pres_ave ); 
 
 ##
 #  Save a factor used to make the prop disc disapear as rpm increases
@@ -99,8 +102,6 @@ var update_actions = func {
     egt = 325 - abs(fuel_flow - 12)*20;
     if (egt < 20) {egt = 20; }
     egt = egt*(rpm/2400)*(rpm/2400);
-#   Smooth and add some lag
-    egt_ave = 0.995*egt_ave + 0.005*egt;
 
 ##
 #  Compute the scissor link angles due to strut compression
@@ -154,11 +155,11 @@ var update_actions = func {
     }
 
     # outputs
-    setprop("/engines/engine[0]/egt-degf-fix", egt_ave);
+    setprop("/engines/engine[0]/egt-degf-fix", egt_lowpass.filter(egt));
     setprop("/gear/gear[0]/turn-pos-norm", rudder_position);
     setprop("/sim/models/materials/propdisc/factor", factor);  
-    setprop("/engines/engine/fuel-pressure-psi", fuel_pres_ave);
-    setprop("/engines/engine/oil-pressure-psi", oil_pres_ave);
+    setprop("/engines/engine/fuel-pressure-psi", fuel_pres_lowpass.filter(fuel_pres));
+    setprop("/engines/engine/oil-pressure-psi", oil_pres_lowpass.filter(oil_pres));
 
     settimer(update_actions, 0);
 }

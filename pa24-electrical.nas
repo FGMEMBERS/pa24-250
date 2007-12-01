@@ -21,7 +21,7 @@ var vbus_volts = 0.0;
 var ebus1_volts = 0.0;
 var ebus2_volts = 0.0;
 var ammeter_ave = 0.0;
-var factor = 0.0;
+var ammeter_lowpass = aircraft.lowpass.new(0.5);
 
 ##
 # Initialize the electrical system
@@ -195,12 +195,10 @@ var update_electrical = func {
 
 
 var update_virtual_bus = func( dt ) {
-    battery_volts = battery.get_output_volts();
-    alternator_volts = alternator.get_output_volts();
-    external_volts = 0.0;
-    load = 0.0;
-    fuel_pres = 0.0;
-    oil_pres = 0.0;
+    var battery_volts = battery.get_output_volts();
+    var alternator_volts = alternator.get_output_volts();
+    var external_volts = 0.0;
+    var load = 0.0;
 
     # switch state
     var master_bat = getprop("/controls/electric/battery-switch");
@@ -216,7 +214,7 @@ var update_virtual_bus = func( dt ) {
 
     # determine power source
     var bus_volts = 0.0;
-    power_source = nil;
+    var power_source = nil;
     if ( master_bat ) {
         bus_volts = battery_volts;
         power_source = "battery";
@@ -234,8 +232,8 @@ var update_virtual_bus = func( dt ) {
     # print( "virtual bus volts = ", bus_volts );
 
     # starter motor
-    starter_switch = getprop("/controls/switches/starter");
-    starter_volts = 0.0;
+    var starter_switch = getprop("/controls/switches/starter");
+    var starter_volts = 0.0;
     if ( starter_switch ) {
         starter_volts = bus_volts;
         load += 12;
@@ -257,7 +255,7 @@ var update_virtual_bus = func( dt ) {
     load += avionics_bus_2();
 
     # system loads and ammeter gauge
-    ammeter = 0.0;
+    var ammeter = 0.0;
     if ( bus_volts > 1.0 ) {
         # normal load
         load += 15.0;
@@ -269,7 +267,6 @@ var update_virtual_bus = func( dt ) {
             ammeter = battery.charge_amps;
         }
     }
-    # print( "ammeter = ", ammeter );
 
     # charge/discharge the battery
     if ( power_source == "battery" ) {
@@ -278,11 +275,8 @@ var update_virtual_bus = func( dt ) {
         battery.apply_load( -battery.charge_amps, dt );
     }
 
-    # filter ammeter needle pos
-    ammeter_ave = 0.8 * ammeter_ave + 0.2 * ammeter;
-
     # outputs
-    setprop("/systems/electrical/amps", ammeter_ave);
+    setprop("/systems/electrical/amps", ammeter_lowpass.filter(ammeter));
     setprop("/systems/electrical/volts", bus_volts);
     vbus_volts = bus_volts;
 
@@ -291,8 +285,8 @@ var update_virtual_bus = func( dt ) {
 
 var electrical_bus_1 = func() {
     # we are fed from the "virtual" bus
-    bus_volts = vbus_volts;
-    load = 0.0;
+    var bus_volts = vbus_volts;
+    var load = 0.0;
     
     # Cabin Lights Power
     if ( getprop("/controls/switches/cabin-lights") ) {
@@ -390,8 +384,8 @@ var electrical_bus_1 = func() {
 
 var electrical_bus_2 = func() {
     # we are fed from the "virtual" bus
-    bus_volts = vbus_volts;
-    load = 0.0;
+    var bus_volts = vbus_volts;
+    var load = 0.0;
 
     # Turn Coordinator Power
     if ( getprop("/controls/switches/turn-indicator" ) ) {
@@ -466,7 +460,7 @@ var cross_feed_bus = func() {
         bus_volts = ebus2_volts;
     }
 
-    load = 0.0;
+    var load = 0.0;
 
     setprop("/systems/electrical/outputs/annunciators", bus_volts);
 
@@ -476,6 +470,7 @@ var cross_feed_bus = func() {
 
 
 var avionics_bus_1 = func() {
+    var bus_volts = 0.0;
     var master_av = getprop("/controls/switches/master-avionics");
     if (master_av){
     bus_volts = ebus1_volts;
@@ -499,13 +494,14 @@ var avionics_bus_1 = func() {
 
 
 var avionics_bus_2 = func() {
+    var bus_volts = 0.0;
     var master_av = getprop("/controls/switches/master-avionics");
     if (master_av){
     bus_volts = ebus2_volts;
     } else {
     bus_volts = 0.0;
     }
-    load = 0.0;
+    var load = 0.0;
 
     # Nav 2 Power
     setprop("/systems/electrical/outputs/nav[1]", bus_volts);
