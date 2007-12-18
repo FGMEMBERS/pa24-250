@@ -13,7 +13,7 @@ a 150 lb copilot and no bagage.
 
   <description>Piper Comanche 250 with Century IIB Autopilot</description>
   <author>Dave Perry</author>
-  <status>early-production</status>
+  <status>production</status>
 
 
   <!-- Use the YASim physics engine for the flight model -->
