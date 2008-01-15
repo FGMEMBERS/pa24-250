@@ -451,6 +451,36 @@
   </offsets>
  </model>
 
+ <model>
+  <name>LeftLandingLight</name>
+  <path>Aircraft/pa24-250/Models/LandingLights/LeftLandingLight.xml</path>
+  <offsets>
+   <x-m>2.37634</x-m>
+   <y-m>-5.05</y-m>
+   <z-m>-0.08</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>RightLandingLight</name>
+  <path>Aircraft/pa24-250/Models/LandingLights/RightLandingLight.xml</path>
+  <offsets>
+   <x-m>2.37634</x-m>
+   <y-m>5.05</y-m>
+   <z-m>-0.08</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>BothLandingLights</name>
+  <path>Aircraft/pa24-250/Models/LandingLights/BothLandingLights.xml</path>
+  <offsets>
+   <x-m>2.37634</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.08</z-m>
+  </offsets>
+ </model>
+
  <!-- Visible up to 10km (6mi) -->
  <animation>
   <type>range</type>
@@ -493,6 +523,19 @@
  </animation>
 
  <animation>
+  <name>LandingLightsGroup</name>
+  <object-name>LeftLandingLight</object-name>
+  <object-name>RightLandingLight</object-name>
+  <object-name>BothLandingLights</object-name>
+ </animation>
+
+ <animation>
+  <name>StrobeGroup</name>
+  <object-name>StrobeLight.L</object-name>
+  <object-name>StrobeLight.R</object-name>
+ </animation>
+
+ <animation>
   <name>PanelAlphaOrderGroup</name>
   <object-name>InstrumentGroup</object-name>
   <object-name>SwitchesGroup</object-name>
@@ -508,6 +551,8 @@
   <object-name>FuselageGroup</object-name>
   <object-name>LightsGroup</object-name>
   <object-name>AntenaGroup</object-name>
+  <object-name>StrobeGroup</object-name>
+  <object-name>LandingLightsGroup</object-name>
   <object-name>PropellerGroup</object-name>
   <object-name>Panel-3d</object-name>
   <object-name>PlacardGroup</object-name>
@@ -590,7 +635,7 @@
   <animation>
   <type>rotate</type>
   <object-name>LdgLtLeftToggle</object-name>
-  <property>controls/switches/landing-light</property>
+  <property>controls/switches/landing-light-L</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -605,18 +650,20 @@
  </animation>
 
  <animation>
-  <type>select</type>
-  <object-name>LdgLt</object-name>
-  <condition>
-   <property>controls/lighting/landing-lights</property>
-  </condition>
+  <type>material</type>
+  <object-name>ldgBulb-L</object-name>
+  <emission>
+   <red> 1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>controls/lighting/landing-lights-L</factor-prop>
+  </emission>
  </animation>
-
 
   <animation>
   <type>rotate</type>
   <object-name>LdgLtRightToggle</object-name>
-  <property>controls/switches/landing-light</property>
+  <property>controls/switches/landing-light-R</property>
   <factor>40</factor>
   <axis>
    <x>0.0</x>
@@ -628,6 +675,17 @@
    <y-m>0.00</y-m>
    <z-m>-0.028</z-m>
 </center>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>ldgBulb-R</object-name>
+  <emission>
+   <red> 1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>controls/lighting/landing-lights-R</factor-prop>
+  </emission>
  </animation>
 
   <animation>
@@ -1550,6 +1608,5 @@
    <z>0.0</z>
   </axis>
  </animation>
-
 
 </PropertyList>

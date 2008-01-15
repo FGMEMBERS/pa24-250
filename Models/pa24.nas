@@ -82,10 +82,24 @@ var panel_light_switch = func(c) {
   setprop("/controls/switches/nav-lights",toggle);     
 }
 
-var landing_light_switch = func {
-  toggle=getprop("/controls/switches/landing-light");
+var landing_light_switch_left = func {
+  toggle=getprop("/controls/switches/landing-light-L");
   toggle=1-toggle;
-  setprop("/controls/switches/landing-light",toggle);
+  setprop("/controls/switches/landing-light-L",toggle);
+}
+
+var landing_light_switch_right = func {
+  toggle=getprop("/controls/switches/landing-light-R");
+  toggle=1-toggle;
+  setprop("/controls/switches/landing-light-R",toggle);
+}
+
+var landing_light_switch_both = func {
+#    SLAVE the Right switch to the Left switch
+  toggle=getprop("/controls/switches/landing-light-L");
+  toggle=1-toggle;
+  setprop("/controls/switches/landing-light-L",toggle);
+  setprop("/controls/switches/landing-light-R",toggle);
 }
 
 var turn_bank_switch = func {

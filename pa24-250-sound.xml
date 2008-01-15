@@ -348,10 +348,10 @@
       </click>
  
       <click>
-        <name>Landing Light On</name>
+        <name>Landing Light-L On</name>
         <path>Sounds/click.wav</path>
         <condition>
-          <property>controls/switches/landing-light</property>
+          <property>controls/switches/landing-light-L</property>
         </condition>
         <volume>
           <factor>1.0</factor>
@@ -359,11 +359,35 @@
       </click>
       
       <click>
-        <name>Landing Light Off</name>
+        <name>Landing Light-L Off</name>
         <path>Sounds/click.wav</path>
         <condition>
           <not>
-            <property>controls/switches/landing-light</property>
+            <property>controls/switches/landing-light-L</property>
+          </not>
+        </condition>
+        <volume>
+          <factor>1.0</factor>
+        </volume>
+      </click>
+
+      <click>
+        <name>Landing Light-R On</name>
+        <path>Sounds/click.wav</path>
+        <condition>
+          <property>controls/switches/landing-light-R</property>
+        </condition>
+        <volume>
+          <factor>1.0</factor>
+        </volume>
+      </click>
+      
+      <click>
+        <name>Landing Light-R Off</name>
+        <path>Sounds/click.wav</path>
+        <condition>
+          <not>
+            <property>controls/switches/landing-light-R</property>
           </not>
         </condition>
         <volume>

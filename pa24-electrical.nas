@@ -38,7 +38,8 @@ var init_electrical = func {
     setprop("/controls/switches/oat-switch", 0);
     setprop("/controls/switches/nav-lights", 0);    
     setprop("/controls/switches/panel-lights-factor", 0);    
-    setprop("/controls/switches/landing-light", 0);
+    setprop("/controls/switches/landing-light-L", 0);
+    setprop("/controls/switches/landing-light-R", 0);
     setprop("/controls/switches/flashing-beacon",0);
     setprop("/controls/switches/turn-indicator",0);
     setprop("/instrumentation/turn-indicator/serviceable",0);
@@ -329,19 +330,40 @@ var electrical_bus_1 = func() {
         setprop("/systems/electrical/outputs/fuel-pump", 0.0);
     }
 
-    # Landing Light Power
-    if ( getprop("/controls/switches/landing-light") ) {
-        setprop("/systems/electrical/outputs/landing-light", bus_volts);
+    # Landing Light-L Power
+    if ( getprop("/controls/switches/landing-light-L") ) {
+        var ldgLightVoltsL = bus_volts;
     } else {
-        setprop("/systems/electrical/outputs/landing-light", 0.0 );
+        ldgLightVoltsL = 0.0;
     }
-    if ( getprop("/systems/electrical/outputs/landing-light") > vcutoff)
+    setprop("/systems/electrical/outputs/landing-light-L", ldgLightVoltsL );
+
+    if ( ldgLightVoltsL > vcutoff)
     {
-        setprop("/controls/lighting/landing-lights", 1);
+        setprop("/controls/lighting/landing-lights-L", 1);
         load += 3.2;
     } else {
-        setprop("/controls/lighting/landing-lights", 0);
+        setprop("/controls/lighting/landing-lights-L", 0);
     }
+    setprop("/sim/models/materials/LandingLight/factor-L", ldgLightVoltsL/14);  
+
+    # Landing Light-R Power
+    if ( getprop("/controls/switches/landing-light-R") ) {
+        var ldgLightVoltsR = bus_volts;
+    } else {
+        ldgLightVoltsR = 0.0;
+    }
+    setprop("/systems/electrical/outputs/landing-light-R", ldgLightVoltsR );
+
+    if ( ldgLightVoltsR > vcutoff)
+    {
+        setprop("/controls/lighting/landing-lights-R", 1);
+        load += 3.2;
+    } else {
+        setprop("/controls/lighting/landing-lights-R", 0);
+    }
+    setprop("/sim/models/materials/LandingLight/factor-R", ldgLightVoltsR/14);  
+
     # Flashing Beacon Power
     if ( getprop("/controls/switches/flashing-beacon") ) {
         setprop("/systems/electrical/outputs/flashing-beacon", bus_volts);

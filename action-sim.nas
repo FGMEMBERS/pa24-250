@@ -37,6 +37,8 @@ var init_actions = func {
     setprop("/gear/gear[0]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
     setprop("/gear/gear[1]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
     setprop("/gear/gear[2]/compression-m", 0.0); #Cheat since this was still nil after fdm-initialize
+    setprop("/sim/models/materials/LandingLight/factor-L", 0.0);
+    setprop("/sim/models/materials/LandingLight/factor-R", 0.0);
     setprop("engines/engine[0]/fuel-flow-gph", 0.0);
     setprop("/surface-positions/flap-pos-norm", 0.0);
     setprop("/instrumentation/airspeed-indicator/indicated-speed-kt", 0.0);
@@ -104,6 +106,20 @@ var update_actions = func {
     egt = egt*(rpm/2400)*(rpm/2400);
 
 ##
+#  Simulate landing light ground illumination fall-off with increased agl distance
+##
+    var factorL = getprop("/sim/models/materials/LandingLight/factor-L");
+    var factorR = getprop("/sim/models/materials/LandingLight/factor-R");
+    var agl = getprop("position/altitude-agl-ft");
+    var aglFactor = 1225/((3.5*agl)*(3.5*agl));
+    var factorAGL_L = factorL;
+    var factorAGL_R = factorR;
+    if (agl > 10) { 
+       factorAGL_L = factorL*aglFactor;
+       factorAGL_R = factorR*aglFactor;
+    }
+
+##
 #  Compute the scissor link angles due to strut compression
 ##
 
@@ -156,6 +172,8 @@ var update_actions = func {
 
     # outputs
     setprop("/engines/engine[0]/egt-degf-fix", egt_lowpass.filter(egt));
+    setprop("/sim/models/materials/LandingLight/factorAGL-L", factorAGL_L);
+    setprop("/sim/models/materials/LandingLight/factorAGL-R", factorAGL_R);
     setprop("/gear/gear[0]/turn-pos-norm", rudder_position);
     setprop("/sim/models/materials/propdisc/factor", factor);  
     setprop("/engines/engine/fuel-pressure-psi", fuel_pres_lowpass.filter(fuel_pres));
