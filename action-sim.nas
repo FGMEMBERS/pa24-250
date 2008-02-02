@@ -111,10 +111,10 @@ var update_actions = func {
     var factorL = getprop("/sim/models/materials/LandingLight/factor-L");
     var factorR = getprop("/sim/models/materials/LandingLight/factor-R");
     var agl = getprop("position/altitude-agl-ft");
-    var aglFactor = 1225/((3.5*agl)*(3.5*agl));
+    var aglFactor = 16/(agl*agl);
     var factorAGL_L = factorL;
     var factorAGL_R = factorR;
-    if (agl > 10) { 
+    if (agl > 4) { 
        factorAGL_L = factorL*aglFactor;
        factorAGL_R = factorR*aglFactor;
     }
