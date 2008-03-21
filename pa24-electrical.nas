@@ -32,50 +32,50 @@ var init_electrical = func {
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
 
-    setprop("/controls/electric/battery-switch", 0);
-    setprop("/controls/electric/engine/generator", 0);
-    setprop("/controls/engines/engine[0]/fuel-pump",0);
-    setprop("/controls/switches/oat-switch", 0);
-    setprop("/controls/switches/nav-lights", 0);    
-    setprop("/controls/switches/panel-lights-factor", 0);    
-    setprop("/controls/switches/landing-light-L", 0);
-    setprop("/controls/switches/landing-light-R", 0);
-    setprop("/controls/switches/flashing-beacon",0);
-    setprop("/controls/switches/turn-indicator",0);
-    setprop("/instrumentation/turn-indicator/serviceable",0);
-    setprop("/controls/anti-ice/pitot-heat", 0);
-    setprop("/controls/switches/starter", 0);
-    setprop("/controls/switches/strobe-lights", 0);
-    setprop("/controls/switches/master-avionics", 0);
-    setprop("/controls/switches/map-lights",0);
-    setprop("/controls/switches/cabin-lights",0);
-    setprop("/systems/electrical/outputs/starter[0]", 0.0);
-    setprop("/systems/electrical/amps", 0.0);
-    setprop("/systems/electrical/volts", 0.0);
-    setprop("/systems/electrical/outputs/cabin-lights", 0.0);
-    setprop("/systems/electrical/outputs/instr-ignition-switch", 0.0);
-    setprop("/systems/electrical/outputs/fuel-pump", 0.0);
-    setprop("/systems/electrical/outputs/landing-light", 0.0);
-    setprop("/controls/lighting/landing-lights", 0);
-    setprop("/systems/electrical/outputs/flashing-beacon", 0.0 );
-    setprop("/controls/lighting/beacon", 0);
-    setprop("/systems/electrical/outputs/strobe-lights", 0.0 );
-    setprop("/controls/lighting/beacon", 0);
-    setprop("/systems/electrical/outputs/flaps", 0.0);
-    setprop("/systems/electrical/outputs/turn-coordinator", 0.0);
-    setprop("/systems/electrical/outputs/nav-lights", 0.0);      
-    setprop("/controls/lighting/nav-lights", 0);
-    setprop("/systems/electrical/outputs/instrument-lights", 0.0);      
-    setprop("/systems/electrical/outputs/pitot-heat", 0.0);
-    setprop("/systems/electrical/outputs/landing-gear", 0.0);
-    setprop("/systems/electrical/outputs/nav[0]", 0.0);
-    setprop("/systems/electrical/outputs/comm[0]", 0.0);
-    setprop("/systems/electrical/outputs/dme", 0.0);
-    setprop("/systems/electrical/outputs/nav[1]", 0.0);
-    setprop("/systems/electrical/outputs/comm[1]", 0.0);
-    setprop("/systems/electrical/outputs/transponder", 0.0);
-    setprop("/systems/electrical/outputs/autopilot", 0.0);
-    setprop("/systems/electrical/outputs/adf", 0.0);
+    setprop("controls/electric/battery-switch", 0);
+    setprop("controls/electric/engine/generator", 0);
+    setprop("controls/engines/engine[0]/fuel-pump",0);
+    setprop("controls/switches/oat-switch", 0);
+    setprop("controls/switches/nav-lights", 0);    
+    setprop("controls/switches/panel-lights-factor", 0);    
+    setprop("controls/switches/landing-light-L", 0);
+    setprop("controls/switches/landing-light-R", 0);
+    setprop("controls/switches/flashing-beacon",0);
+    setprop("controls/switches/turn-indicator",0);
+    setprop("instrumentation/turn-indicator/serviceable",0);
+    setprop("controls/anti-ice/pitot-heat", 0);
+    setprop("controls/switches/starter", 0);
+    setprop("controls/switches/strobe-lights", 0);
+    setprop("controls/switches/master-avionics", 0);
+    setprop("controls/switches/map-lights",0);
+    setprop("controls/switches/cabin-lights",0);
+    setprop("systems/electrical/outputs/starter[0]", 0.0);
+    setprop("systems/electrical/amps", 0.0);
+    setprop("systems/electrical/volts", 0.0);
+    setprop("systems/electrical/outputs/cabin-lights", 0.0);
+    setprop("systems/electrical/outputs/instr-ignition-switch", 0.0);
+    setprop("systems/electrical/outputs/fuel-pump", 0.0);
+    setprop("systems/electrical/outputs/landing-light", 0.0);
+    setprop("controls/lighting/landing-lights", 0);
+    setprop("systems/electrical/outputs/flashing-beacon", 0.0 );
+    setprop("controls/lighting/beacon", 0);
+    setprop("systems/electrical/outputs/strobe-lights", 0.0 );
+    setprop("controls/lighting/beacon", 0);
+    setprop("systems/electrical/outputs/flaps", 0.0);
+    setprop("systems/electrical/outputs/turn-coordinator", 0.0);
+    setprop("systems/electrical/outputs/nav-lights", 0.0);      
+    setprop("controls/lighting/nav-lights", 0);
+    setprop("systems/electrical/outputs/instrument-lights", 0.0);      
+    setprop("systems/electrical/outputs/pitot-heat", 0.0);
+    setprop("systems/electrical/outputs/landing-gear", 0.0);
+    setprop("systems/electrical/outputs/nav[0]", 0.0);
+    setprop("systems/electrical/outputs/comm[0]", 0.0);
+    setprop("systems/electrical/outputs/dme", 0.0);
+    setprop("systems/electrical/outputs/nav[1]", 0.0);
+    setprop("systems/electrical/outputs/comm[1]", 0.0);
+    setprop("systems/electrical/outputs/transponder", 0.0);
+    setprop("systems/electrical/outputs/autopilot", 0.0);
+    setprop("systems/electrical/outputs/adf", 0.0);
   
     print("Nasal Electrical System Initialized");  
 
@@ -130,7 +130,7 @@ AlternatorClass = {};
 
 AlternatorClass.new = func {
     obj = { parents : [AlternatorClass],
-            rpm_source : "/engines/engine[0]/rpm",
+            rpm_source : "engines/engine[0]/rpm",
             rpm_threshold : 600.0,
             ideal_volts : 14.0,
             ideal_amps : 50.0 };
@@ -183,7 +183,7 @@ AlternatorClass.get_output_amps = func {
 
 
 var update_electrical = func {
-    var time = getprop("/sim/time/elapsed-sec");
+    var time = getprop("sim/time/elapsed-sec");
     var dt = time - last_time;
     last_time = time;
 
@@ -202,13 +202,13 @@ var update_virtual_bus = func( dt ) {
     var load = 0.0;
 
     # switch state
-    var master_bat = getprop("/controls/electric/battery-switch");
+    var master_bat = getprop("controls/electric/battery-switch");
 #
 # Comanche has only one master switch which connects both the battery 
 # and the alternator via a voltage regulator to the bus.
 #
     if ( master_bat ) {
-        setprop("/controls/electric/engine/generator",1);
+        setprop("controls/electric/engine/generator",1);
     }
 
     var master_alt = master_bat;
@@ -233,18 +233,18 @@ var update_virtual_bus = func( dt ) {
     # print( "virtual bus volts = ", bus_volts );
 
     # starter motor
-    var starter_switch = getprop("/controls/switches/starter");
+    var starter_switch = getprop("controls/switches/starter");
     var starter_volts = 0.0;
     if ( starter_switch ) {
         starter_volts = bus_volts;
         load += 12;
     }
-    setprop("/systems/electrical/outputs/starter[0]", starter_volts);
+    setprop("systems/electrical/outputs/starter[0]", starter_volts);
     if (starter_volts > vcutoff) {
-    setprop("/controls/engines/engine[0]/starter",1);
-    setprop("/controls/engines/engine[0]/magnetos",3);
+    setprop("controls/engines/engine[0]/starter",1);
+    setprop("controls/engines/engine[0]/magnetos",3);
     } else {
-    setprop("/controls/engines/engine[0]/starter",0);
+    setprop("controls/engines/engine[0]/starter",0);
     }
 
     # bus network (1. these must be called in the right order, 2. the
@@ -277,8 +277,8 @@ var update_virtual_bus = func( dt ) {
     }
 
     # outputs
-    setprop("/systems/electrical/amps", ammeter_lowpass.filter(ammeter));
-    setprop("/systems/electrical/volts", bus_volts);
+    setprop("systems/electrical/amps", ammeter_lowpass.filter(ammeter));
+    setprop("systems/electrical/volts", bus_volts);
     vbus_volts = bus_volts;
 
     return load;
@@ -290,111 +290,111 @@ var electrical_bus_1 = func() {
     var load = 0.0;
     
     # Cabin Lights Power
-    if ( getprop("/controls/switches/cabin-lights") ) {
-        setprop("/systems/electrical/outputs/cabin-lights", bus_volts);
+    if ( getprop("controls/switches/cabin-lights") ) {
+        setprop("systems/electrical/outputs/cabin-lights", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/cabin-lights", 0.0);
+        setprop("systems/electrical/outputs/cabin-lights", 0.0);
     }
-    if ( getprop("/systems/electrical/outputs/cabin-lights") > vcutoff)
+    if ( getprop("systems/electrical/outputs/cabin-lights") > vcutoff)
     {
-        setprop("/controls/lighting/cabin-lights", 1);
+        setprop("controls/lighting/cabin-lights", 1);
         load += 0.2;
     } else {
-        setprop("/controls/lighting/cabin-lights", 0);
+        setprop("controls/lighting/cabin-lights", 0);
     }
 
    # Map Lights Power
-    if ( getprop("/controls/switches/map-lights") ) {
-        setprop("/systems/electrical/outputs/map-lights", bus_volts);
+    if ( getprop("controls/switches/map-lights") ) {
+        setprop("systems/electrical/outputs/map-lights", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/map-lights", 0.0);
+        setprop("systems/electrical/outputs/map-lights", 0.0);
     }
-    if ( getprop("/systems/electrical/outputs/map-lights") > vcutoff)
+    if ( getprop("systems/electrical/outputs/map-lights") > vcutoff)
     {
-        setprop("/controls/lighting/map-lights", 1);
+        setprop("controls/lighting/map-lights", 1);
         load += 0.2;
     } else {
-        setprop("/controls/lighting/map-lights", 0);
+        setprop("controls/lighting/map-lights", 0);
     }
     # Instrument Power
-    setprop("/systems/electrical/outputs/instr-ignition-switch", bus_volts);
+    setprop("systems/electrical/outputs/instr-ignition-switch", bus_volts);
     if (bus_volts > vcutoff) {
     load += 0.3;
     }
 
     # Fuel Pump Power
-    if ( getprop("/controls/engines/engine[0]/fuel-pump") ) {
-        setprop("/systems/electrical/outputs/fuel-pump", bus_volts);
+    if ( getprop("controls/engines/engine[0]/fuel-pump") ) {
+        setprop("systems/electrical/outputs/fuel-pump", bus_volts);
         load += 0.1;
     } else {
-        setprop("/systems/electrical/outputs/fuel-pump", 0.0);
+        setprop("systems/electrical/outputs/fuel-pump", 0.0);
     }
 
     # Landing Light-L Power
-    if ( getprop("/controls/switches/landing-light-L") ) {
+    if ( getprop("controls/switches/landing-light-L") ) {
         var ldgLightVoltsL = bus_volts;
     } else {
         ldgLightVoltsL = 0.0;
     }
-    setprop("/systems/electrical/outputs/landing-light-L", ldgLightVoltsL );
+    setprop("systems/electrical/outputs/landing-light-L", ldgLightVoltsL );
 
     if ( ldgLightVoltsL > vcutoff)
     {
-        setprop("/controls/lighting/landing-lights-L", 1);
+        setprop("controls/lighting/landing-lights-L", 1);
         load += 3.2;
     } else {
-        setprop("/controls/lighting/landing-lights-L", 0);
+        setprop("controls/lighting/landing-lights-L", 0);
     }
-    setprop("/sim/models/materials/LandingLight/factor-L", ldgLightVoltsL/14);  
+    setprop("sim/models/materials/LandingLight/factor-L", ldgLightVoltsL/14);  
 
     # Landing Light-R Power
-    if ( getprop("/controls/switches/landing-light-R") ) {
+    if ( getprop("controls/switches/landing-light-R") ) {
         var ldgLightVoltsR = bus_volts;
     } else {
         ldgLightVoltsR = 0.0;
     }
-    setprop("/systems/electrical/outputs/landing-light-R", ldgLightVoltsR );
+    setprop("systems/electrical/outputs/landing-light-R", ldgLightVoltsR );
 
     if ( ldgLightVoltsR > vcutoff)
     {
-        setprop("/controls/lighting/landing-lights-R", 1);
+        setprop("controls/lighting/landing-lights-R", 1);
         load += 3.2;
     } else {
-        setprop("/controls/lighting/landing-lights-R", 0);
+        setprop("controls/lighting/landing-lights-R", 0);
     }
-    setprop("/sim/models/materials/LandingLight/factor-R", ldgLightVoltsR/14);  
+    setprop("sim/models/materials/LandingLight/factor-R", ldgLightVoltsR/14);  
 
     # Flashing Beacon Power
-    if ( getprop("/controls/switches/flashing-beacon") ) {
-        setprop("/systems/electrical/outputs/flashing-beacon", bus_volts);
+    if ( getprop("controls/switches/flashing-beacon") ) {
+        setprop("systems/electrical/outputs/flashing-beacon", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/flashing-beacon", 0.0 );
+        setprop("systems/electrical/outputs/flashing-beacon", 0.0 );
     }
-    if ( getprop("/systems/electrical/outputs/flashing-beacon") > vcutoff )
+    if ( getprop("systems/electrical/outputs/flashing-beacon") > vcutoff )
     {
-        setprop("/controls/lighting/beacon", 1);
+        setprop("controls/lighting/beacon", 1);
         load += 1.2;
     } else {
-        setprop("/controls/lighting/beacon", 0);
+        setprop("controls/lighting/beacon", 0);
     }
 
     # Strobe Power
-    if ( getprop("/controls/switches/strobe-lights") ) {
-        setprop("/systems/electrical/outputs/strobe-lights", bus_volts);
+    if ( getprop("controls/switches/strobe-lights") ) {
+        setprop("systems/electrical/outputs/strobe-lights", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/strobe-lights", 0.0 );
+        setprop("systems/electrical/outputs/strobe-lights", 0.0 );
     }
-    if ( getprop("/systems/electrical/outputs/strobe-lights") > vcutoff ) 
+    if ( getprop("systems/electrical/outputs/strobe-lights") > vcutoff ) 
     {
-        setprop("/controls/lighting/strobe", 1);
+        setprop("controls/lighting/strobe", 1);
         load += 1.2;
     } else {
-        setprop("/controls/lighting/strobe", 0);
+        setprop("controls/lighting/strobe", 0);
     }
 
 
     # Flaps Power
-    setprop("/systems/electrical/outputs/flaps", bus_volts);
+    setprop("systems/electrical/outputs/flaps", bus_volts);
 
     # register bus voltage
     ebus1_volts = bus_volts;
@@ -410,61 +410,61 @@ var electrical_bus_2 = func() {
     var load = 0.0;
 
     # Turn Coordinator Power
-    if ( getprop("/controls/switches/turn-indicator" ) ) {
-        setprop("/systems/electrical/outputs/turn-coordinator", bus_volts);
+    if ( getprop("controls/switches/turn-indicator" ) ) {
+        setprop("systems/electrical/outputs/turn-coordinator", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/turn-coordinator", 0.0);      
+        setprop("systems/electrical/outputs/turn-coordinator", 0.0);      
     }
 
-    if ( getprop("/systems/electrical/outputs/turn-coordinator") > vcutoff ) 
+    if ( getprop("systems/electrical/outputs/turn-coordinator") > vcutoff ) 
     {
-        setprop("/instrumentation/turn-indicator/serviceable", 1);
+        setprop("instrumentation/turn-indicator/serviceable", 1);
         load += 1.4;
     } else {
-        setprop("/instrumentation/turn-indicator/serviceable", 0);
+        setprop("instrumentation/turn-indicator/serviceable", 0);
     }
 
     # Nav Lights Power
-    if ( getprop("/controls/switches/nav-lights" ) ) {
-        setprop("/systems/electrical/outputs/nav-lights", bus_volts);
+    if ( getprop("controls/switches/nav-lights" ) ) {
+        setprop("systems/electrical/outputs/nav-lights", bus_volts);
     } else {
-        setprop("/systems/electrical/outputs/nav-lights", 0.0);      
+        setprop("systems/electrical/outputs/nav-lights", 0.0);      
     }
 
-    if ( getprop("/systems/electrical/outputs/nav-lights") > vcutoff ) 
+    if ( getprop("systems/electrical/outputs/nav-lights") > vcutoff ) 
     {
-        setprop("/controls/lighting/nav-lights", 1);
+        setprop("controls/lighting/nav-lights", 1);
         load += 1.4;
     } else {
-        setprop("/controls/lighting/nav-lights", 0);
+        setprop("controls/lighting/nav-lights", 0);
     }
 
     # Instrument Lights Power controlled by nav-lights switch on pa24
-    factor = getprop("/controls/switches/panel-lights-factor" );
-    if ( getprop("/controls/switches/nav-lights" ) ) {
-       setprop("/systems/electrical/outputs/instrument-lights", bus_volts);
+    factor = getprop("controls/switches/panel-lights-factor" );
+    if ( getprop("controls/switches/nav-lights" ) ) {
+       setprop("systems/electrical/outputs/instrument-lights", bus_volts);
        # Normalize factor by 1/14 = 0.071428571 for max bus_volts
-       setprop("/sim/model/material/instruments/factor", bus_volts * 0.071428571 * (1.0 - factor));
-       setprop("/controls/lighting/panel-norm", bus_volts * 0.071428571 * (1.0 - factor));
+       setprop("sim/model/material/instruments/factor", bus_volts * 0.071428571 * (1.0 - factor));
+       setprop("systems/electrical/outputs/instrument-lights-norm", bus_volts * 0.071428571 * (1.0 - factor));
     } else {
-       setprop("/systems/electrical/outputs/instrument-lights", 0.0);
-       setprop("/sim/model/material/instruments/factor", 0.0);
-       setprop("/controls/lighting/panel-norm", 0.0);
+       setprop("systems/electrical/outputs/instrument-lights", 0.0);
+       setprop("sim/model/material/instruments/factor", 0.0);
+       setprop("systems/electrical/outputs/instrument-lights-norm", 0.0);
     }
 
 
 
 
     # Pitot Heat Power
-    if ( getprop("/controls/anti-ice/pitot-heat" ) ) {
-        setprop("/systems/electrical/outputs/pitot-heat", bus_volts);
+    if ( getprop("controls/anti-ice/pitot-heat" ) ) {
+        setprop("systems/electrical/outputs/pitot-heat", bus_volts);
         if (bus_volts > vcutoff) {load += 12.8; }
     } else {
-        setprop("/systems/electrical/outputs/pitot-heat", 0.0);
+        setprop("systems/electrical/outputs/pitot-heat", 0.0);
     }
   
     # Landing Gear Power
-    setprop("/systems/electrical/outputs/landing-gear", bus_volts);
+    setprop("systems/electrical/outputs/landing-gear", bus_volts);
 
     # register bus voltage
     ebus2_volts = bus_volts;
@@ -484,7 +484,7 @@ var cross_feed_bus = func() {
 
     var load = 0.0;
 
-    setprop("/systems/electrical/outputs/annunciators", bus_volts);
+    setprop("systems/electrical/outputs/annunciators", bus_volts);
 
     # return cumulative load
     return load;
@@ -493,7 +493,7 @@ var cross_feed_bus = func() {
 
 var avionics_bus_1 = func() {
     var bus_volts = 0.0;
-    var master_av = getprop("/controls/switches/master-avionics");
+    var master_av = getprop("controls/switches/master-avionics");
     if (master_av){
     bus_volts = ebus1_volts;
     } else {
@@ -502,13 +502,13 @@ var avionics_bus_1 = func() {
    load = 0.0;
 
     # Nav 1 Power
-    setprop("/systems/electrical/outputs/nav[0]", bus_volts);
+    setprop("systems/electrical/outputs/nav[0]", bus_volts);
         if (bus_volts > vcutoff) {load += 0.8; }
     # Com 1 Power
-    setprop("/systems/electrical/outputs/comm[0]", bus_volts);
+    setprop("systems/electrical/outputs/comm[0]", bus_volts);
         if (bus_volts > vcutoff) {load += 0.8; }
     # DME
-    setprop("/systems/electrical/outputs/dme", bus_volts);
+    setprop("systems/electrical/outputs/dme", bus_volts);
         if (bus_volts > vcutoff) {load += 0.6; }
     # return cumulative load
     return load;
@@ -517,7 +517,7 @@ var avionics_bus_1 = func() {
 
 var avionics_bus_2 = func() {
     var bus_volts = 0.0;
-    var master_av = getprop("/controls/switches/master-avionics");
+    var master_av = getprop("controls/switches/master-avionics");
     if (master_av){
     bus_volts = ebus2_volts;
     } else {
@@ -526,23 +526,23 @@ var avionics_bus_2 = func() {
     var load = 0.0;
 
     # Nav 2 Power
-    setprop("/systems/electrical/outputs/nav[1]", bus_volts);
+    setprop("systems/electrical/outputs/nav[1]", bus_volts);
         if (bus_volts > vcutoff) {load += 0.8; }
     # Com 2 Power
-    setprop("/systems/electrical/outputs/comm[1]", bus_volts);
+    setprop("systems/electrical/outputs/comm[1]", bus_volts);
         if (bus_volts > vcutoff) {load += 0.8; }
 
 
     # Transponder Power
-    setprop("/systems/electrical/outputs/transponder", bus_volts);
+    setprop("systems/electrical/outputs/transponder", bus_volts);
         if (bus_volts > vcutoff) {load += 0.6; }
 
     # Autopilot Power
-    setprop("/systems/electrical/outputs/autopilot", bus_volts);
+    setprop("systems/electrical/outputs/autopilot", bus_volts);
         if (bus_volts > vcutoff) {load += 0.8; }
 
     # ADF Power
-    setprop("/systems/electrical/outputs/adf", bus_volts);
+    setprop("systems/electrical/outputs/adf", bus_volts);
         if (bus_volts > vcutoff) {load += 0.8; }
 
     # return cumulative load
@@ -552,6 +552,6 @@ var avionics_bus_2 = func() {
 
 # Setup listener call to initialize the electrical system once the fdm is initialized
 # 
-setlistener("/sim/signals/fdm-initialized", init_electrical);  
+setlistener("sim/signals/fdm-initialized", init_electrical);  
 
 
