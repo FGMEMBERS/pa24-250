@@ -28,7 +28,7 @@ a 150 lb copilot and no bagage.
   <systems>
    <autopilot>
     <path>Aircraft/pa24-250/Systems/CENTURYIIB.xml</path>
-   </autopilot> -->
+   </autopilot>
    <electrical>
     <path></path>
    </electrical>
