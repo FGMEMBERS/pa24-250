@@ -425,10 +425,14 @@ a 150 lb copilot and no bagage.
     <file>Aircraft/pa24-250/Models/pa24.nas</file>
     <file>Aircraft/pa24-250/pa24-electrical.nas</file>
     <file>Aircraft/pa24-250/action-sim.nas</file>
+    <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
   </pa24>
   <century3>
     <file>Aircraft/Generic/century3.nas</file>
   </century3>
+  <kr87>
+    <file>Aircraft/pa24-250/kr87.nas</file>
+  </kr87>
 
 </nasal>
 

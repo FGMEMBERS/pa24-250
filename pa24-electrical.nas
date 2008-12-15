@@ -76,6 +76,7 @@ var init_electrical = func {
     setprop("systems/electrical/outputs/transponder", 0.0);
     setprop("systems/electrical/outputs/autopilot", 0.0);
     setprop("systems/electrical/outputs/adf", 0.0);
+    ki266.new(0);
   
     print("Nasal Electrical System Initialized");  
 
