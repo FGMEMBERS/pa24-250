@@ -25,20 +25,48 @@
 
     <animation>
         <type>material</type>
+        <object-name>kr87.Chassis</object-name>
+        <object-name>kr87.knobs.FRQInner</object-name>
+        <object-name>kr87.knobs.FRQOuter</object-name>
+        <object-name>kr87.knobs.Volume</object-name>
+        <emission>
+            <red>0.5</red>
+            <green>0.1</green>
+            <blue>0.00005</blue>
+            <factor-prop>sim/model/material/instruments/factor</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>kr87.Chassis</object-name>
+        <object-name>kr87.knobs.FRQInner</object-name>
+        <object-name>kr87.knobs.FRQOuter</object-name>
+        <object-name>kr87.knobs.Volume</object-name>
+        <emission>
+            <red>1.0</red>
+            <green>0.2</green>
+            <blue>0.0001</blue>
+            <factor-prop>sim/model/material/instruments/factor</factor-prop>
+        </emission>
+    </animation>
+    
+    <animation>
+        <type>material</type>
         <object-name>kr87.knobs.ADF</object-name>
         <object-name>kr87.knobs.BFO</object-name>
         <object-name>kr87.knobs.FRQ</object-name>
         <object-name>kr87.knobs.FLT</object-name>
         <object-name>kr87.knobs.SET</object-name>
         <emission>
-            <red-prop>/sim/model/instrument-lighting/emission/red</red-prop>
-            <green-prop>/sim/model/instrument-lighting/emission/green</green-prop>
-            <blue-prop>/sim/model/instrument-lighting/emission/blue</blue-prop>
-            <factor-prop>/controls/lighting/instruments-norm</factor-prop>
+            <red>0.4</red>
+            <green>0.08</green>
+            <blue>0.00004</blue>
+            <factor-prop>sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>
-    
-    <animation>
+ 
+   <animation>
         <type>select</type>
         <object-name>kr87.indicators.ANT</object-name>
         <condition>

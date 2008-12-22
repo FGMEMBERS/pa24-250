@@ -203,9 +203,9 @@ a 150 lb copilot and no bagage.
    <pitot-heat type="bool">0</pitot-heat>		<!--  pitot heat off 		-->
   </anti-ice>
   <flight>
-   <aileron-trim>0.03</aileron-trim>
+   <aileron-trim>0.05</aileron-trim>
    <elevator-trim>-0.25</elevator-trim>  		<!--  tab set for takeoff	-->
-   <rudder-trim>0.00</rudder-trim>
+   <rudder-trim>-0.048</rudder-trim>
   </flight>
   <switches>
    <master-avionics type="bool">0</master-avionics>	<!--  avionics master off	-->

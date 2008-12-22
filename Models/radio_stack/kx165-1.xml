@@ -64,13 +64,30 @@
 
   <animation>
     <type>material</type>
+    <object-name>Chassis</object-name>
+    <object-name>CommKHz</object-name>
+    <object-name>CommMHz</object-name>
+    <object-name>CommVolume</object-name>
+    <object-name>NavKHz</object-name>
+    <object-name>NavMHz</object-name>
+    <object-name>NavVolume</object-name>
+    <emission>
+      <red>0.5</red>
+      <green>0.1</green>
+      <blue>0.00005</blue>
+      <factor-prop>sim/model/material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
     <object-name>CommToggle</object-name>
     <object-name>NavToggle</object-name>
     <emission>
-      <red>1.0</red>
-      <green>0.2</green>
-      <blue>0.0</blue>
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.4</red>
+      <green>0.08</green>
+      <blue>0.00004</blue>
+      <factor-prop>sim/model/material/instruments/factor</factor-prop>
     </emission>
   </animation>
 
