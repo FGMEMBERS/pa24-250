@@ -36,4 +36,16 @@
    </action>
   </animation>
 
+  <animation>
+   <type>material</type>
+    <object-name>window_base</object-name>
+    <object-name>click</object-name>
+    <emission>
+     <red>0.2</red>
+     <green>0.04</green>
+     <blue>0.00002</blue>
+     <factor-prop>sim/model/material/instruments/factor</factor-prop>
+    </emission>
+  </animation> 
+
 </PropertyList>

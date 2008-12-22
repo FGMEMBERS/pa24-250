@@ -30,24 +30,16 @@ properties' values.
  <h-base>128</h-base>
 
  <layers>
-
-  <layer>
-   <name>base</name>
-   <texture>
-    <path>Aircraft/pa24-250/Models/oat/OAT_win_base.rgb</path>
-    <x1>0.0</x1>
-    <y1>0.0</y1>
-    <x2>1.0</x2>
-    <y2>1.0</y2>
-   </texture>
-  </layer>
- 
   <layer>
    <name>deg-C-display</name>
    <condition>
     <equals>
      <property>/controls/switches/oat-switch</property>
      <value>1</value>
+    </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
     </equals>
    </condition>
    <type>text</type>
@@ -84,6 +76,10 @@ properties' values.
      <property>/controls/switches/oat-switch</property>
      <value>1</value>
     </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
    </condition>
    <type>text</type>
    <font>led</font>
@@ -117,6 +113,10 @@ properties' values.
     <equals>
      <property>/controls/switches/oat-switch</property>
      <value>2.0</value>
+    </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
     </equals>
    </condition>
    <type>text</type>
@@ -153,6 +153,10 @@ properties' values.
      <property>/controls/switches/oat-switch</property>
      <value>2.0</value>
     </equals>
+    <equals>
+     <property>sim/current-view/view-number</property>
+     <value>0</value>
+    </equals>
    </condition>
    <type>text</type>
    <font>led</font>
@@ -184,6 +188,10 @@ properties' values.
    <name>deg-symbol</name>
    <condition>
      <property>/controls/switches/oat-switch</property>
+     <equals>
+      <property>sim/current-view/view-number</property>
+      <value>0</value>
+     </equals>
    </condition>
    <type>text</type>
    <font>led</font>
