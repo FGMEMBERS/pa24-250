@@ -5,9 +5,9 @@
       <type>material</type>
       <object-name>OM-light</object-name>
       <emission>
-       <red>0.902</red>
-       <green>0.467</green>
-       <blue>0.0</blue>
+       <red>0.0</red>
+       <green>0.255</green>
+       <blue>0.612</blue>
        <factor-prop>instrumentation/marker-beacon/outer</factor-prop>
       </emission>
     </animation>
@@ -15,9 +15,9 @@
       <type>material</type>
       <object-name>MM-light</object-name>
       <emission>
-       <red>0.0</red>
-       <green>0.255</green>
-       <blue>0.612</blue>
+       <red>0.902</red>
+       <green>0.467</green>
+       <blue>0.0</blue>
        <factor-prop>instrumentation/marker-beacon/middle</factor-prop>
       </emission>
     </animation>
