@@ -66,6 +66,8 @@
     <max>2.0</max>
     <offset>0.15</offset>
    </pitch>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </engine>
 
   <propeller>
@@ -90,6 +92,8 @@
     <max>2.0</max>
     <offset>0.9</offset>
    </pitch>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </propeller>
 
   <rumble>
@@ -117,6 +121,8 @@
    <mode>in-transit</mode>
    <path>Sounds/gear.wav</path>
    <property>/gear/gear[0]/position-norm</property>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </gear>
 
   <gear>
@@ -128,6 +134,8 @@
      <value>0.9</value>
     </greater-than>
    </condition>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </gear>
 
   <gear>
@@ -167,8 +175,8 @@
     <offset>0.1</offset>
     <factor>0.1</factor>
    </pitch>
-   <reference-dist>10.0</reference-dist>
-   <max-dist>20.0</max-dist>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </gear>
 
   <squeal>
@@ -232,10 +240,38 @@
    <volume>
     <factor>0.8</factor>
    </volume>
-   <reference-dist>10.0</reference-dist>
-   <max-dist>20.0</max-dist>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </flap>
 
+  <fuel-pump>
+   <name>fuel pump</name>
+   <mode>looped</mode>
+   <path>Sounds/overspeed.wav</path>
+   <condition>
+    <and>
+     <greater-than>
+      <property>systems/electrical/outputs/fuel-pump</property>
+      <value>8</value>
+     </greater-than>
+     <less-than>
+      <property>/engines/engine/rpm</property>
+      <value>1200</value>
+     </less-than>  
+    </and> 
+   </condition>
+   <volume>
+    <property>/sim/sound/fuel_pump_volume</property>
+   </volume>
+   <pitch>
+    <property>controls/engines/engine[0]/fuel-pump</property>
+    <offset>0.0</offset>
+    <factor>1.75</factor>
+   </pitch>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
+  </fuel-pump>
+     
   <wind>
    <name>wind</name>
    <mode>looped</mode>
@@ -259,6 +295,8 @@
     <factor>0.0035</factor>
     <offset>1.25</offset>
    </pitch>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </wind>
  
   <stall>
@@ -273,8 +311,8 @@
     <offset>0.5</offset>
     <factor>0.5</factor>
    </volume>
-   <reference-dist>10.0</reference-dist>
-   <max-dist>20.0</max-dist>
+   <reference-dist>60.0</reference-dist>
+   <max-dist>2000.0</max-dist>
   </stall>
 
  <!--                  Toggle Switches                  -->     

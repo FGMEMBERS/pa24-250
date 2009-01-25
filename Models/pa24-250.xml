@@ -45,6 +45,7 @@
   <object-name>gear-lever-nut</object-name>
   <object-name>GearLever</object-name>
   <object-name>ParkBrake</object-name>
+  <object-name>ParkBrakeIn</object-name>
   <object-name>Mixture</object-name>
   <object-name>Throttle</object-name>
   <object-name>PropCont</object-name>
@@ -954,15 +955,25 @@
  </animation>
 
  <animation>
-  <type>translate</type>
+  <type>select</type>
+  <object-name>ParkBrakeIn</object-name>
+  <condition>
+   <less-than>
+    <property>controls/gear/brake-parking</property>
+    <value>0.5</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
   <object-name>ParkBrake</object-name>
-  <property>controls/gear/brake-parking</property>
-  <factor>0.03</factor>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
+  <condition>
+   <greater-than>
+    <property>controls/gear/brake-parking</property>
+    <value>0.5</value>
+   </greater-than>
+  </condition>
  </animation>
 
     <animation> 

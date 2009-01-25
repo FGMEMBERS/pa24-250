@@ -23,6 +23,7 @@ var L = nil;
 var phi = nil;
 var C = nil;
 var rudder_position = nil;
+var fuel_pump_volume = nil;
 
 # set up filters for these actions
 
@@ -67,6 +68,15 @@ var update_actions = func {
     if (getprop("/controls/engines/engine/fuel-pump")) {
     fuel_pres += 1.5;
     }
+
+##
+#  reduce fuel pump sound volume as rpm increases
+##
+   if (rpm < 1200) {
+     fuel_pump_volume = 0.3/(0.002*rpm+1)
+   } else {
+     fuel_pump_volume = 0.0
+   }
 
 ##
 #  Save a factor used to make the prop disc disapear as rpm increases
@@ -178,6 +188,7 @@ var update_actions = func {
     setprop("/sim/models/materials/propdisc/factor", factor);  
     setprop("/engines/engine/fuel-pressure-psi", fuel_pres_lowpass.filter(fuel_pres));
     setprop("/engines/engine/oil-pressure-psi", oil_pres_lowpass.filter(oil_pres));
+    setprop("/sim/sound/fuel_pump_volume", fuel_pump_volume);
 
     settimer(update_actions, 0);
 }
