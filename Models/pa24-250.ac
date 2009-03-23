@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "ac3dmat7" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
 MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
 MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 16  trans 0
@@ -8,7 +8,7 @@ MATERIAL "ac3dmat2" rgb 0.431 0.137 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 0 
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.745 0.745 0.745  emis 0 0 0  spec 0.631 0.631 0.631  shi 16  trans 0
 MATERIAL "ac3dmat3" rgb 0 0 0  amb 0.325 0.325 0.325  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.745 0.745 0.745  emis 0 0 0  spec 0 0 0  shi 20  trans 0
-MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.502 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.753 0.106 0.106  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat8" rgb 0.627 0.753 0.878  amb 0.204 0.204 0.204  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat12" rgb 0.267 0.267 0.267  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat13" rgb 0.533 0.533 0.533  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 0  trans 0
@@ -43,7 +43,36 @@ MATERIAL "ac3dmat5" rgb 0.502 0.502 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.498 0
 MATERIAL "ac3dmat5" rgb 1 1 0  amb 0.2 0.2 0.2  emis 1 1 0  spec 0 0 0  shi 128  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 1 1 1  shi 128  trans 0
 OBJECT world
-kids 47
+kids 49
+OBJECT poly
+name "ccw"
+loc 2.61459 -0.499712 0.0223895
+crease 45.000000
+numvert 8
+0.0050292 0 0.0187694
+0.0050292 0 0.0187694
+-0.00942421 0 0.0024706
+0.00939608 0 -0.0025723
+0.00393152 0 -0.000998935
+-0.00359678 0 0.00101823
+-0.00863957 0 -0.017802
+-0.00111127 0 -0.0198192
+numsurf 2
+SURF 0x30
+mat 1
+refs 4
+3 0 0
+2 1 0
+1 1 1
+0 0 1
+SURF 0x30
+mat 1
+refs 4
+7 0 0
+6 1 0
+5 1 1
+4 0 1
+kids 0
 OBJECT poly
 name "PropCont"
 loc 2.17826 -0.0282516 -0.0471609
@@ -57684,4 +57713,33 @@ refs 3
 93 0 0
 91 0 0
 83 0 0
+kids 0
+OBJECT poly
+name "cw"
+loc 2.61511 -0.499712 -0.0225093
+crease 45.000000
+numvert 8
+-0.00894713 0 0.0177196
+-0.00141883 0 0.0197367
+0.00362396 0 0.000916405
+-0.0039041 0 -0.00110076
+-0.00942373 0 -0.00247052
+0.00939655 0 0.00257237
+0.00502968 0 -0.0187694
+0.00502968 0 -0.0187694
+numsurf 2
+SURF 0x30
+mat 1
+refs 4
+0 0 0
+1 1 0
+2 1 1
+3 0 1
+SURF 0x30
+mat 1
+refs 4
+4 0 0
+5 1 0
+6 1 1
+7 0 1
 kids 0

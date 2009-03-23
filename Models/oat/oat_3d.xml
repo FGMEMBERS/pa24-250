@@ -25,7 +25,7 @@
   <animation>
    <type>pick</type>
    <object-name>click</object-name>
-   <visible>true</visible>
+   <visible type="bool">true</visible>
    <action>
      <name>OAT switch</name>
      <button>0</button>

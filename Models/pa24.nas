@@ -2,7 +2,7 @@ var value = 0;
 var test = 0;
 var toggle = 0;
 
-var fuel_switch = func {
+var fuel_switch = func(rotDir) {
   node = props.globals.getNode("consumables/fuel/tank[0]/selected",0);
   node.setBoolValue(0);
   node = props.globals.getNode("consumables/fuel/tank[1]/selected",0);
@@ -13,8 +13,9 @@ var fuel_switch = func {
   node.setBoolValue(0);
 
   val = getprop("controls[1]/fuel/switch-position");
-  test = 1 + val;
+  test = rotDir + val;
   if(test > 4){test=0};
+  if(test < 0){test=4};
   setprop("controls[1]/fuel/switch-position",test);
   if(test == 1){
     node = props.globals.getNode("consumables/fuel/tank[0]/selected",0);
@@ -51,7 +52,7 @@ var fuel_switch = func {
 }
 
 setprop("controls[1]/fuel/switch-position", -1);
-fuel_switch();
+fuel_switch(1);
 
 var master_switch = func {
   toggle=getprop("controls/electric/battery-switch");
