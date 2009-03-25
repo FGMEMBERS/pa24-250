@@ -1,6 +1,6 @@
 AC3Db
 MATERIAL "ac3dmat11" rgb 0.933333 0.501961 0.933333  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 1
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.745 0.745 0.745  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 1 1 1  spec 0 0 0  shi 10  trans 0
 OBJECT world
 kids 15
@@ -63,7 +63,6 @@ OBJECT poly
 name "CommUse100M"
 loc 0.00234275 0.00053078 0.0232637
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.0172322 0.000379309
@@ -83,7 +82,6 @@ OBJECT poly
 name "CommUse10M"
 loc 0.00234275 0.00053078 0.0162098
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.00698765 0.000379302
@@ -103,7 +101,6 @@ OBJECT poly
 name "CommUse1M"
 loc 0.00234275 0.00053078 0.0091559
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.0172322 0.000379302
@@ -123,7 +120,6 @@ OBJECT poly
 name "CommUse100K"
 loc 0.00234275 0.00053078 0.00210197
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.00698765 0.000379302
@@ -143,7 +139,6 @@ OBJECT poly
 name "CommUse10K"
 loc 0.00234275 0.00053078 -0.00495195
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.0172322 0.000379302
@@ -186,7 +181,6 @@ OBJECT poly
 name "CommStby100M"
 loc 0.00214136 0.00053078 0.0232527
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.00698765 0.000379309
@@ -206,7 +200,6 @@ OBJECT poly
 name "CommStby10M"
 loc 0.00214136 0.00053078 0.0161988
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.0172322 0.000379302
@@ -226,7 +219,6 @@ OBJECT poly
 name "CommStby1M"
 loc 0.00214136 0.00053078 0.00914484
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.00698765 0.000379302
@@ -246,7 +238,6 @@ OBJECT poly
 name "CommStby100K"
 loc 0.00214136 0.00053078 0.00209092
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.0172322 0.000379302
@@ -266,7 +257,6 @@ OBJECT poly
 name "CommStby10K"
 loc 0.00214136 0.00053078 -0.004963
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 0.00698765 0.000379302
@@ -309,7 +299,6 @@ OBJECT poly
 name "NavUse100M"
 loc 0.00193996 0.0247506 0.031069
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.00698765 -0.00037931
@@ -329,7 +318,6 @@ OBJECT poly
 name "NavUse10M"
 loc 0.00193996 0.0247506 0.0240151
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.0172322 -0.000379303
@@ -349,7 +337,6 @@ OBJECT poly
 name "NavUse1M"
 loc 0.00193996 0.0247506 0.0169612
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.00698765 -0.000379302
@@ -369,7 +356,6 @@ OBJECT poly
 name "NavUse100K"
 loc 0.00193996 0.0247506 0.00990724
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.0172322 -0.000379302
@@ -389,7 +375,6 @@ OBJECT poly
 name "NavUse10K"
 loc 0.00193996 0.0247506 0.00285331
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.00698765 -0.000379302
@@ -432,7 +417,6 @@ OBJECT poly
 name "NavStby100M"
 loc 0.00173857 0.0247506 0.031068
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.0172322 -0.000379309
@@ -452,7 +436,6 @@ OBJECT poly
 name "NavStby10M"
 loc 0.00173857 0.0247506 0.0240141
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.00698765 -0.000379302
@@ -472,7 +455,6 @@ OBJECT poly
 name "NavStby1M"
 loc 0.00173857 0.0247506 0.0169602
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.0172322 -0.000379302
@@ -492,7 +474,6 @@ OBJECT poly
 name "NavStby100K"
 loc 0.00173857 0.0247506 0.00990625
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.00698765 -0.000379302
@@ -512,7 +493,6 @@ OBJECT poly
 name "NavStby10K"
 loc 0.00173857 0.0247506 0.00285233
 texture "kx165.rgb"
-texrep 1 1
 crease 45.000000
 numvert 4
 0 -0.0172322 -0.000379302

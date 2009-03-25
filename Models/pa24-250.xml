@@ -102,7 +102,7 @@
 
  <model>
   <name>AP-Mode</name>
-  <path>Aircraft/Instruments-3d/Century-III/AutopilotMode.xml</path>
+  <path>Aircraft/Instruments-3d/Century-III/AutopilotMode-CIII.xml</path>
   <offsets>
    <x-m>2.119</x-m>
    <y-m>-0.48</y-m>
