@@ -182,7 +182,7 @@
     <type>double-exponential</type>
     <input>/autopilot/CENTURYIII/settings/target-roll-deg</input>
     <output>/autopilot/internal/filtered-target-roll-deg</output>
-    <filter-time>0.1</filter-time>
+    <filter-time>0.3</filter-time>
    </filter>
 
   <!-- Wing leveler (ROL) Mode --> 
@@ -355,7 +355,7 @@
     <type>double-exponential</type>
     <input>/controls/flight/elevator</input>
     <output>/autopilot/internal/filtered-elevator</output>
-    <filter-time>1</filter-time>
+    <filter-time>1.5</filter-time>
    </filter>
 
    <!-- Auto elevator trim -->

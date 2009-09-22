@@ -182,7 +182,7 @@
     <type>double-exponential</type>
     <input>/autopilot/CENTURYIIB/settings/target-roll-deg</input>
     <output>/autopilot/internal/filtered-target-roll-deg</output>
-    <filter-time>0.1</filter-time>
+    <filter-time>0.3</filter-time>
    </filter>
 
   <!-- Wing leveler (ROL) Mode --> 
