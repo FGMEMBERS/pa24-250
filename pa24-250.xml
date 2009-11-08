@@ -51,7 +51,7 @@
   <flap1 start="0.58" end="0.98" lift="1.2" drag="1.1"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-speed control="FLAP0" transition-time="5"/>
-  <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+  <control-input axis="/controls/flight/aileron_in" control="FLAP1" split="true"/>
   <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
   <control-output control="FLAP1" side="left"
@@ -64,7 +64,7 @@
        length="1.92" chord="1.02" sweep="3.23">
   <stall aoa="16" width="4" peak="1.5"/>
   <flap0 start="0" end="1" lift="2.0" drag="1.1" effectiveness="2"/>
-  <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+  <control-input axis="/controls/flight/elevator_in" control="FLAP0"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>

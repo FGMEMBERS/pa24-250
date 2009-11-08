@@ -211,8 +211,8 @@
                           <!-- unfiltered derivative error -->
       <Ti>15</Ti>         <!-- integrator time   10 -->
       <Td>0.025</Td>      <!-- derivator time 0.05 -->
-      <u_min>-0.25</u_min> <!-- minimum output clamp -->
-      <u_max>0.25</u_max>  <!-- maximum output clamp -->
+      <u_min>-0.5</u_min> <!-- minimum output clamp -->
+      <u_max>0.5</u_max>  <!-- maximum output clamp -->
     </config>
   </pid-controller>
 
@@ -225,7 +225,7 @@
     </enable>
     <type>double-exponential</type>
     <input>/autopilot/internal/raw-aileron</input>
-    <output>/controls/flight/aileron</output>
+    <output>/controls/flight/AP_aileron</output>
     <filter-time>.05</filter-time>  <!-- .1 -->
    </filter>
 
@@ -371,7 +371,7 @@
     </enable>
     <type>double-exponential</type>
     <input>/autopilot/internal/raw-elevator</input>
-    <output>/controls/flight/elevator</output>
+    <output>/controls/flight/AP_elevator</output>
     <filter-time>.1</filter-time>
    </filter>
 
@@ -379,7 +379,7 @@
     <name>elevator trim filter</name>
     <debug>false</debug>
     <type>double-exponential</type>
-    <input>/controls/flight/elevator</input>
+    <input>/controls/flight/AP_elevator</input>
     <output>/autopilot/internal/filtered-elevator</output>
     <filter-time>1.5</filter-time>
    </filter>

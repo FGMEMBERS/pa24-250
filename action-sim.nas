@@ -24,6 +24,8 @@ var phi = nil;
 var C = nil;
 var rudder_position = nil;
 var fuel_pump_volume = nil;
+var aileron = nil;
+var elevator = nil;
 
 # set up filters for these actions
 
@@ -180,7 +182,34 @@ var update_actions = func {
         rudder_position = getprop("surface-positions/rudder-pos-norm");
     }
 
+##
+#  Disengage Joystick aileron if autopilot is controlling roll
+##
+
+  if ( getprop("autopilot/CENTURYIII/controls/roll")) { 
+      aileron = getprop("controls/flight/AP_aileron");
+  }
+  elsif ( getprop("autopilot/CENTURYIIB/controls/roll")) {
+      aileron = getprop("controls/flight/AP_aileron");
+  }
+  else {
+      aileron = getprop("controls/flight/aileron");
+  }
+
+##
+#  Disengage Joystick elevator if autopilot is controlling pitch
+##
+
+  if ( getprop("autopilot/CENTURYIII/controls/pitch")) {
+      elevator = getprop("controls/flight/AP_elevator");
+  }
+  else {
+      elevator = getprop("controls/flight/elevator");
+  }
+
     # outputs
+    setprop("/controls/flight/aileron_in", aileron);
+    setprop("/controls/flight/elevator_in", elevator);
     setprop("/engines/engine[0]/egt-degf-fix", egt_lowpass.filter(egt));
     setprop("/sim/models/materials/LandingLight/factorAGL-L", factorAGL_L);
     setprop("/sim/models/materials/LandingLight/factorAGL-R", factorAGL_R);
