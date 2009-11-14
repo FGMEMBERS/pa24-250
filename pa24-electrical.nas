@@ -346,7 +346,7 @@ var electrical_bus_1 = func() {
     } else {
         setprop("controls/lighting/landing-lights-L", 0);
     }
-    setprop("sim/models/materials/LandingLight/factor-L", ldgLightVoltsL/14);  
+    setprop("sim/model/material/LandingLight/factor-L", ldgLightVoltsL/14);  
 
     # Landing Light-R Power
     if ( getprop("controls/switches/landing-light-R") ) {
@@ -363,7 +363,7 @@ var electrical_bus_1 = func() {
     } else {
         setprop("controls/lighting/landing-lights-R", 0);
     }
-    setprop("sim/models/materials/LandingLight/factor-R", ldgLightVoltsR/14);  
+    setprop("sim/model/material/LandingLight/factor-R", ldgLightVoltsR/14);  
 
     # Flashing Beacon Power
     if ( getprop("controls/switches/flashing-beacon") ) {
