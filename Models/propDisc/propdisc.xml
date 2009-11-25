@@ -9,7 +9,7 @@
   <type>material</type>
   <object-name>noshadow.PropellerDisk</object-name>
   <transparency>
-   <alpha>0.2</alpha>
+   <alpha>0.125</alpha>
    <factor-prop>/sim/model/material/propdisc/factor</factor-prop>
   </transparency>
  </animation>

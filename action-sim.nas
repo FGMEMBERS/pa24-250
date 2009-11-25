@@ -157,7 +157,7 @@ var update_actions = func {
 ##
 #  Save a factor used to make the prop disc disapear as rpm increases
 ##
-    factor = 1.0 - rpm/2400;
+    factor = 1.0 - rpm/2750;
     if ( factor < 0.0 ) {
         factor = 0.0;
     }
