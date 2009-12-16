@@ -69,8 +69,8 @@
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
 
-<vstab x="-6.68" y="0" z=".36" taper=".556" effectiveness="2"
-       length="1.6" chord="1.3" sweep="26.6">
+<vstab x="-6.68" y="0" z=".36" taper=".556" 
+       length="1.6" chord="1.3" sweep="26.6"> <!-- effectiveness="2"-->
   <stall aoa="14" width="3" peak="1.5"/>
   <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
   <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>

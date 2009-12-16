@@ -123,6 +123,9 @@ var init_actions = func {
     filteredGS0.setDoubleValue(0.0);
     filteredGS1.setDoubleValue(0.0);
 
+    # Make sure that init_actions is called when the sim is reset
+    setlistener("sim/signals/reset", init_actions); 
+
     # Request that the update fuction be called next frame
     settimer(update_actions, 0);
 }
@@ -157,7 +160,8 @@ var update_actions = func {
 ##
 #  Save a factor used to make the prop disc disapear as rpm increases
 ##
-    factor = 1.0 - rpm/2750;
+    var ratio = rpm/2400;
+    factor = 1.0 - ratio*ratio;
     if ( factor < 0.0 ) {
         factor = 0.0;
     }
@@ -310,6 +314,5 @@ var scissor_angle = func(H,C,L,phi) {
 # Setup listener call to start update loop once the fdm is initialized
 # 
 setlistener("sim/signals/fdm-initialized", init_actions);  
-
 
 

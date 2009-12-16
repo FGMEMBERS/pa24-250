@@ -196,19 +196,6 @@
    </action>   
 
    <action>
-     <name>primer</name>
-     <button>0</button>
-     <x>280</x>
-     <y>-200</y>
-     <w>16</w>
-     <h>32</h>
-     <binding>
-   <command>nasal</command>
-   <script>pa24.primer()</script>
-     </binding>
-   </action>   
-
-   <action>
     <name>Increase Mixture</name>
     <button>0</button>     <x>-58</x>
      <y>-224</y>
