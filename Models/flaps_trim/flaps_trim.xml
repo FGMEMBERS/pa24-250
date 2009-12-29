@@ -20,6 +20,50 @@
  </animation>
 
  <animation>
+   <type>pick</type>
+   <object-name>NoseTrimLeft</object-name>
+   <visible>false</visible>
+   <action>
+     <name>left rudder trim</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/rudder-trim</property>
+       <step>-0.001</step>
+     </binding>
+   </action>   
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>NoseTrimRight</object-name>
+   <visible>false</visible>
+   <action>
+     <name>right rudder trim</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/rudder-trim</property>
+       <step>0.001</step>
+     </binding>
+   </action>   
+ </animation>
+
+<animation>
+ <type>translate</type>
+  <object-name>NoseTrimInd</object-name>
+  <property>/controls/flight/rudder-trim[0]</property>
+  <factor>0.03</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>  
+</animation>
+
+ <animation>
   <name>NoseTrim</name>
   <type>rotate</type>
   <object-name>RudderTrim</object-name>
@@ -37,17 +81,47 @@
   </axis>
  </animation>
 
-<animation>
- <type>translate</type>
-  <object-name>NoseTrimInd</object-name>
-  <property>/controls/flight/rudder-trim[0]</property>
-  <factor>0.03</factor>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>  
-</animation>
+ <animation>
+   <type>pick</type>
+   <object-name>FlapsUp</object-name>
+   <visible>false</visible>
+   <action>
+     <name>Retract flaps</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(-1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>FlapsDn</object-name>
+   <visible>false</visible>
+   <action>
+     <name>Extend flaps</name>
+     <button>0</button>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>
+ </animation>
 
  <animation>
   <name>FlapSwitch</name>

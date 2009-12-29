@@ -102,6 +102,9 @@ var fuelPumpVolume = props.globals.getNode("sim/sound/fuel_pump_volume", 1);
 
 
 var init_actions = func {
+#    pitchC3.setDoubleValue(0.0);
+#    rollC3.setDoubleValue(0.0);
+#    rollC2b.setDoubleValue(0.0);
     theta0N.setDoubleValue(0.0);
     theta1N.setDoubleValue(0.0);
     theta2N.setDoubleValue(0.0);
@@ -313,6 +316,5 @@ var scissor_angle = func(H,C,L,phi) {
 
 # Setup listener call to start update loop once the fdm is initialized
 # 
-setlistener("sim/signals/fdm-initialized", init_actions);  
-
+setlistener("/sim/signals/fdm-initialized", init_actions);
 

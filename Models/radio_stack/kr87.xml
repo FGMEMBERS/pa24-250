@@ -2,13 +2,14 @@
 <PropertyList>
     <params>
         <right-display>/instrumentation/adf[0]/right-display</right-display>
+        <dimming>instrumentation/adf[0]/dimming-norm</dimming>
     </params>
     
     <path>kr87.ac</path>
     
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators</object-name>
+        <object-name>indicator</object-name>
         <condition>
             <property>/instrumentation/adf[0]/serviceable</property>
             <property>/instrumentation/adf[0]/power-btn</property>
@@ -20,55 +21,47 @@
     </animation>
     <animation>
         <type>noshadow</type>
-        <object-name>kr87</object-name>
+    </animation>
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
     </animation>
 
     <animation>
         <type>material</type>
-        <object-name>kr87.Chassis</object-name>
-        <object-name>kr87.knobs.FRQInner</object-name>
-        <object-name>kr87.knobs.FRQOuter</object-name>
-        <object-name>kr87.knobs.Volume</object-name>
+        <object-name>Chassis</object-name>
+        <object-name>Volume</object-name>
+        <object-name>FRQOuter</object-name>
+        <object-name>FRQInner</object-name>
+        <object-name>knobs.ADF</object-name>
+        <object-name>knobs.BFO</object-name>
+        <object-name>knobs.FRQ</object-name>
+        <object-name>knobs.FLT</object-name>
+        <object-name>knobs.SET</object-name>
         <emission>
-            <red>0.5</red>
-            <green>0.1</green>
-            <blue>0.00005</blue>
-            <factor-prop>sim/model/material/instruments/factor</factor-prop>
-        </emission>
-    </animation>
-
-    <animation>
-        <type>material</type>
-        <object-name>kr87.Chassis</object-name>
-        <object-name>kr87.knobs.FRQInner</object-name>
-        <object-name>kr87.knobs.FRQOuter</object-name>
-        <object-name>kr87.knobs.Volume</object-name>
-        <emission>
-            <red>1.0</red>
-            <green>0.2</green>
-            <blue>0.0001</blue>
-            <factor-prop>sim/model/material/instruments/factor</factor-prop>
+          <red>0.5</red>
+          <green>0.1</green>
+          <blue>0.00005</blue>
+          <factor-prop>sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>
     
     <animation>
         <type>material</type>
-        <object-name>kr87.knobs.ADF</object-name>
-        <object-name>kr87.knobs.BFO</object-name>
-        <object-name>kr87.knobs.FRQ</object-name>
-        <object-name>kr87.knobs.FLT</object-name>
-        <object-name>kr87.knobs.SET</object-name>
+        <object-name>indicator</object-name>
         <emission>
-            <red>0.4</red>
-            <green>0.08</green>
-            <blue>0.00004</blue>
-            <factor-prop>sim/model/material/instruments/factor</factor-prop>
+            <red>-1.0</red>
+            <green>-1.0</green>
+            <blue>-1.0</blue>
+            <factor-prop alias="../../../params/dimming"/>
+            <offset>1</offset>
         </emission>
     </animation>
- 
-   <animation>
+
+    <animation>
         <type>select</type>
-        <object-name>kr87.indicators.ANT</object-name>
+        <object-name>indicator.ANT</object-name>
         <condition>
             <not>
                 <property>/instrumentation/adf[0]/adf-btn</property>
@@ -78,7 +71,7 @@
 
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators.ADF</object-name>
+        <object-name>indicator.ADF</object-name>
         <condition>
             <property>/instrumentation/adf[0]/adf-btn</property>
         </condition>
@@ -86,7 +79,7 @@
 
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators.BFO</object-name>
+        <object-name>indicator.BFO</object-name>
         <condition>
             <property>/instrumentation/adf[0]/bfo-btn</property>
         </condition>
@@ -94,7 +87,7 @@
 
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators.FRQ</object-name>
+        <object-name>indicator.FRQ</object-name>
         <condition>
             <equals>
                 <property>/instrumentation/adf[0]/display-mode</property>
@@ -105,7 +98,7 @@
 
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators.FLT</object-name>
+        <object-name>indicator.FLT</object-name>
         <condition>
             <equals>
                 <property>/instrumentation/adf[0]/display-mode</property>
@@ -116,7 +109,7 @@
 
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators.ET</object-name>
+        <object-name>indicator.ET</object-name>
         <condition>
             <equals>
                 <property>/instrumentation/adf[0]/display-mode</property>
@@ -128,7 +121,7 @@
     <!-- Use FREQ -->
     <animation>
         <type>select</type>
-        <object-name>kr87.indicators.Use.1000</object-name>
+        <object-name>indicator.Use.1000</object-name>
         <condition>
             <greater-than-equals>
                 <property>/instrumentation/adf[0]/frequencies/selected-khz</property>
@@ -139,7 +132,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Use.1000</object-name>
+        <object-name>indicator.Use.1000</object-name>
         <property>/instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>1000</step>
         <factor>0.0001</factor>
@@ -152,7 +145,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Use.100</object-name>
+        <object-name>indicator.Use.100</object-name>
         <property>/instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>100</step>
         <factor>0.001</factor>
@@ -165,7 +158,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Use.10</object-name>
+        <object-name>indicator.Use.10</object-name>
         <property>/instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>10</step>
         <factor>0.01</factor>
@@ -178,7 +171,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Use.1</object-name>
+        <object-name>indicator.Use.1</object-name>
         <property>/instrumentation/adf[0]/frequencies/selected-khz</property>
         <step>1</step>
         <factor>0.1</factor>
@@ -198,7 +191,7 @@
             </not-equals>
         </condition>
         <type>select</type>
-        <object-name>kr87.indicators.dots</object-name>
+        <object-name>indicator.dots</object-name>
     </animation>
 
     <animation>
@@ -209,7 +202,7 @@
             </greater-than-equals>
         </condition>
         <type>select</type>
-        <object-name>kr87.indicators.Stby.1000</object-name>
+        <object-name>indicator.Stby.1000</object-name>
     </animation>
 
     <animation>
@@ -220,12 +213,12 @@
             </greater-than-equals>
         </condition>
         <type>select</type>
-        <object-name>kr87.indicators.Stby.100</object-name>
+        <object-name>indicator.Stby.100</object-name>
     </animation>
     
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Stby.1000</object-name>
+        <object-name>indicator.Stby.1000</object-name>
         <property alias="../../params/right-display"/>
         <step>1000</step>
         <factor>0.0001</factor>
@@ -238,7 +231,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Stby.100</object-name>
+        <object-name>indicator.Stby.100</object-name>
         <property alias="../../params/right-display"/>
         <step>100</step>
         <factor>0.001</factor>
@@ -251,7 +244,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Stby.10</object-name>
+        <object-name>indicator.Stby.10</object-name>
         <property alias="../../params/right-display"/>
         <step>10</step>
         <factor>0.01</factor>
@@ -264,7 +257,7 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>kr87.indicators.Stby.1</object-name>
+        <object-name>indicator.Stby.1</object-name>
         <property alias="../../params/right-display"/>
         <step>1</step>
         <factor>0.1</factor>
@@ -279,7 +272,7 @@
     <!-- knobs and buttons -->
     <animation>
         <type>translate</type>
-        <object-name>kr87.knobs.ADF</object-name>
+        <object-name>knobs.ADF</object-name>
         <property>/instrumentation/adf[0]/adf-btn</property>
         <factor>-0.004</factor>
         <axis>
@@ -288,9 +281,23 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>knobs.ADF</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/adf[0]/adf-btn</property>
+            </binding>
+        </action>
+    </animation>
+
     <animation>
         <type>translate</type>
-        <object-name>kr87.knobs.BFO</object-name>
+        <object-name>knobs.BFO</object-name>
         <property>/instrumentation/adf[0]/bfo-btn</property>
         <factor>-0.004</factor>
         <axis>
@@ -299,9 +306,23 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>knobs.BFO</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/adf[0]/bfo-btn</property>
+            </binding>
+        </action>
+    </animation>
+
     <animation>
         <type>translate</type>
-        <object-name>kr87.knobs.FRQ</object-name>
+        <object-name>knobs.FRQ</object-name>
         <property>/instrumentation/adf[0]/frq-btn</property>
         <factor>-0.004</factor>
         <axis>
@@ -310,9 +331,51 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>knobs.FRQ</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/adf[0]/bfo-frq</property>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/frq-btn</property>
+                <value type="int">1</value>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>/instrumentation/adf[0]/display-mode</property>
+                        <value type="int">0</value>
+                    </equals>
+                </condition>
+                <command>property-swap</command>
+                <property>/instrumentation/adf[0]/frequencies/selected-khz</property>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/display-mode</property>
+                <value type="int">0</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/instrumentation/adf[0]/frq-btn</property>
+                    <value type="int">0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
     <animation>
         <type>translate</type>
-        <object-name>kr87.knobs.FLT</object-name>
+        <object-name>knobs.FLT</object-name>
         <property>/instrumentation/adf[0]/flt-btn</property>
         <factor>-0.004</factor>
         <axis>
@@ -321,9 +384,39 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>knobs.FLT</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/flt-btn</property>
+                <value type="int">1</value>
+            </binding>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/display-mode</property>
+                <step>1</step>
+                <min>1</min>
+                <max>3</max>
+                <wrap>true</wrap>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/instrumentation/adf[0]/flt-btn</property>
+                    <value type="int">0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
     <animation>
         <type>translate</type>
-        <object-name>kr87.knobs.SET</object-name>
+        <object-name>knobs.SET</object-name>
         <property>/instrumentation/adf[0]/set-btn</property>
         <factor>-0.004</factor>
         <axis>
@@ -332,9 +425,31 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>knobs.SET</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/set-btn</property>
+                <value type="int">1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/instrumentation/adf[0]/set-btn</property>
+                    <value type="int">0</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
     <animation>
         <type>rotate</type>
-        <object-name>kr87.knobs.Volume</object-name>
+        <object-name>Volume</object-name>
         <property>/instrumentation/adf[0]/volume-norm</property>
         <factor>-270</factor>
         <axis>
@@ -347,6 +462,239 @@
             <y-m>0.03362955</y-m>
             <z-m>-0.00472295</z-m>
         </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>VolumePickRight</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/volume-norm</property>
+                <step>0.1</step>
+                <min>0</min>
+                <max>1.0</max>
+            </binding>
+            <binding>
+                <condition>
+                    <greater-than>
+                        <property>/instrumentation/adf[0]/volume-norm</property>
+                        <value>0.0</value>
+                    </greater-than>
+                </condition>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/power-btn</property>
+                <value type="bool">1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>VolumePickLeft</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/volume-norm</property>
+                <step>-0.1</step>
+                <min>0</min>
+                <max>1.0</max>
+            </binding>
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>/instrumentation/adf[0]/volume-norm</property>
+                        <value>0.1</value>
+                    </less-than>
+                </condition>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/power-btn</property>
+                <value type="bool">0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>Volume</object-name>
+        <action>
+            <button>4</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/volume-norm</property>
+                <step>0.1</step>
+                <min>0</min>
+                <max>1.0</max>
+            </binding>
+            <binding>
+                <condition>
+                    <greater-than>
+                        <property>/instrumentation/adf[0]/volume-norm</property>
+                        <value>0.0</value>
+                    </greater-than>
+                </condition>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/power-btn</property>
+                <value type="bool">1</value>
+            </binding>
+        </action>
+        <action>
+            <button>3</button>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/volume-norm</property>
+                <step>-0.1</step>
+                <min>0</min>
+                <max>1.0</max>
+            </binding>
+            <binding>
+                <condition>
+                    <less-than>
+                        <property>/instrumentation/adf[0]/volume-norm</property>
+                        <value>0.1</value>
+                    </less-than>
+                </condition>
+                <command>property-assign</command>
+                <property>/instrumentation/adf[0]/power-btn</property>
+                <value type="bool">0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FreqPickLeft</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>-1</step>
+                <min>200</min>
+                <max>1800</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>-100</step>
+                <min>200</min>
+                <max>1800</max>
+                <wrap>true</wrap>
+                <mask>integer</mask>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FreqPickRight</object-name>
+        <visible>false</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>1</step>
+                <min>200</min>
+                <max>1800</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>100</step>
+                <min>200</min>
+                <max>1800</max>
+                <wrap>true</wrap>
+                <mask>integer</mask>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FRQOuter</object-name>
+        <object-name>FRQInner</object-name>
+        <visible>true</visible>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>-100</step>
+                <min>200</min>
+                <max>1800</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>-1</step>
+                <min>200</min>
+                <max>1800</max>
+                <resolution>1</resolution>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <not>
+                        <property>devices/status/keyboard/shift</property>
+                    </not>
+                </condition>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>1</step>
+                <min>200</min>
+                <max>1800</max>
+                <wrap>true</wrap>
+                <mask>integer</mask>
+            </binding>
+            <binding>
+                <condition>
+                    <property>devices/status/keyboard/shift</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>/instrumentation/adf[0]/frequencies/standby-khz</property>
+                <step>100</step>
+                <min>200</min>
+                <max>1800</max>
+                <wrap>true</wrap>
+                <mask>integer</mask>
+            </binding>
+        </action>
     </animation>
 
 </PropertyList>
