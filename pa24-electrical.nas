@@ -32,6 +32,7 @@ var init_electrical = func {
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
 
+    setprop("controls/engines/engine[0]/magnetos",0);
     setprop("controls/electric/battery-switch", 0);
     setprop("controls/electric/engine/generator", 0);
     setprop("controls/engines/engine[0]/fuel-pump",0);

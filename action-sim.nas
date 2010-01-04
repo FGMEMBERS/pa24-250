@@ -54,6 +54,8 @@ var propCentury3Controls = props.globals.getNode("autopilot/CENTURYIII/controls"
 
 # Associate Nodes
 
+var click = props.globals.getNode("controls/switches/click",0);
+var prime = props.globals.getNode("sim/sound/prime",0);
 var theta0N = propGear0.getNode("theta0", 1);
 var theta1N = propGear1.getNode("theta1", 1);
 var theta2N = propGear2.getNode("theta2", 1);
@@ -105,6 +107,7 @@ var init_actions = func {
 #    pitchC3.setDoubleValue(0.0);
 #    rollC3.setDoubleValue(0.0);
 #    rollC2b.setDoubleValue(0.0);
+    click.setBoolValue(0);
     theta0N.setDoubleValue(0.0);
     theta1N.setDoubleValue(0.0);
     theta2N.setDoubleValue(0.0);
@@ -135,6 +138,10 @@ var init_actions = func {
 
 
 var update_actions = func {
+
+    if ( click.getValue() ) { settimer(resetClick, 0.05); }
+    if ( prime.getValue() ) { settimer(resetPrime, 0.2); }
+    
 ##
 #  This is a convenient cludge to model fuel pressure and oil pressure
 ##
@@ -313,6 +320,9 @@ var scissor_angle = func(H,C,L,phi) {
     var theta = phi - 2*a/3 - a/3/(1-a*a/2);
     return theta;
 }
+
+var resetClick = func { click.setBoolValue(0); }
+var resetPrime = func { prime.setBoolValue(0); }
 
 # Setup listener call to start update loop once the fdm is initialized
 # 

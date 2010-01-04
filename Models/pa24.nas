@@ -1,6 +1,10 @@
 var value = 0;
 var test = 0;
 var toggle = 0;
+var click = props.globals.getNode("controls/switches/click",0);
+click.setBoolValue(0);
+var prime = props.globals.getNode("sim/sound/prime",0);
+prime.setBoolValue(0);
 
 var fuel_switch = func(rotDir) {
   node = props.globals.getNode("consumables/fuel/tank[0]/selected",0);
@@ -58,41 +62,43 @@ var master_switch = func {
   toggle=getprop("controls/electric/battery-switch");
   toggle=1-toggle;
   setprop("controls/electric/battery-switch",toggle);
+  click.setBoolValue(1);
 }
 
 var f_pump_switch = func {
   toggle=getprop("controls/engines/engine/fuel-pump");
   toggle=1-toggle;
   setprop("controls/engines/engine/fuel-pump",toggle);
+  click.setBoolValue(1);
 }
-
-#nav_light_switch = func {
-#toggle=getprop("controls/switches/nav-lights");
-#toggle=1-toggle;
-#setprop("controls/switches/nav-lights",toggle);
-#}
 
 var panel_light_switch = func(c) {
   var factor = getprop("controls/switches/panel-lights-factor");
-  if ( (c > 0) and ( factor > 1 )) { return; } 
-  if ( (c < 0) and ( factor < 0 )) { return; }
+  if ( (c > 0) and ( factor > 1 )) { factor = 1; return; } 
+  if ( (c < 0) and ( factor < 0 )) { factor = 0; return; }
   factor = c*0.01 + factor;
   setprop("controls/switches/panel-lights-factor",factor);
   if (factor > 0.0001 ) { toggle = 1; }
   else { toggle = 0; }
-  setprop("controls/switches/nav-lights",toggle);     
+  var lastToggle = getprop("controls/switches/nav-lights");
+  if ( toggle != lastToggle ) {
+     setprop("controls/switches/nav-lights",toggle);
+     click.setBoolValue(1);
+  }
 }
 
 var landing_light_switch_left = func {
   toggle=getprop("controls/switches/landing-light-L");
   toggle=1-toggle;
   setprop("controls/switches/landing-light-L",toggle);
+  click.setBoolValue(1);
 }
 
 var landing_light_switch_right = func {
   toggle=getprop("controls/switches/landing-light-R");
   toggle=1-toggle;
   setprop("controls/switches/landing-light-R",toggle);
+  click.setBoolValue(1);
 }
 
 var landing_light_switch_both = func {
@@ -101,36 +107,42 @@ var landing_light_switch_both = func {
   toggle=1-toggle;
   setprop("controls/switches/landing-light-L",toggle);
   setprop("controls/switches/landing-light-R",toggle);
+  click.setBoolValue(1);
 }
 
 var turn_bank_switch = func {
   toggle = getprop("controls/switches/turn-indicator");
   toggle=1-toggle;
   setprop("controls/switches/turn-indicator",toggle);
+  click.setBoolValue(1);
 }
 
 var rot_beacon_switch = func {
   toggle=getprop("controls/switches/flashing-beacon");
   toggle=1-toggle;
   setprop("controls/switches/flashing-beacon",toggle);
+  click.setBoolValue(1);
 }
 
 var pitot_heat_switch = func {
   toggle=getprop("controls/anti-ice/pitot-heat");
   toggle=1-toggle;
   setprop("controls/anti-ice/pitot-heat",toggle);
+  click.setBoolValue(1);
 }
 
 var strobe_light_switch = func {
   toggle=getprop("controls/switches/strobe-lights");
   toggle=1-toggle;
   setprop("controls/switches/strobe-lights",toggle);
+  click.setBoolValue(1);
 }
 
 var avionics_master_switch = func {
   toggle=getprop("controls/switches/master-avionics");
   toggle=1-toggle;
   setprop("controls/switches/master-avionics",toggle);
+  click.setBoolValue(1);
 }
 
 var carb_heat = func {
@@ -143,6 +155,7 @@ var primer = func {
   toggle=getprop("controls/engines/engine/primer-pump");
   toggle=1-toggle;
   setprop("controls/engines/engine/primer-pump",toggle);
+  prime.setBoolValue(1);
 }
 
 var map_light_switch = func {
