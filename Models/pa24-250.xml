@@ -690,18 +690,43 @@
      </entry>
      <entry>
        <ind>0.5</ind>
-       <dep>30.0</dep>
+       <dep>75.0</dep>
      </entry>
      <entry>
        <ind>1</ind>
-       <dep>30.0</dep>
+       <dep>75.0</dep>
      </entry>
    </interpolation>
    <center>
-     <x-m>2.70061</x-m>
-     <y-m>0.56533</y-m>
-     <z-m>0.11770</z-m>
+     <x-m>2.66217</x-m>
+     <y-m>0.56458</y-m>
+     <z-m>0.16380</z-m>
    </center>
+   <axis>
+     <x>0.0</x>
+     <y>1.0</y>
+     <z>0.0</z>
+   </axis>
+ </animation>
+  
+ <animation>
+   <type>translate</type>
+   <object-name>DoorLock</object-name>
+   <property>/sim/model/door-positions/rightDoor/position-norm</property>
+   <interpolation>
+     <entry>
+       <ind>0.0</ind>
+       <dep>0.0</dep>
+     </entry>
+     <entry>
+       <ind>0.5</ind>
+       <dep>0.02</dep>
+     </entry>
+     <entry>
+       <ind>1</ind>
+       <dep>0.02</dep>
+     </entry>
+   </interpolation>
    <axis>
      <x>0.0</x>
      <y>0.0</y>
@@ -1659,7 +1684,8 @@
    <type>rotate</type>
    <object-name>NoseWheel</object-name>
    <object-name>NoseCylinder</object-name>
-   <object-name>NoseWheelStrut</object-name>
+   <object-name>NoseFork</object-name>
+   <object-name>NoseAxle</object-name>
    <object-name>sczors-top</object-name>
    <object-name>sczors-bot</object-name>
    <property>gear/gear[0]/turn-pos-norm</property>
@@ -1680,7 +1706,8 @@
    <type>rotate</type>
    <object-name>NoseWheel</object-name>
    <object-name>NoseCylinder</object-name>
-   <object-name>NoseWheelStrut</object-name>
+   <object-name>NoseFork</object-name>
+   <object-name>NoseAxle</object-name>
    <object-name>sczors-top</object-name>
    <object-name>sczors-bot</object-name>
    <property>gear/gear[0]/position-norm</property>
@@ -1703,7 +1730,8 @@
  <animation>
    <type>translate</type>
    <object-name>NoseWheel</object-name>
-   <object-name>NoseWheelStrut</object-name>
+   <object-name>NoseFork</object-name>
+   <object-name>NoseAxle</object-name>
    <object-name>sczors-bot</object-name>
    <property>gear/gear[0]/compression-m</property>
    <factor>1.0</factor>
@@ -1737,9 +1765,9 @@
    <property>gear/gear[0]/theta0</property>
    <factor>-57.3</factor>
    <center>
-     <x-m>1.11746</x-m>
+     <x-m>1.13126</x-m>
      <y-m>0.0</y-m>
-     <z-m>-0.767699</z-m>
+     <z-m>-0.76028</z-m>
    </center>
    <axis>
      <x>0</x>
@@ -1772,7 +1800,10 @@
    <type>rotate</type>
    <object-name>LeftWheel</object-name>
    <object-name>LeftFork</object-name>
+   <object-name>LeftMainAxle</object-name>
    <object-name>LeftCylinder</object-name>
+   <object-name>LeftBrake</object-name>
+   <object-name>LeftBrakeLine</object-name>
    <object-name>sczors-left-top</object-name>
    <object-name>sczors-left-bottom</object-name>
    <property>gear/gear[1]/position-norm</property>
@@ -1785,7 +1816,7 @@
    </center>
    <axis>
      <x>1</x>
-     <y>-0.2</y>
+     <y>-0.1</y>
      <z>-0.2</z>
    </axis>
  </animation>
@@ -1794,7 +1825,10 @@
    <type>translate</type>
    <object-name>LeftWheel</object-name>
    <object-name>LeftFork</object-name>
+   <object-name>LeftMainAxle</object-name>
    <object-name>sczors-left-bottom</object-name>
+   <object-name>LeftBrake</object-name>
+   <object-name>LeftBrakeLine</object-name>
    <property>gear/gear[1]/compression-m</property>
    <factor>1.0</factor>
    <axis>
@@ -1810,9 +1844,9 @@
    <property>gear/gear[1]/theta1</property>
    <factor>-57.3</factor>
    <center>
-     <x-m>3.135242</x-m>
+     <x-m>3.13358</x-m>
      <y-m>0.0</y-m>
-     <z-m>-0.494984</z-m>
+     <z-m>-0.50175</z-m>
    </center>
    <axis>
      <x>0</x>
@@ -1827,9 +1861,9 @@
    <property>gear/gear[1]/theta1</property>
    <factor>57.3</factor>
    <center>
-     <x-m>3.119376</x-m>
+     <x-m>3.11588</x-m>
      <y-m>0.0</y-m>
-     <z-m>-0.703486</z-m>
+     <z-m>-0.70390</z-m>
    </center>
    <axis>
      <x>0</x>
@@ -1860,7 +1894,10 @@
    <type>rotate</type>
    <object-name>RightWheel</object-name>
    <object-name>RightFork</object-name>
+   <object-name>RightMainAxle</object-name>
    <object-name>RightCylinder</object-name>
+   <object-name>RightBrake</object-name>
+   <object-name>RightBrakeLine</object-name>
    <object-name>sczors-right-top</object-name>
    <object-name>sczors-right-bottom</object-name>
    <property>gear/gear[2]/position-norm</property>
@@ -1873,7 +1910,7 @@
    </center>
    <axis>
      <x>1</x>
-     <y>0.2</y>
+     <y>0.1</y>
      <z>-0.2</z>
    </axis>
  </animation>
@@ -1882,7 +1919,10 @@
    <type>translate</type>
    <object-name>RightWheel</object-name>
    <object-name>RightFork</object-name>
+   <object-name>RightMainAxle</object-name>
    <object-name>sczors-right-bottom</object-name>
+   <object-name>RightBrake</object-name>
+   <object-name>RightBrakeLine</object-name>
    <property>gear/gear[2]/compression-m</property>
    <factor>1.0</factor>
    <axis>
@@ -1898,9 +1938,9 @@
    <property>gear/gear[2]/theta2</property>
    <factor>-57.3</factor>
    <center>
-     <x-m>3.135242</x-m>
+     <x-m>3.13358</x-m>
      <y-m>0.0</y-m>
-     <z-m>-0.494984</z-m>
+     <z-m>-0.50175</z-m>
    </center>
    <axis>
      <x>0</x>
@@ -1915,9 +1955,9 @@
    <property>gear/gear[2]/theta2</property>
    <factor>57.3</factor>
    <center>
-     <x-m>3.119376</x-m>
+     <x-m>3.11588</x-m>
      <y-m>0.0</y-m>
-     <z-m>-0.703486</z-m>
+     <z-m>-0.70390</z-m>
    </center>
    <axis>
      <x>0</x>
@@ -2062,9 +2102,9 @@
    <property>gear/gear[0]/rollspeed-ms</property>
    <factor>-21.95</factor>
    <center>
-     <x-m>1.134200</x-m>
+     <x-m>1.13608</x-m>
      <y-m>0</y-m>
-     <z-m>-1.009518</z-m>
+     <z-m>-1.00957</z-m>
    </center>
    <axis>
      <x>0.0</x>
@@ -2079,9 +2119,9 @@
    <property>gear/gear[1]/rollspeed-ms</property>
    <factor>-21.95</factor>
    <center>
-     <x-m>3.059953</x-m>
+     <x-m>3.06171</x-m> 
      <y-m>1.38621</y-m>
-     <z-m>-0.945484</z-m>
+     <z-m>-0.94481</z-m>
    </center>
    <axis>
      <x>0.0</x>
@@ -2096,9 +2136,9 @@
    <property>gear/gear[2]/rollspeed-ms</property>
    <factor>-21.95</factor>
    <center>
-     <x-m>3.06319</x-m>
+     <x-m>3.06171</x-m>
      <y-m>1.38621</y-m>
-     <z-m>-0.946451</z-m>
+     <z-m>-0.94481</z-m>
    </center>
    <axis>
      <x>0.0</x>
