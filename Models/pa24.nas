@@ -1,6 +1,12 @@
 var value = 0;
 var test = 0;
 var toggle = 0;
+var baggageLoaded = props.globals.getNode("sim/model/baggage/loaded",0);
+baggageLoaded.setBoolValue(0);
+var leftVisorDown = props.globals.getNode("sim/model/visor-positions/leftVisorDown",0);
+leftVisorDown.setBoolValue(0);
+var rightVisorDown = props.globals.getNode("sim/model/visor-positions/rightVisorDown",0);
+rightVisorDown.setBoolValue(0);
 var click = props.globals.getNode("controls/switches/click",0);
 click.setBoolValue(0);
 var prime = props.globals.getNode("sim/sound/prime",0);
@@ -57,6 +63,24 @@ var fuel_switch = func(rotDir) {
 
 setprop("controls[1]/fuel/switch-position", -1);
 fuel_switch(1);
+
+var baggageToggle = func {
+  toggle=baggageLoaded.getValue();
+  toggle=1-toggle;
+  baggageLoaded.setBoolValue(toggle);
+}
+
+var LeftVisorDown = func {
+  toggle=leftVisorDown.getValue();
+  toggle=1-toggle;
+  leftVisorDown.setBoolValue(toggle);
+}
+
+var RightVisorDown = func {
+  toggle=rightVisorDown.getValue();
+  toggle=1-toggle;
+  rightVisorDown.setBoolValue(toggle);
+}
 
 var master_switch = func {
   toggle=getprop("controls/electric/battery-switch");

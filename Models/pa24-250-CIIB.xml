@@ -574,6 +574,106 @@
   </condition>
  </animation>
 
+<!-- picks for left visor -->
+ <animation>
+   <type>pick</type>
+   <object-name>LeftVisor</object-name>
+   <visible>true</visible>
+   <action>
+     <button>0</button>
+     <repeatable>false</repeatable>
+     <binding>
+        <command>nasal</command>
+        <script>pa24.LeftVisorDown();</script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation> 
+   <type>rotate</type>
+   <object-name>LeftVisor</object-name>
+   <property>sim/model/visor-positions/leftVisorDown</property>
+   <interpolation>
+     <entry>
+       <ind>0.0</ind>
+       <dep>0.0</dep>
+     </entry>
+     <entry>
+       <ind>0.5</ind>
+       <dep>60.0</dep>
+     </entry>
+     <entry>
+       <ind>1</ind>
+       <dep>120.0</dep>
+     </entry>
+   </interpolation>
+
+   <center>
+     <x-m>2.27948</x-m>
+     <y-m>-0.05409</y-m>
+     <z-m>0.62064</z-m>
+   </center>
+
+   <axis>
+     <x1-m>2.34888</x1-m>
+     <y1-m>-0.41549</y1-m>
+     <z1-m>0.58842</z1-m>
+     <x2-m>2.27948</x2-m>
+     <y2-m>-0.05409</y2-m>
+     <z2-m>0.62064</z2-m>
+   </axis>
+ </animation>
+
+<!-- picks for right visor -->
+ <animation>
+   <type>pick</type>
+   <object-name>RightVisor</object-name>
+   <visible>true</visible>
+   <action>
+     <button>0</button>
+     <repeatable>false</repeatable>
+     <binding>
+        <command>nasal</command>
+        <script>pa24.RightVisorDown();</script>
+     </binding>
+   </action>
+ </animation>
+
+ <animation> 
+   <type>rotate</type>
+   <object-name>RightVisor</object-name>
+   <property>sim/model/visor-positions/rightVisorDown</property>
+   <interpolation>
+     <entry>
+       <ind>0.0</ind>
+       <dep>0.0</dep>
+     </entry>
+     <entry>
+       <ind>0.5</ind>
+       <dep>60.0</dep>
+     </entry>
+     <entry>
+       <ind>1</ind>
+       <dep>120.0</dep>
+     </entry>
+   </interpolation>
+
+   <center>
+     <x-m>2.27948</x-m>
+     <y-m>0.05409</y-m>
+     <z-m>0.62064</z-m>
+   </center>
+
+   <axis>
+     <x1-m>2.27948</x1-m>
+     <y1-m>0.05409</y1-m>
+     <z1-m>0.62064</z1-m>
+     <x2-m>2.34888</x2-m>
+     <y2-m>0.41549</y2-m>
+     <z2-m>0.58842</z2-m>
+   </axis>
+ </animation>
+
 <!-- picks for the cabin door animation --> 
  <animation>
    <type>pick</type>
@@ -688,9 +788,9 @@
      </entry>
    </interpolation>
    <center>
-     <x-m>2.66217</x-m>
-     <y-m>0.56458</y-m>
-     <z-m>0.16380</z-m>
+     <x-m>2.54951</x-m>
+     <y-m>0.55237</y-m>
+     <z-m>0.14829</z-m>
    </center>
    <axis>
      <x>0.0</x>
@@ -773,6 +873,22 @@
      <y2-m>0.58084</y2-m>
      <z2-m>0.19125</z2-m>
     </axis>
+ </animation>
+
+ <animation>
+   <type>select</type>
+   <object-name>bag1</object-name>
+   <object-name>bag2</object-name>
+   <object-name>box</object-name>
+   <condition>
+     <and>
+       <property>sim/model/baggage/loaded</property>
+       <greater-than>
+         <property>sim/model/door-positions/baggageDoor/position-norm</property>
+         <value>0</value>
+       </greater-than>
+     </and>
+   </condition>
  </animation>
 
 <!--fuelvalve animation--> 
@@ -1187,25 +1303,36 @@
  </animation>
 
  <animation>
-   <type>select</type>
-   <object-name>LeftNavLightOn</object-name>
-   <object-name>RightNavLightOn</object-name>
-   <object-name>RearNavLightOn</object-name>
-   <condition>
-     <property>controls/lighting/nav-lights</property>
-   </condition>
+  <type>material</type>
+  <object-name>LeftNavLight</object-name>
+  <emission>
+   <red> 1.0</red>
+   <green>0.0</green>
+   <blue>0.0</blue>
+   <factor-prop>controls/lighting/nav-lights</factor-prop>
+  </emission>
  </animation>
 
  <animation>
-   <type>select</type>
-   <object-name>LeftNavLightOff</object-name>
-   <object-name>RightNavLightOff</object-name>
-   <object-name>RearNavLightOff</object-name>
-   <condition>
-     <not>
-       <property>controls/lighting/nav-lights</property>
-     </not>
-   </condition>
+  <type>material</type>
+  <object-name>RightNavLight</object-name>
+  <emission>
+   <red> 0.0</red>
+   <green>1.0</green>
+   <blue>0.0</blue>
+   <factor-prop>controls/lighting/nav-lights</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>RearNavLights</object-name>
+  <emission>
+   <red> 1.0</red>
+   <green>1.0</green>
+   <blue>1.0</blue>
+   <factor-prop>controls/lighting/nav-lights</factor-prop>
+  </emission>
  </animation>
 
  <animation>
