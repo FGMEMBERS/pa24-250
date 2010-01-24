@@ -3,6 +3,8 @@ var test = 0;
 var toggle = 0;
 var baggageLoaded = props.globals.getNode("sim/model/baggage/loaded",0);
 baggageLoaded.setBoolValue(0);
+var baggageWt_lb = props.globals.getNode("sim/weight[4]/weight-lb",0);
+baggageWt_lb.setValue(0);
 var leftVisorDown = props.globals.getNode("sim/model/visor-positions/leftVisorDown",0);
 leftVisorDown.setBoolValue(0);
 var rightVisorDown = props.globals.getNode("sim/model/visor-positions/rightVisorDown",0);
@@ -68,6 +70,11 @@ var baggageToggle = func {
   toggle=baggageLoaded.getValue();
   toggle=1-toggle;
   baggageLoaded.setBoolValue(toggle);
+  if (toggle) {
+     baggageWt_lb.setValue(122);
+  } else {
+     baggageWt_lb.setValue(0);
+  }
 }
 
 var LeftVisorDown = func {
