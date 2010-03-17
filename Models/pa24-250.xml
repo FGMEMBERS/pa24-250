@@ -308,7 +308,7 @@
   <name>kr87_adf</name>
   <path>Aircraft/pa24-250/Models/radio_stack/kr87.xml</path>
   <offsets>
-   <x-m>2.1664</x-m>
+   <x-m>2.1604</x-m>
    <y-m>0.12</y-m>
    <z-m>0.2757</z-m>
   </offsets>
@@ -318,7 +318,7 @@
   <name>kx165-1</name>
   <path>Aircraft/pa24-250/Models/radio_stack/kx165-1.xml</path>
   <offsets>
-   <x-m>2.1664</x-m>
+   <x-m>2.1604</x-m>
    <y-m>0.12</y-m>
    <z-m>0.2307</z-m>
   </offsets>
@@ -328,7 +328,7 @@
   <name>kx165-2</name>
   <path>Aircraft/pa24-250/Models/radio_stack/kx165-2.xml</path>
   <offsets>
-   <x-m>2.1664</x-m>
+   <x-m>2.1604</x-m>
    <y-m>0.12</y-m>
    <z-m>0.1757</z-m>
   </offsets>
