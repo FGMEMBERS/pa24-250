@@ -457,35 +457,47 @@
   </offsets>
  </model>
 
- <model>
-  <name>LeftLandingLight</name>
-  <path>Aircraft/pa24-250/Models/LandingLights/LeftLandingLight.xml</path>
-  <offsets>
-   <x-m>2.37634</x-m>
-   <y-m>-5.05</y-m>
-   <z-m>-0.08</z-m>
-  </offsets>
- </model>
+  <!-- Wing light cone left -->
+  <model>
+    <name>LeftLandingLight</name>
+    <path>Aircraft/pa24-250/Models/LandingLights/light-cone.xml</path>
+    <offsets>
+      <x-m>2.37634</x-m>
+      <y-m>-5.05</y-m>
+      <z-m>-0.08</z-m>
+      <heading-deg>    3.0 </heading-deg>
+      <pitch-deg>    -7.500 </pitch-deg>
+    </offsets>
+  </model>
 
- <model>
-  <name>RightLandingLight</name>
-  <path>Aircraft/pa24-250/Models/LandingLights/RightLandingLight.xml</path>
-  <offsets>
-   <x-m>2.37634</x-m>
-   <y-m>5.05</y-m>
-   <z-m>-0.08</z-m>
-  </offsets>
- </model>
+  <!-- Wing light cone right -->
+  <model>
+    <name>RightLandingLight</name>
+    <path>Aircraft/pa24-250/Models/LandingLights/light-cone.xml</path>
+    <offsets>
+      <x-m>2.37634</x-m>
+      <y-m>5.05</y-m>
+      <z-m>-0.08</z-m>
+      <heading-deg>   -3.0 </heading-deg>
+      <pitch-deg>    -7.500 </pitch-deg>
+    </offsets>
+  </model>
 
- <model>
-  <name>BothLandingLights</name>
-  <path>Aircraft/pa24-250/Models/LandingLights/BothLandingLights.xml</path>
-  <offsets>
-   <x-m>2.37634</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.08</z-m>
-  </offsets>
- </model>
+  <animation>
+    <type>select</type>
+    <object-name>LeftLandingLight</object-name>
+    <condition>
+      <property>controls/switches/landing-light-L</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>RightLandingLight</object-name>
+    <condition>
+      <property>controls/switches/landing-light-R</property>
+    </condition>
+  </animation>
 
  <!-- Visible up to 10km (6mi) -->
  <animation>
@@ -532,7 +544,6 @@
   <name>LandingLightsGroup</name>
   <object-name>LeftLandingLight</object-name>
   <object-name>RightLandingLight</object-name>
-  <object-name>BothLandingLights</object-name>
  </animation>
 
  <animation>
