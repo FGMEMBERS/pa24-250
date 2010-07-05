@@ -3,6 +3,7 @@
 <PropertyList>
 
  <path>fastprop.ac</path>
+ <nopreview/>
 
  <animation>
   <name>PropVisibility</name>
