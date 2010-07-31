@@ -1,20 +1,5 @@
-<?xml version="1.0"?>
-<!--
-************************************************************************
-Aircraft configuration file: Piper Comanche 250 (1962 model)
-This file configures the airplane with full fuel, a 200 lb pilot, and
-a 150 lb copilot and no bagage.
-************************************************************************
--->
-
 <PropertyList>
-
- <sim include="help.xml">
-
-  <description>Piper Comanche 250 (1962 model)</description>
-  <author>Dave Perry</author>
-  <status>production</status>
-
+ <sim>
 
   <!-- Use the YASim physics engine for the flight model -->
 
@@ -25,28 +10,12 @@ a 150 lb copilot and no bagage.
    <splash-texture>Aircraft/pa24-250/pa24-250splash.rgb</splash-texture>
   </startup>
 
-  <systems>
-   <autopilot>
-    <path>Aircraft/pa24-250/Systems/CENTURYIII.xml</path>
-   </autopilot>
-   <electrical>
-    <path></path>
-   </electrical>
-  </systems> 
-
   <!-- For now, use the Cessna 172 sound configuration (same engine) -->
 
   <sound>
    <path archive="y">Aircraft/pa24-250/pa24-250-sound.xml</path>
   </sound>
 
-
-  <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
-
-  <model>
-   <path archive="y">Aircraft/pa24-250/Models/pa24-250.xml</path>
-   <hide-yoke>false</hide-yoke>
-  </model>
 
   <panel>
    <visibility archive="y">false</visibility>
@@ -442,21 +411,17 @@ a 150 lb copilot and no bagage.
 <nasal>
 
   <pa24>
-    <file>Aircraft/pa24-250/Models/pa24.nas</file>
-    <file>Aircraft/pa24-250/pa24-electrical.nas</file>
-    <file>Aircraft/pa24-250/action-sim.nas</file>
-    <file>Aircraft/pa24-250/doors.nas</file>
+    <file>Aircraft/pa24-250/Nasal/pa24.nas</file>
+    <file>Aircraft/pa24-250/Nasal/pa24-electrical.nas</file>
+    <file>Aircraft/pa24-250/Nasal/action-sim.nas</file>
+    <file>Aircraft/pa24-250/Nasal/doors.nas</file>
     <file>Aircraft/Instruments-3d/ki266/ki266.nas</file>
   </pa24>
-  <century3>
-    <file>Aircraft/Generic/century3.nas</file>
-  </century3>
   <kr87>
-    <file>Aircraft/pa24-250/kr87.nas</file>
+    <file>Aircraft/pa24-250/Nasal/kr87.nas</file>
   </kr87>
 
 </nasal>
 
 </PropertyList>
 
-<!-- end of pa24-250-set.xml -->

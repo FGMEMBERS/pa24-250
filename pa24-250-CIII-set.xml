@@ -2,8 +2,12 @@
 <!--
 ************************************************************************
 Aircraft configuration file: Piper Comanche 250 (1962 model)
-This file configures the airplane with full fuel, a 200 lb pilot, and
-a 150 lb copilot and no bagage.
+This file contains configuration unique to the Century III autopilot.
+
+Configuration items common to either the Century IIB or the Century III 
+autopilots are in the file "pa24-250-baxe.xml included below.  This file
+configures the airplane with full fuel, a 200 lb pilot, and a 150 lb 
+copilot and no bagage.
 ************************************************************************
 -->
 
@@ -11,13 +15,13 @@ a 150 lb copilot and no bagage.
 
  <sim include="help.xml">
 
-  <description>Piper Comanche 250, CIIB autopilot</description>
+  <description>Piper Comanche 250, CIII autopilot</description>
   <author>Dave Perry</author>
   <status>production</status>
 
   <systems>
    <autopilot>
-    <path>Aircraft/pa24-250/Systems/CENTURYIIB.xml</path>
+    <path>Aircraft/pa24-250/Systems/CENTURYIII.xml</path>
    </autopilot>
    <electrical>
     <path></path>
@@ -27,7 +31,7 @@ a 150 lb copilot and no bagage.
   <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
 
   <model>
-   <path archive="y">Aircraft/pa24-250/Models/pa24-250-CIIB.xml</path>
+   <path archive="y">Aircraft/pa24-250/Models/pa24-250-CIII.xml</path>
    <hide-yoke>false</hide-yoke>
   </model>
 
@@ -35,12 +39,12 @@ a 150 lb copilot and no bagage.
 
 <nasal>
 
-  <CenturyIIB>
-    <file>Aircraft/Generic/century2b.nas</file>
-  </CenturyIIB>
+  <century3>
+    <file>Aircraft/Generic/century3.nas</file>
+  </century3>
 
 </nasal>
 
 </PropertyList>
 
-<!-- end of pa24-250-CIIB-set.xml -->
+<!-- end of pa24-250-set.xml -->
