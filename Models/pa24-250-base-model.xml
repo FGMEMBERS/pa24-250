@@ -444,28 +444,8 @@
 
 <!-- Landing Lights -->
  <model>
-  <name>LeftLandingLight</name>
-  <path>Aircraft/pa24-250/Models/LandingLights/LeftLandingLight.xml</path>
-  <offsets>
-   <x-m>2.37634</x-m>
-   <y-m>-5.05</y-m>
-   <z-m>-0.08</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>RightLandingLight</name>
-  <path>Aircraft/pa24-250/Models/LandingLights/RightLandingLight.xml</path>
-  <offsets>
-   <x-m>2.37634</x-m>
-   <y-m>5.05</y-m>
-   <z-m>-0.08</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>BothLandingLights</name>
-  <path>Aircraft/pa24-250/Models/LandingLights/BothLandingLights.xml</path>
+  <name>LandingLights</name>
+  <path>Aircraft/pa24-250/Models/LandingLights/LandingLights.xml</path>
   <offsets>
    <x-m>2.37634</x-m>
    <y-m>0.0</y-m>
@@ -545,13 +525,6 @@
  </animation>
 
  <animation>
-  <name>LandingLightsGroup</name>
-  <object-name>LeftLandingLight</object-name>
-  <object-name>RightLandingLight</object-name>
-  <object-name>BothLandingLights</object-name>
- </animation>
-
- <animation>
   <name>StrobeGroup</name>
   <object-name>StrobeLight.L</object-name>
   <object-name>StrobeLight.R</object-name>
@@ -574,7 +547,7 @@
   <object-name>LightsGroup</object-name>
   <object-name>AntenaGroup</object-name>
   <object-name>StrobeGroup</object-name>
-  <object-name>LandingLightsGroup</object-name>
+  <object-name>LandingLights</object-name>
   <object-name>PropellerGroup</object-name>
   <object-name>Panel-3d</object-name>
   <object-name>PlacardGroup</object-name>

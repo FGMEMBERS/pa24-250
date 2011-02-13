@@ -130,6 +130,8 @@ var init_actions = func {
     gear2Compression.setDoubleValue(0.0);
     leftLandingLightFactor.setDoubleValue(0.0);
     rightLandingLightFactor.setDoubleValue(0.0);
+    leftLandingLightFactorAGL.setDoubleValue(0.0);
+    rightLandingLightFactorAGL.setDoubleValue(0.0);
     fuelFlowGph.setDoubleValue(0.0);
     flapPosition.setDoubleValue(0.0);
     indicatedAirSpeedKnots.setDoubleValue(0.0);
@@ -224,10 +226,10 @@ var update_actions = func {
     var factorL = leftLandingLightFactor.getValue();
     var factorR = rightLandingLightFactor.getValue();
     var agl = aglFt.getValue();
-    var aglFactor = 16/(agl*agl);
+    var aglFactor = 62500/(agl*agl);
     var factorAGL_L = factorL;
     var factorAGL_R = factorR;
-    if (agl > 4) { 
+    if (agl > 250) { 
        factorAGL_L = factorL*aglFactor;
        factorAGL_R = factorR*aglFactor;
     }
