@@ -36,7 +36,15 @@ copilot and no bagage.
 
   <systems>
    <autopilot>
-    <path>Aircraft/pa24-250/Systems/CENTURYIII.xml</path>
+     <name>autopilot helpers</name>
+     <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+   </autopilot>
+   <autopilot>
+     <path>Aircraft/pa24-250/Systems/CENTURYIII.xml</path>
+   </autopilot>
+   <autopilot>
+     <name>FiltersOnly</name>
+     <path>Aircraft/c172p/Systems/NAVandGSfilters.xml</path>
    </autopilot>
    <electrical>
     <path></path>

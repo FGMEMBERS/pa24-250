@@ -1869,8 +1869,7 @@
  <animation>
    <type>rotate</type>
    <object-name>sczors-top</object-name>
-   <property>gear/gear[0]/theta0</property>
-   <factor>57.3</factor>
+   <property>gear/gear[0]/compression-norm</property>
    <center>
      <x-m>1.149944</x-m>
      <y-m>0.0</y-m>
@@ -1881,13 +1880,13 @@
      <y>1</y>
      <z>0</z>
    </axis>
+   <interpolation include="NoseGearScissorInterpolation.xml"/>
  </animation>
 
  <animation>
    <type>rotate</type>
    <object-name>sczors-bot</object-name>
-   <property>gear/gear[0]/theta0</property>
-   <factor>-57.3</factor>
+   <property>gear/gear[0]/compression-norm</property>
    <center>
      <x-m>1.13126</x-m>
      <y-m>0.0</y-m>
@@ -1895,9 +1894,10 @@
    </center>
    <axis>
      <x>0</x>
-     <y>1</y>
+     <y>-1</y>
      <z>0</z>
    </axis>
+   <interpolation include="NoseGearScissorInterpolation.xml"/>
  </animation>
 
  <animation>
@@ -1965,8 +1965,7 @@
  <animation>
    <type>rotate</type>
    <object-name>sczors-left-top</object-name>
-   <property>gear/gear[1]/theta1</property>
-   <factor>-57.3</factor>
+   <property>gear/gear[1]/compression-norm</property>
    <center>
      <x-m>3.13358</x-m>
      <y-m>0.0</y-m>
@@ -1974,16 +1973,16 @@
    </center>
    <axis>
      <x>0</x>
-     <y>1</y>
+     <y>-1</y>
      <z>0</z>
    </axis>
+   <interpolation include="MainGearScissorInterpolation.xml"/>
  </animation>
 
  <animation>
    <type>rotate</type>
    <object-name>sczors-left-bottom</object-name>
-   <property>gear/gear[1]/theta1</property>
-   <factor>57.3</factor>
+   <property>gear/gear[1]/compression-norm</property>
    <center>
      <x-m>3.11588</x-m>
      <y-m>0.0</y-m>
@@ -1994,6 +1993,7 @@
      <y>1</y>
      <z>0</z>
    </axis>
+   <interpolation include="MainGearScissorInterpolation.xml"/>
  </animation>
 
  <animation>
@@ -2059,8 +2059,7 @@
  <animation>
    <type>rotate</type>
    <object-name>sczors-right-top</object-name>
-   <property>gear/gear[2]/theta2</property>
-   <factor>-57.3</factor>
+   <property>gear/gear[2]/compression-norm</property>
    <center>
      <x-m>3.13358</x-m>
      <y-m>0.0</y-m>
@@ -2068,16 +2067,16 @@
    </center>
    <axis>
      <x>0</x>
-     <y>1</y>
+     <y>-1</y>
      <z>0</z>
    </axis>
+   <interpolation include="MainGearScissorInterpolation.xml"/>
  </animation>
 
  <animation>
    <type>rotate</type>
    <object-name>sczors-right-bottom</object-name>
-   <property>gear/gear[2]/theta2</property>
-   <factor>57.3</factor>
+   <property>gear/gear[2]/compression-norm</property>
    <center>
      <x-m>3.11588</x-m>
      <y-m>0.0</y-m>
@@ -2088,6 +2087,7 @@
      <y>1</y>
      <z>0</z>
    </axis>
+   <interpolation include="MainGearScissorInterpolation.xml"/>
  </animation>
 
  <animation>

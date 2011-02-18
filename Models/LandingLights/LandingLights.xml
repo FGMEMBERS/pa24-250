@@ -171,8 +171,6 @@
 
    <animation>
 	<type>select</type>
-<!--	<object-name>left-phare</object-name>
-	<object-name>right-phare</object-name> -->
 	<object-name>both_landing_light_spot</object-name>
 	<condition>
 	   <and>
@@ -185,18 +183,6 @@
    <animation>
 	<type>material</type>
 	<object-name>both_landing_light_spot</object-name>
-	<emission>
-	   <red>0.98</red>
-	   <green>0.98</green>
-	   <blue>0.84</blue>
-	   <factor-prop>sim/model/material/LandingLight/factorAGL-R</factor-prop>
-	</emission>
-   </animation>
-
-   <animation>
-	<type>material</type>
-	<object-name>left-phare</object-name>
-	<object-name>right-phare</object-name>
 	<emission>
 	   <red>0.98</red>
 	   <green>0.98</green>
@@ -283,11 +269,11 @@
             </entry>
             <entry>
                 <ind>20</ind>
-                <dep>1</dep>
+                <dep>2</dep>
             </entry>
             <entry>
                 <ind>1500</ind>
-                <dep>10</dep>
+                <dep>20</dep>
             </entry>
         </interpolation>
     </animation>

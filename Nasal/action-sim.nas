@@ -32,10 +32,6 @@ var node = nil;
 var OnGround = nil;
 var fuel_flow = nil;
 var egt = nil;
-var H = nil;
-var L = nil;
-var phi = nil;
-var C = nil;
 var rudder_position = nil;
 var fuel_pump_volume = nil;
 var aileron = nil;
@@ -46,21 +42,13 @@ var elevator = nil;
 var fuel_pres_lowpass = aircraft.lowpass.new(0.5);
 var oil_pres_lowpass = aircraft.lowpass.new(0.5);
 var egt_lowpass = aircraft.lowpass.new(0.95);
-var cdi0_lowpass = aircraft.lowpass.new(0.5);
-var cdi1_lowpass = aircraft.lowpass.new(0.5);
-var gs0_lowpass = aircraft.lowpass.new(0.5);
-var gs1_lowpass = aircraft.lowpass.new(0.5);
 
 # Properties
 
 var propGear0 = props.globals.getNode("gear/gear[0]", 1);
-var propGear1 = props.globals.getNode("gear/gear[1]", 1);
-var propGear2 = props.globals.getNode("gear/gear[2]", 1);
 var propLandingLights = props.globals.getNode("sim/model/material/LandingLight", 1);
 var propFlightControls = props.globals.getNode("controls/flight", 1);
 var propEngine = props.globals.getNode("engines/engine[0]", 1);
-var propNav0 = props.globals.getNode("instrumentation/nav[0]", 1);
-var propNav1 = props.globals.getNode("instrumentation/nav[1]", 1);
 var propAirspeedIndicator = props.globals.getNode("instrumentation/airspeed-indicator", 1);
 var propSurfacePositions = props.globals.getNode("surface-positions", 1);
 var propCentury2bControls = props.globals.getNode("autopilot/CENTURYIIB/controls", 1);
@@ -70,12 +58,6 @@ var propCentury3Controls = props.globals.getNode("autopilot/CENTURYIII/controls"
 
 var click = props.globals.getNode("controls/switches/click",0);
 var prime = props.globals.getNode("sim/sound/prime",0);
-var theta0N = propGear0.getNode("theta0", 1);
-var theta1N = propGear1.getNode("theta1", 1);
-var theta2N = propGear2.getNode("theta2", 1);
-var gear0Compression = propGear0.getNode("compression-m", 1);
-var gear1Compression = propGear1.getNode("compression-m", 1);
-var gear2Compression = propGear2.getNode("compression-m", 1);
 var leftLandingLightFactor = propLandingLights.getNode("factor-L", 1);
 var rightLandingLightFactor = propLandingLights.getNode("factor-R", 1);
 var leftLandingLightFactorAGL  = propLandingLights.getNode("factorAGL-L", 1);
@@ -101,14 +83,6 @@ var elevatorJS = propFlightControls.getNode("elevator", 1);
 var pitchC3 = propCentury3Controls.getNode("pitch", 1);
 var rollC3  = propCentury3Controls.getNode("roll", 1);
 var rollC2b = propCentury2bControls.getNode("roll", 1);
-var cdiNAV0 = propNav0.getNode("heading-needle-deflection", 1);
-var cdiNAV1 = propNav1.getNode("heading-needle-deflection", 1);
-var gsNAV0  = propNav0.getNode("gs-needle-deflection-norm", 1);
-var gsNAV1  = propNav1.getNode("gs-needle-deflection-norm", 1);
-var filteredCDI0 = propNav0.getNode("filtered-cdiNAV0-deflection", 1);
-var filteredCDI1 = propNav1.getNode("filtered-cdiNAV1-deflection", 1);
-var filteredGS0  = propNav0.getNode("filtered-gsNAV0-deflection", 1);
-var filteredGS1  = propNav1.getNode("filtered-gsNAV1-deflection", 1);
 var batterySwitch = props.globals.getNode("controls/electric/battery-switch", 1);
 var noseGearWow = propGear0.getNode("wow", 1);
 var aglFt = props.globals.getNode("position/altitude-agl-ft", 1);
@@ -116,18 +90,11 @@ var propDiskFactor = props.globals.getNode("sim/model/material/propdisc/factor",
 var fuelPump = props.globals.getNode("controls/engines/engine/fuel-pump", 1);
 var fuelPumpVolume = props.globals.getNode("sim/sound/fuel_pump_volume", 1);
 
-
 var init_actions = func {
 #    pitchC3.setDoubleValue(0.0);
 #    rollC3.setDoubleValue(0.0);
 #    rollC2b.setDoubleValue(0.0);
     click.setBoolValue(0);
-    theta0N.setDoubleValue(0.0);
-    theta1N.setDoubleValue(0.0);
-    theta2N.setDoubleValue(0.0);
-    gear0Compression.setDoubleValue(0.0);
-    gear1Compression.setDoubleValue(0.0);
-    gear2Compression.setDoubleValue(0.0);
     leftLandingLightFactor.setDoubleValue(0.0);
     rightLandingLightFactor.setDoubleValue(0.0);
     leftLandingLightFactorAGL.setDoubleValue(0.0);
@@ -140,10 +107,6 @@ var init_actions = func {
     pilotGs.setDoubleValue(0.0);
     aileronIN.setDoubleValue(0.0);
     elevatorIN.setDoubleValue(0.0);
-    filteredCDI0.setDoubleValue(0.0);
-    filteredCDI1.setDoubleValue(0.0);
-    filteredGS0.setDoubleValue(0.0);
-    filteredGS1.setDoubleValue(0.0);
 
     # Make sure that init_actions is called when the sim is reset
     setlistener("sim/signals/reset", init_actions); 
@@ -235,44 +198,6 @@ var update_actions = func {
     }
 
 ##
-#  Compute the scissor link angles due to strut compression
-##
-
-    var theta0 = 0.0;
-    var theta1 = 0.0;
-    var theta2 = 0.0;
-
-    # Compute the angle the nose gear scissor rotates due to nose gear strut compression
-
-    H = 0.205048;  # Nose gear oleo strut extended length in m
-    L = 0.107564;  # Nose gear scissor length in m
-    phi = 1.2673;
-    C = gear0Compression.getValue();
-    if (C > 0.0) {
-      theta0 = scissor_angle(H,C,L,phi);
-    }
-
-    # Compute the angle the right gear scissor rotates due to right gear strut compression
-      
-    H = 0.205048;  # Right gear oleo strut extended length in m
-    L = 0.107564;  # Right gear scissor length in m
-    phi = 1.2673;
-    C = gear1Compression.getValue();
-    if (C > 0.0) {
-      theta1 = scissor_angle(H,C,L,phi);
-    }
-
-    # Compute the angle the left gear scissor rotates due to left gear strut compression
-
-    H = 0.205048;  # Left gear oleo strut extended length in m
-    L = 0.107564;  # Left gear scissor length in m
-    phi = 1.2673;
-    C = gear2Compression.getValue();
-    if (C > 0.0) {
-      theta2 = scissor_angle(H,C,L,phi);
-    }
-
-##
 #  Disengage nose wheel steering from the rudder pedals if not locked down
 ##
 
@@ -308,15 +233,8 @@ var update_actions = func {
   }
 
   # outputs
-    theta0N.setDoubleValue(theta0);
-    theta1N.setDoubleValue(theta1);
-    theta2N.setDoubleValue(theta2);
     aileronIN.setDoubleValue(aileron);
     elevatorIN.setDoubleValue(elevator);
-    filteredCDI0.setDoubleValue( cdi0_lowpass.filter(cdiNAV0.getValue()));
-    filteredCDI1.setDoubleValue(cdi1_lowpass.filter(cdiNAV1.getValue()));
-    filteredGS0.setDoubleValue(gs0_lowpass.filter(gsNAV0.getValue()));
-    filteredGS1.setDoubleValue(gs1_lowpass.filter(gsNAV1.getValue()));
     fixEGT.setDoubleValue(egt_lowpass.filter(egt));
     leftLandingLightFactorAGL.setDoubleValue(factorAGL_L);
     rightLandingLightFactorAGL.setDoubleValue(factorAGL_R);
@@ -327,14 +245,6 @@ var update_actions = func {
     fuelPumpVolume.setDoubleValue(fuel_pump_volume);
 
     settimer(update_actions, 0);
-}
-
-var scissor_angle = func(H,C,L,phi) {
-    var a = (H - C)/2/L;
-    # Use 2 iterates of Newton's method and 4th order Taylor series to 
-    # approximate theta where sin(phi - theta) = a
-    var theta = phi - 2*a/3 - a/3/(1-a*a/2);
-    return theta;
 }
 
 var resetClick = func { click.setBoolValue(0); }
