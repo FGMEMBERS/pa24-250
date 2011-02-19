@@ -189,10 +189,10 @@ var update_actions = func {
     var factorL = leftLandingLightFactor.getValue();
     var factorR = rightLandingLightFactor.getValue();
     var agl = aglFt.getValue();
-    var aglFactor = 62500/(agl*agl);
+    var aglFactor = 10000/(agl*agl);
     var factorAGL_L = factorL;
     var factorAGL_R = factorR;
-    if (agl > 250) { 
+    if (agl > 100) { 
        factorAGL_L = factorL*aglFactor;
        factorAGL_R = factorR*aglFactor;
     }

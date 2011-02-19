@@ -62,12 +62,6 @@
    </animation>
 
    <animation>
-	<type>noshadow</type>
-	<object-name>left-phare</object-name>
-	<object-name>left_landing_light_spot</object-name>
-   </animation>
-
-   <animation>
 	<type>flash</type>
 	<object-name>left-phare</object-name>
 	<center>
@@ -143,12 +137,6 @@
    </animation>
 
    <animation>
-	<type>noshadow</type>
-	<object-name>right-phare</object-name>
-	<object-name>right_landing_light_spot</object-name>
-   </animation>
-
-   <animation>
 	<type>flash</type>
 	<object-name>right-phare</object-name>
 	<center>
@@ -167,6 +155,15 @@
 	<two-sides type="bool">false</two-sides>
 	<min>0.01</min>
 	<max>1</max>
+   </animation>
+
+   <animation>
+	<type>noshadow</type>
+	<object-name>left-phare</object-name>
+	<object-name>left_landing_light_spot</object-name>
+	<object-name>right-phare</object-name>
+	<object-name>right_landing_light_spot</object-name>
+	<object-name>both_landing_light_spot</object-name>
    </animation>
 
    <animation>
@@ -253,7 +250,7 @@
 	<axis>
 	   <x>-1.0</x>
 	   <y>0.0</y>
-	   <z>0.0</z>
+	   <z>-0.088</z>
 	</axis>
    </animation>
 
@@ -269,11 +266,11 @@
             </entry>
             <entry>
                 <ind>20</ind>
-                <dep>2</dep>
+                <dep>1</dep>
             </entry>
             <entry>
                 <ind>1500</ind>
-                <dep>20</dep>
+                <dep>10</dep>
             </entry>
         </interpolation>
     </animation>
