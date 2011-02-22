@@ -5,7 +5,7 @@ OBJECT world
 kids 5
 OBJECT poly
 name "both_landing_light_spot"
-loc -17.4075 -1.40434 -0.0563498
+loc -17.4075 -1.34591 -0.0563498
 data 9
 Plane.042
 texture "light.png"
@@ -241,7 +241,7 @@ refs 3
 kids 0
 OBJECT poly
 name "right_landing_light_spot"
-loc 3.40376 -0.633476 -8.06448
+loc 3.40376 -0.575049 -8.06448
 data 9
 Plane.036
 texture "light.png"
@@ -360,7 +360,7 @@ refs 3
 kids 0
 OBJECT poly
 name "left_landing_light_spot"
-loc 3.41601 -0.465405 2.02328
+loc 3.41601 -0.406978 2.02328
 data 9
 Plane.042
 texture "light.png"

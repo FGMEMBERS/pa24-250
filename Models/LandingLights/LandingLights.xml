@@ -231,8 +231,8 @@
 	<object-name>left_landing_light_spot</object-name>
 	<object-name>right_landing_light_spot</object-name>
 	<object-name>both_landing_light_spot</object-name>
-	<property>position/altitude-agl-ft</property>
-	<factor>0.25</factor>
+	<property>position/gear-agl-ft</property>
+	<factor>1.0</factor>
 	<axis>
 	  <x>-1.0</x>
 	  <y>0.0</y>
