@@ -19,6 +19,11 @@
 
  <path>fastprop.ac</path>
  <nopreview/>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>noshadow.PropellerDisk</object-name>
+ </effect>
 
  <animation>
   <name>PropVisibility</name>

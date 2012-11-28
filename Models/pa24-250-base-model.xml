@@ -76,6 +76,11 @@
    <factor-prop>sim/model/material/instruments/factor</factor-prop>
   </emission>
  </animation>
+ 
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>WindowGroup</object-name>
+ </effect>
 
  <model>
   <name>COMP</name>
