@@ -4,9 +4,9 @@
 Aircraft configuration file: Piper Comanche 250 (1962 model)
 This file contains configuration unique to the Century IIB autopilot.
 
-Configuration items common to either the Century IIB or the Century III 
+Configuration items common to either the Century IIB or the Century III
 autopilots are in the file "pa24-250-baxe.xml included below.  This file
-configures the airplane with full fuel, a 200 lb pilot, anda 150 lb 
+configures the airplane with full fuel, a 200 lb pilot, anda 150 lb
 copilot and no bagage.
 ************************************************************************
 -->
@@ -33,7 +33,8 @@ copilot and no bagage.
   <description>Piper Comanche 250, CIIB autopilot</description>
   <author>Dave Perry</author>
   <status>production</status>
-
+  <variant-of>pa24-250-CIII</variant-of>
+  
   <systems>
    <autopilot>
       <name>autopilot helpers</name>
@@ -49,7 +50,7 @@ copilot and no bagage.
    <electrical>
      <path></path>
    </electrical>
-  </systems> 
+  </systems>
 
   <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
 
