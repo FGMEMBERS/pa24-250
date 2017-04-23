@@ -37,6 +37,17 @@
    <visibility archive="y">false</visibility>
   </panel>
 
+  <tags>
+    <tag>1-engine</tag>
+    <tag>1950s</tag> <!-- first flight in 1957 -->
+    <tag>1960s</tag>
+    <tag>1970s</tag> <!-- production line flooded in 1972 -->
+    <tag>ga</tag>
+    <tag>ifr</tag>
+    <tag>piper</tag>
+    <tag>piston</tag>
+    <tag>retractable-gear</tag>
+  </tags>
 
   <!-- Set the pilot's view position x/y/z == right/up/back-->
 
