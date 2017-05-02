@@ -38,7 +38,6 @@
   </panel>
 
   <tags>
-    <tag>1-engine</tag>
     <tag>1950s</tag> <!-- first flight in 1957 -->
     <tag>1960s</tag>
     <tag>1970s</tag> <!-- production line flooded in 1972 -->
@@ -47,6 +46,9 @@
     <tag>piper</tag>
     <tag>piston</tag>
     <tag>retractable-gear</tag>
+    <tag>single-engine</tag>
+    <tag>tricycle</tag>
+    <tag>variable-pitch</tag>
   </tags>
 
   <!-- Set the pilot's view position x/y/z == right/up/back-->
