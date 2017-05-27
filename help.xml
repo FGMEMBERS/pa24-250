@@ -35,11 +35,11 @@
     <desc>toggle fuel pump</desc>
    </key>
    <key>
-    <name>#</name>
+    <name>&lt;</name>
     <desc>turn on nav lights; turn on and/or dim panel lights</desc>
    </key>
    <key>
-    <name>3</name>
+    <name>&gt;</name>
     <desc>increase and/or turn off panel lights and nav lights</desc>
    </key>
    <key>
@@ -67,7 +67,7 @@
     <desc>toggle avionics master</desc>
    </key>
    <key>
-    <name>h</name>
+    <name>H</name>
     <desc>toggle carburator heat</desc>
    </key>
    <key>

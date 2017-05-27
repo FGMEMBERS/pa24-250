@@ -37,6 +37,19 @@
    <visibility archive="y">false</visibility>
   </panel>
 
+  <tags>
+    <tag>1950s</tag> <!-- first flight in 1957 -->
+    <tag>1960s</tag>
+    <tag>1970s</tag> <!-- production line flooded in 1972 -->
+    <tag>ga</tag>
+    <tag>ifr</tag>
+    <tag>piper</tag>
+    <tag>piston</tag>
+    <tag>retractable-gear</tag>
+    <tag>single-engine</tag>
+    <tag>tricycle</tag>
+    <tag>variable-pitch</tag>
+  </tags>
 
   <!-- Set the pilot's view position x/y/z == right/up/back-->
 
@@ -330,8 +343,8 @@
   </binding>
   </key> 
 
-  <key n="35">
-  <name>#</name>
+  <key n="62">
+  <name>&gt;</name>
   <desc>Increase Panel Lights</desc>
   <repeatable>true</repeatable>
   <binding>
@@ -340,8 +353,8 @@
   </binding>
   </key> 
 
-  <key n="51">
-  <name>3</name>
+  <key n="60">
+  <name>&lt;</name>
   <desc>Decrease Panel Lights</desc>
   <repeatable>true</repeatable>
   <binding>
@@ -404,8 +417,8 @@
   </binding>
   </key> 
 
-  <key n="104">
-  <name>h</name>
+  <key n="72">
+  <name>H</name>
   <desc>Toggle Carb Heat</desc>
   <binding>
    <command>nasal</command>
